@@ -1,0 +1,5927 @@
+{
+	"info": {
+		"_postman_id": "b8e7fa0f-de5b-46e4-ad5e-764deb2b73bd",
+		"name": "Contentful APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CDA",
+			"item": [
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Search (by content_type)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inclusion IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.headerAlignment",
+											"value": "Center-aligned"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Exclusion not IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.headerAlignment[nin]",
+											"value": "Center-aligned"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Array Equality/Inequality)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentHeroBanner"
+										},
+										{
+											"key": "fields.internalName",
+											"value": "Homepage hero banner (B)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inequality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "sys.id[ne]",
+											"value": "54u9lXUVBJlg8BiIXhz9Y"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Equality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Existence)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[exists]=false",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "field.tags[exists]",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Ranges)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "field.tags[gte]",
+											"value": "2",
+											"description": "greather than or equal"
+										},
+										{
+											"key": "field.tags[gt]",
+											"value": "2",
+											"description": "greater than"
+										},
+										{
+											"key": "field.tags[lt]",
+											"value": "2",
+											"description": "lower than"
+										},
+										{
+											"key": "field.tags[lte]",
+											"value": "2",
+											"description": "lower than or equal"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?query=home",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "home"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text on field)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.backgroundVisual[match]",
+											"value": "home"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location proximty)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[near]",
+											"value": "38,-122"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to entry)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_entry=aaaa",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_entry",
+											"value": "aaaa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to asset)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_asset=aaaa",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_asset",
+											"value": "aaaa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location bounding object)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[within]",
+											"value": "40,-124,36,-12"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+							},
+							"response": []
+						},
+						{
+							"name": "Search (by reference)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.{reference_field}.sys.contentType.sys.id",
+											"value": "{reference_content_type}"
+										},
+										{
+											"key": "fields.{reference_field}{search_field}",
+											"value": "{search_value}"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Spaces - Collection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/entries",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"entries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=sys.createdAt,sys.id",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "sys.createdAt,sys.id"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Limit - Skip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?limit=5&skip=0",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "MIME type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets?mimetype_group=image",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "mimetype_group",
+									"value": "image"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Order (Reverse)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=-sys.createdAt",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-sys.createdAt"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Content Model",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"content_types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Content Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"content_types",
+								"imageWithFocalPoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entries Collection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entries Collection (Include)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entries Collection (Links to item)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "10"
+								},
+								{
+									"key": "content_type",
+									"value": "componentImageGallery"
+								},
+								{
+									"key": "fields.featuredImages.sys.id",
+									"value": "53Qdp8JSTrNa5w75I28dky"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries",
+								"6Lng3TPchCEw9cGvDiYDHs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assets of space - Collection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"assets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asset",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/4rhOLX8hOlcbNUelJpkvBs",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"assets",
+								"4rhOLX8hOlcbNUelJpkvBs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Locale - Collection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"locales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entry by locale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries",
+								"qcYpt0du7nO3Bl4HP4uBI",
+								""
+							],
+							"query": [
+								{
+									"key": "locale",
+									"value": "en-US"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select (Entries and Assets)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "content_type",
+									"value": "componentImageGallery"
+								},
+								{
+									"key": "select",
+									"value": "sys.id,sys.environment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Synchronization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/sync?initial=true&type=Deletion&limit=10",
+							"protocol": "https",
+							"host": [
+								"{{cda_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"sync"
+							],
+							"query": [
+								{
+									"key": "initial",
+									"value": "true"
+								},
+								{
+									"key": "type",
+									"value": "Deletion"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Content delivery API",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CMA",
+			"item": [
+				{
+					"name": "Spaces",
+					"item": [
+						{
+							"name": "Spaces",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"ymcs3dx5hc2h"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hyper Space\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"ymcs3dx5hc2h"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hyper Space\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"ymcs3dx5hc2h"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Example Space\",\n  \"defaultLocale\": \"en\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Enviroments",
+					"item": [
+						{
+							"name": "Environments - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Staging\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/ljzpsal195l9",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"ljzpsal195l9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/ljzpsal195l9",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"ljzpsal195l9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "4"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/staging",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"staging"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Environment alias",
+					"item": [
+						{
+							"name": "Environment alias - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environment_aliases"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment alias",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/master",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environment_aliases",
+										"master"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Environment alias",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"environment\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Environment\",\n      \"id\": \"staging\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/master",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environment_aliases",
+										"master"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Organizations",
+					"item": [
+						{
+							"name": "Organizations - collections",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Types",
+					"item": [
+						{
+							"name": "Content types - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content types",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content types",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"2CybV4O3C7PvLzsqBI2qcs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"2CybV4O3C7PvLzsqBI2qcs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"2CybV4O3C7PvLzsqBI2qcs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activate Content type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"2CybV4O3C7PvLzsqBI2qcs",
+										"published"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activated content type - Collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/public/content_types",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"public",
+										"content_types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate Content type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"2CybV4O3C7PvLzsqBI2qcs",
+										"published"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Editor Interface",
+					"item": [
+						{
+							"name": "Edtor interface - Collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/editor_interfaces",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"editor_interfaces"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edtor interface",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/person/editor_interfaces",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"person",
+										"editor_interfaces"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edtor interface",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"controls\": [\n    {\n      \"fieldId\": \"name\",\n      \"widgetNamespace\": \"builtin\",\n      \"widgetId\": \"singleLine\",\n      \"settings\": {}\n    }\n  ],\n  \"sidebar\": [\n    {\n      \"widgetNamespace\": \"extension\",\n      \"widgetId\": \"someuiextension\",\n      \"settings\": {},\n      \"disabled\": false\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/person/editor_interfaces",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"person",
+										"editor_interfaces"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "UI Extensions",
+					"item": [
+						{
+							"name": "Extension - Collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"extensions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Extension",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"extensions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Extension Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"extensions",
+										"1F8UNNZ84CCG8hGQ27j2Nb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Extension",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"extensions",
+										"1F8UNNZ84CCG8hGQ27j2Nb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Extension",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"extensions",
+										"1F8UNNZ84CCG8hGQ27j2Nb"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Entries",
+					"item": [
+						{
+							"name": "Entries - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Content-Type",
+										"value": "aaaa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Content-Type",
+										"value": "aaaa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry publishing",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "6"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"published"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry archiving",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "6"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/archived",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"archived"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry unarchiving",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "6"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/archived",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"archived"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry Unpublish",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "6"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Hello, World!\"\n    },\n    \"body\": {\n      \"en-US\": \"Bacon is healthy!\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"published"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Uploads",
+					"item": [
+						{
+							"name": "Upload resource",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/octet-stream"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/Users/rodrigo.casado/Downloads/me.jpeg"
+									},
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads",
+									"protocol": "https",
+									"host": [
+										"{{upload_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"uploads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload resource",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/4MVoerI2vRdFpW3mi6a1wf",
+									"protocol": "https",
+									"host": [
+										"{{upload_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"uploads",
+										"4MVoerI2vRdFpW3mi6a1wf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload resource",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/4MVoerI2vRdFpW3mi6a1wf",
+									"protocol": "https",
+									"host": [
+										"{{upload_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"uploads",
+										"4MVoerI2vRdFpW3mi6a1wf"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Assets - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Published assets - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/public/assets",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"public",
+										"assets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Playsam Streamliner\"\n    },\n    \"file\": {\n      \"en-US\": {\n        \"contentType\": \"image/jpeg\",\n        \"fileName\": \"example.jpeg\",\n        \"upload\": \"https://example.com/example.jpg\"\n      }\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fields\": {\n    \"title\": {\n      \"en-US\": \"Playsam Streamliner\"\n    },\n    \"file\": {\n      \"en-US\": {\n        \"contentType\": \"image/jpeg\",\n        \"fileName\": \"example.jpeg\",\n        \"upload\": \"https://example.com/example.jpg\"\n      }\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Process Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"value": "2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/files/en-us",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"files",
+										"en-us"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "2"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"published"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "2"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/archived",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"archived"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unarchive Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "2"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/archived",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"archived"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unpublish Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "2"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/published",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"published"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Locale",
+					"item": [
+						{
+							"name": "Locale - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"locales"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Locale",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"English (United States)\",\n  \"code\": \"en-US\",\n  \"fallbackCode\": \"en-US\",\n  \"optional\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"locales"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Locale",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"English (United States)\",\n  \"code\": \"en-US\",\n  \"fallbackCode\": \"en-US\",\n  \"optional\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"locales",
+										"0tquV4RqKSbaICHZ9tzXfl"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Locale",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "3",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"English (United States)\",\n  \"code\": \"en-US\",\n  \"fallbackCode\": \"en-US\",\n  \"optional\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"locales",
+										"0tquV4RqKSbaICHZ9tzXfl"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Locale",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "3",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"English (United States)\",\n  \"code\": \"en-US\",\n  \"fallbackCode\": \"en-US\",\n  \"optional\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"locales",
+										"0tquV4RqKSbaICHZ9tzXfl"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Webhook",
+					"item": [
+						{
+							"name": "Webhook - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calls webhook overview - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhooks/13LGvUWmcRknoHBkDt5EXv/calls",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhooks",
+										"13LGvUWmcRknoHBkDt5EXv",
+										"calls"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Health webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhooks/13LGvUWmcRknoHBkDt5EXv/health",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhooks",
+										"13LGvUWmcRknoHBkDt5EXv",
+										"health"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": [],\n  \"headers\": [\n    {\n      \"key\": \"header1\",\n      \"value\": \"value1\"\n    },\n    {\n      \"key\": \"header2\",\n      \"value\": \"value2\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions",
+										"13LGvUWmcRknoHBkDt5EXv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": [],\n  \"headers\": [\n    {\n      \"key\": \"header1\",\n      \"value\": \"value1\"\n    },\n    {\n      \"key\": \"header2\",\n      \"value\": \"value2\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions",
+										"13LGvUWmcRknoHBkDt5EXv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": [],\n  \"headers\": [\n    {\n      \"key\": \"header1\",\n      \"value\": \"value1\"\n    },\n    {\n      \"key\": \"header2\",\n      \"value\": \"value2\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions",
+										"13LGvUWmcRknoHBkDt5EXv"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "Roles - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Some role\",\n  \"description\": \"Test role\",\n  \"permissions\": {\n    \"ContentModel\": [\n      \"read\"\n    ],\n    \"ContentDelivery\": \"all\",\n    \"Environments\": \"all\",\n    \"EnvironmentAliases\": \"all\",\n    \"Settings\": \"all\"\n  },\n  \"policies\": [\n    {\n      \"effect\": \"allow\",\n      \"actions\": [\n        \"read\",\n        \"create\",\n        \"update\",\n        \"delete\",\n        \"publish\",\n        \"unpublish\",\n        \"archive\",\n        \"unarchive\"\n      ],\n      \"constraint\": {\n        \"equals\": [\n          {\n            \"doc\": \"sys.type\"\n          },\n          \"Entry\"\n        ]\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Some role\",\n  \"description\": \"Test role\",\n  \"permissions\": {\n    \"ContentModel\": [\n      \"read\"\n    ],\n    \"ContentDelivery\": \"all\",\n    \"Environments\": \"all\",\n    \"EnvironmentAliases\": \"all\",\n    \"Settings\": \"all\"\n  },\n  \"policies\": [\n    {\n      \"effect\": \"allow\",\n      \"actions\": [\n        \"read\",\n        \"create\",\n        \"update\",\n        \"delete\",\n        \"publish\",\n        \"unpublish\",\n        \"archive\",\n        \"unarchive\"\n      ],\n      \"constraint\": {\n        \"equals\": [\n          {\n            \"doc\": \"sys.type\"\n          },\n          \"Entry\"\n        ]\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"roles",
+										"4F8dqhLSPKIUd06luqJrRR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"roles",
+										"4F8dqhLSPKIUd06luqJrRR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Some role\",\n  \"description\": \"Test role\",\n  \"permissions\": {\n    \"ContentModel\": [\n      \"read\"\n    ],\n    \"ContentDelivery\": \"all\",\n    \"Environments\": \"all\",\n    \"EnvironmentAliases\": \"all\",\n    \"Settings\": \"all\"\n  },\n  \"policies\": [\n    {\n      \"effect\": \"allow\",\n      \"actions\": [\n        \"read\",\n        \"create\",\n        \"update\",\n        \"delete\",\n        \"publish\",\n        \"unpublish\",\n        \"archive\",\n        \"unarchive\"\n      ],\n      \"constraint\": {\n        \"equals\": [\n          {\n            \"doc\": \"sys.type\"\n          },\n          \"Entry\"\n        ]\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"roles",
+										"4F8dqhLSPKIUd06luqJrRR"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Snapshots",
+					"item": [
+						{
+							"name": "Snapshot - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/AAAA/snapshots",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"AAAA",
+										"snapshots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content type snapshot - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/AAAAA/snapshots",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"AAAAA",
+										"snapshots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content type snapshot",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/AAAAA/snapshots/BBBBB",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"content_types",
+										"AAAAA",
+										"snapshots",
+										"BBBBB"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Snapshot",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/AAAA/snapshots/BBBB",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"AAAA",
+										"snapshots",
+										"BBBB"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Space memberships",
+					"item": [
+						{
+							"name": "Space membership - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"space_memberships"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"admin\": false,\n  \"roles\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Role\",\n        \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n      }\n    }\n  ],\n  \"email\": \"foo@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"space_memberships"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"admin\": false,\n  \"roles\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Role\",\n        \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaa",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"space_memberships",
+										"aaaaa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"admin\": false,\n  \"roles\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Role\",\n        \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaa",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"space_memberships",
+										"aaaaa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"admin\": false,\n  \"roles\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Role\",\n        \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n      }\n    }\n  ],\n  \"email\": \"foo@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaaa",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"space_memberships",
+										"aaaaaa"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "API keys",
+					"item": [
+						{
+							"name": "Delivery API keys - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"api_keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preview API keys - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/preview_api_keys",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"preview_api_keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preview API keys",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/preview_api_keys/0uVxA8jnkmhBsGbrgGSL4v",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"preview_api_keys",
+										"0uVxA8jnkmhBsGbrgGSL4v"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delivery API key",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Example API Key\",\n  \"environments\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Environment\",\n        \"id\": \"staging\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"api_keys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delivery API key",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Example API Key\",\n  \"environments\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Environment\",\n        \"id\": \"staging\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"api_keys",
+										"0uR282nmLzwLbgmQavSafV"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delivery API key",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Example API Key\",\n  \"environments\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Environment\",\n        \"id\": \"staging\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"api_keys",
+										"0uR282nmLzwLbgmQavSafV"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delivery API key",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"type": "text",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Example API Key\",\n  \"environments\": [\n    {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Environment\",\n        \"id\": \"staging\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"api_keys",
+										"0uR282nmLzwLbgmQavSafV"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Personal Access token",
+					"item": [
+						{
+							"name": "Personal access token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My Token\",\n  \"scopes\": [\n    \"content_management_manage\"\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/users/me/access_tokens",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"users",
+										"me",
+										"access_tokens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Personal access token - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/users/me/access_tokens",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"users",
+										"me",
+										"access_tokens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Personal access token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/users/me/access_tokens/322wK6yCMAryglTS4089bR",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"users",
+										"me",
+										"access_tokens",
+										"322wK6yCMAryglTS4089bR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Personal access token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/users/me/access_tokens/322wK6yCMAryglTS4089bR/revoked",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"users",
+										"me",
+										"access_tokens",
+										"322wK6yCMAryglTS4089bR",
+										"revoked"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Users - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/users/me",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "Tasks of entry - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"tasks",
+										"7BslKh9TdKGOK41VmLDjFZ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"tasks",
+										"7BslKh9TdKGOK41VmLDjFZ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"entries",
+										"15jwOBqpxqSAOy2eOO4S0m",
+										"tasks",
+										"7BslKh9TdKGOK41VmLDjFZ"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Schedule actions",
+					"item": [
+						{
+							"name": "Schedule actions - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/scheduled_actions?entity.sys.id=15jwOBqpxqSAOy2eOO4S0m&environment.sys.id=master",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"scheduled_actions"
+									],
+									"query": [
+										{
+											"key": "entity.sys.id",
+											"value": "15jwOBqpxqSAOy2eOO4S0m"
+										},
+										{
+											"key": "environment.sys.id",
+											"value": "master"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schedule actions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"entity\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Entry\",\n      \"id\": \"5KsDBWseXY6QegucYAoacS\"\n    }\n  },\n  \"environment\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Environment\",\n      \"id\": \"staging\"\n    }\n  },\n  \"scheduledFor\": {\n    \"datetime\": \"2119-09-02T14:00:00.000Z\"\n  },\n  \"action\": \"publish\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/scheduled_actions?entity.sys.id=15jwOBqpxqSAOy2eOO4S0m&environment.sys.id=master",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"scheduled_actions"
+									],
+									"query": [
+										{
+											"key": "entity.sys.id",
+											"value": "15jwOBqpxqSAOy2eOO4S0m"
+										},
+										{
+											"key": "environment.sys.id",
+											"value": "master"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schedule actions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"entity\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Entry\",\n      \"id\": \"5KsDBWseXY6QegucYAoacS\"\n    }\n  },\n  \"environment\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Environment\",\n      \"id\": \"staging\"\n    }\n  },\n  \"scheduledFor\": {\n    \"datetime\": \"2119-09-02T14:00:00.000Z\"\n  },\n  \"action\": \"publish\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/scheduled_actions?entity.sys.id=15jwOBqpxqSAOy2eOO4S0m&environment.sys.id=master",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"scheduled_actions"
+									],
+									"query": [
+										{
+											"key": "entity.sys.id",
+											"value": "15jwOBqpxqSAOy2eOO4S0m"
+										},
+										{
+											"key": "environment.sys.id",
+											"value": "master"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "App definitions",
+					"item": [
+						{
+							"name": "App definitions - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"app_definitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App definitions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"app_definitions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App definitions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"app_definitions",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App definitions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"app_definitions",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App definitions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"app_definitions",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "App Installations",
+					"item": [
+						{
+							"name": "App installations - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"app_installations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App installation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"app_installations",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App installation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"app_installations",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "App installation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"master",
+										"app_installations",
+										"3RtNYiWs5bKKFhTO2FH2WG"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Usage",
+					"item": [
+						{
+							"name": "Organization usage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/organization_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"organization_periodic_usages"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "usage"
+										},
+										{
+											"key": "metric[in]",
+											"value": "cma,cpa,gql"
+										},
+										{
+											"key": "dateRange.startAt",
+											"value": "2020-01-01"
+										},
+										{
+											"key": "dateRange.endAt",
+											"value": "2020-01-05"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Space usage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/space_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										"2CKrUXflqGC6iamnTgtYBu",
+										"space_periodic_usages"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "usage"
+										},
+										{
+											"key": "metric[in]",
+											"value": "cma,cpa,gql"
+										},
+										{
+											"key": "dateRange.startAt",
+											"value": "2020-01-01"
+										},
+										{
+											"key": "dateRange.endAt",
+											"value": "2020-01-05"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
