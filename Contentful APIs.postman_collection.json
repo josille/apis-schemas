@@ -644,34 +644,434 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Spaces - Collection",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
+					"name": "Spaces",
+					"item": [
+						{
+							"name": "Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/entries",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"entries"
+									]
 								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/entries",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"entries"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Types",
+					"item": [
+						{
+							"name": "Content Model",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"content_types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"content_types",
+										"imageWithFocalPoint"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Entries",
+					"item": [
+						{
+							"name": "Entries Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries",
+										"6Lng3TPchCEw9cGvDiYDHs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assets of space - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"assets"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Locales",
+					"item": [
+						{
+							"name": "Locale - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"locales"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Links",
+					"item": [
+						{
+							"name": "Entries Collection (Include)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries Collection (Links to item)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "10"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.featuredImages.sys.id",
+											"value": "53Qdp8JSTrNa5w75I28dky"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Localization",
+					"item": [
+						{
+							"name": "Entry by locale",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries",
+										"qcYpt0du7nO3Bl4HP4uBI",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "en-US"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
 					"name": "Order",
@@ -830,357 +1230,6 @@
 							]
 						},
 						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
-					},
-					"response": []
-				},
-				{
-					"name": "Content Model",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"content_types"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Content Type",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"content_types",
-								"imageWithFocalPoint"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Entries Collection",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"entries"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Entries Collection (Include)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "include",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Entries Collection (Links to item)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "include",
-									"value": "10"
-								},
-								{
-									"key": "content_type",
-									"value": "componentImageGallery"
-								},
-								{
-									"key": "fields.featuredImages.sys.id",
-									"value": "53Qdp8JSTrNa5w75I28dky"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Entry",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"entries",
-								"6Lng3TPchCEw9cGvDiYDHs"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Assets of space - Collection",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"assets"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Asset",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"assets",
-								"6Od9v3wzLOysiMum0Wkmme"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Locale - Collection",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"locales"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Entry by locale",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cda_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
-							"protocol": "https",
-							"host": [
-								"{{cda_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								"{{environment_id}}",
-								"entries",
-								"qcYpt0du7nO3Bl4HP4uBI",
-								""
-							],
-							"query": [
-								{
-									"key": "locale",
-									"value": "en-US"
-								}
-							]
-						}
 					},
 					"response": []
 				},
@@ -5920,6 +5969,1324 @@
 					"_postman_isSubFolder": true
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CPA",
+			"item": [
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Search (by content_type)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inclusion IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.headerAlignment",
+											"value": "Center-aligned"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Exclusion not IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.headerAlignment[nin]",
+											"value": "Center-aligned"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Array Equality/Inequality)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentHeroBanner"
+										},
+										{
+											"key": "fields.internalName",
+											"value": "Homepage hero banner (B)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inequality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "sys.id[ne]",
+											"value": "54u9lXUVBJlg8BiIXhz9Y"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Equality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Existence)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[exists]=false",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "field.tags[exists]",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Ranges)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "field.tags[gte]",
+											"value": "2",
+											"description": "greather than or equal"
+										},
+										{
+											"key": "field.tags[gt]",
+											"value": "2",
+											"description": "greater than"
+										},
+										{
+											"key": "field.tags[lt]",
+											"value": "2",
+											"description": "lower than"
+										},
+										{
+											"key": "field.tags[lte]",
+											"value": "2",
+											"description": "lower than or equal"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?query=home",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "home"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text on field)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.backgroundVisual[match]",
+											"value": "home"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location proximty)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[near]",
+											"value": "38,-122"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to entry)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_entry=aaaa",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_entry",
+											"value": "aaaa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to asset)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_asset=aaaa",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_asset",
+											"value": "aaaa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location bounding object)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[within]",
+											"value": "40,-124,36,-12"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+							},
+							"response": []
+						},
+						{
+							"name": "Search (by reference)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.{reference_field}.sys.contentType.sys.id",
+											"value": "{reference_content_type}"
+										},
+										{
+											"key": "fields.{reference_field}{search_field}",
+											"value": "{search_value}"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Spaces",
+					"item": [
+						{
+							"name": "Space",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Types",
+					"item": [
+						{
+							"name": "Content Model",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"content_types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Content Type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"content_types",
+										"imageWithFocalPoint"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Entries",
+					"item": [
+						{
+							"name": "Entries Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entry",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries",
+										"6Lng3TPchCEw9cGvDiYDHs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Assets of space - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"assets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asset",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"assets",
+										"6Od9v3wzLOysiMum0Wkmme"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Locales",
+					"item": [
+						{
+							"name": "Locale - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"locales"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Links",
+					"item": [
+						{
+							"name": "Entries Collection (Include)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Entries Collection (Links to item)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "10"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.featuredImages.sys.id",
+											"value": "53Qdp8JSTrNa5w75I28dky"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "retrival of linked items",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Localization",
+					"item": [
+						{
+							"name": "Entry by locale",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"environments",
+										"{{environment_id}}",
+										"entries",
+										"qcYpt0du7nO3Bl4HP4uBI",
+										""
+									],
+									"query": [
+										{
+											"key": "locale",
+											"value": "en-US"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=sys.createdAt,sys.id",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "sys.createdAt,sys.id"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Limit - Skip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?limit=5&skip=0",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "MIME type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets?mimetype_group=image",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"assets"
+							],
+							"query": [
+								{
+									"key": "mimetype_group",
+									"value": "image"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Order (Reverse)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=-sys.createdAt",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-sys.createdAt"
+								}
+							]
+						},
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+					},
+					"response": []
+				},
+				{
+					"name": "Select (Entries and Assets)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"{{environment_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "content_type",
+									"value": "componentImageGallery"
+								},
+								{
+									"key": "select",
+									"value": "sys.id,sys.environment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Synchronization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cpa_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/sync?initial=true&type=Deletion&limit=10",
+							"protocol": "https",
+							"host": [
+								"{{cpa_url}}"
+							],
+							"path": [
+								"spaces",
+								"{{space_id}}",
+								"sync"
+							],
+							"query": [
+								{
+									"key": "initial",
+									"value": "true"
+								},
+								{
+									"key": "type",
+									"value": "Deletion"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Content delivery API",
 			"protocolProfileBehavior": {}
 		},
 		{
