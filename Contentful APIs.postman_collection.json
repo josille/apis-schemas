@@ -1095,7 +1095,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/4rhOLX8hOlcbNUelJpkvBs",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1106,7 +1106,7 @@
 								"environments",
 								"{{environment_id}}",
 								"assets",
-								"4rhOLX8hOlcbNUelJpkvBs"
+								"6Od9v3wzLOysiMum0Wkmme"
 							]
 						}
 					},
@@ -5912,6 +5912,311 @@
 										}
 									]
 								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Images API",
+			"item": [
+				{
+					"name": "Retrival",
+					"item": [
+						{
+							"name": "Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrive image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "fm",
+											"value": "jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Progressive image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg&fl=progressive",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "fm",
+											"value": "jpg"
+										},
+										{
+											"key": "fl",
+											"value": "progressive"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Rezise & Cropping",
+					"item": [
+						{
+							"name": "Width height",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "w",
+											"value": "100"
+										},
+										{
+											"key": "h",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rezising behavior",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100&fit=pad",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "w",
+											"value": "100"
+										},
+										{
+											"key": "h",
+											"value": "100"
+										},
+										{
+											"key": "fit",
+											"value": "pad"
+										}
+									]
+								},
+								"description": "fit Possible values:\n\npad: Resize the image to the specified dimensions, padding the image if needed.\nfill: Resize the image to the specified dimensions, cropping the image if needed.\nscale: Resize the image to the specified dimensions, changing the original aspect ratio if needed.\ncrop: Crop a part of the original image to fit into the specified dimensions.\nthumb: Create a thumbnail from the image."
+							},
+							"response": []
+						},
+						{
+							"name": "Focus area",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?f=face&fit=thumb",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "f",
+											"value": "face"
+										},
+										{
+											"key": "fit",
+											"value": "thumb"
+										}
+									]
+								},
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+							},
+							"response": []
+						},
+						{
+							"name": "Crop rounded corners",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?r=20",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "r",
+											"value": "20"
+										}
+									]
+								},
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Manipulation",
+					"item": [
+						{
+							"name": "Quality",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg&q=50",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "fm",
+											"value": "jpg"
+										},
+										{
+											"key": "q",
+											"value": "50"
+										}
+									]
+								},
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+							},
+							"response": []
+						},
+						{
+							"name": "Background color",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100&fit=pad&bg=red",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										"{{space_id}}",
+										"6Od9v3wzLOysiMum0Wkmme",
+										"7625743369807117f4dc8c252d1a207c",
+										"cameron-kirby-88711.jpg"
+									],
+									"query": [
+										{
+											"key": "w",
+											"value": "100"
+										},
+										{
+											"key": "h",
+											"value": "100"
+										},
+										{
+											"key": "fit",
+											"value": "pad"
+										},
+										{
+											"key": "bg",
+											"value": "red"
+										}
+									]
+								},
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
 							},
 							"response": []
 						}
