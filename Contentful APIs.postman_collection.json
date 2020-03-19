@@ -45,7 +45,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/content-type"
 							},
 							"response": []
 						},
@@ -87,7 +88,8 @@
 											"value": "Center-aligned"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/inclusion"
 							},
 							"response": []
 						},
@@ -129,7 +131,8 @@
 											"value": "Center-aligned"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/exclusion"
 							},
 							"response": []
 						},
@@ -171,7 +174,8 @@
 											"value": "Homepage hero banner (B)"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/array-equality-inequality\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/array-with-multiple-values"
 							},
 							"response": []
 						},
@@ -209,7 +213,8 @@
 											"value": "54u9lXUVBJlg8BiIXhz9Y"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/inequality-operator"
 							},
 							"response": []
 						},
@@ -247,7 +252,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/equality-operator"
 							},
 							"response": []
 						},
@@ -289,7 +295,8 @@
 											"value": "false"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/existence"
 							},
 							"response": []
 						},
@@ -347,7 +354,8 @@
 											"description": "lower than or equal"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/ranges"
 							},
 							"response": []
 						},
@@ -385,7 +393,8 @@
 											"value": "home"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search"
 							},
 							"response": []
 						},
@@ -427,7 +436,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field"
 							},
 							"response": []
 						},
@@ -469,7 +479,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/location-proximity-search"
 							},
 							"response": []
 						},
@@ -507,7 +518,8 @@
 											"value": "aaaa"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/links-to-entry"
 							},
 							"response": []
 						},
@@ -545,7 +557,8 @@
 											"value": "aaaa"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/links-to-asset"
 							},
 							"response": []
 						},
@@ -588,7 +601,7 @@
 										}
 									]
 								},
-								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/locations-in-a-bounding-object"
 							},
 							"response": []
 						},
@@ -635,7 +648,7 @@
 										}
 									]
 								},
-								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/search-on-references"
 							},
 							"response": []
 						}
@@ -672,7 +685,8 @@
 										"{{space_id}}",
 										"entries"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/spaces"
 							},
 							"response": []
 						}
@@ -711,7 +725,8 @@
 										"{{environment_id}}",
 										"content_types"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model"
 							},
 							"response": []
 						},
@@ -744,7 +759,8 @@
 										"content_types",
 										"imageWithFocalPoint"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						}
@@ -783,7 +799,8 @@
 										"{{environment_id}}",
 										"entries"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entries-collection"
 							},
 							"response": []
 						},
@@ -816,7 +833,8 @@
 										"entries",
 										"6Lng3TPchCEw9cGvDiYDHs"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry"
 							},
 							"response": []
 						}
@@ -856,7 +874,8 @@
 										"assets",
 										"6Od9v3wzLOysiMum0Wkmme"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset"
 							},
 							"response": []
 						},
@@ -888,7 +907,8 @@
 										"{{environment_id}}",
 										"assets"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection"
 							},
 							"response": []
 						}
@@ -927,7 +947,8 @@
 										"{{environment_id}}",
 										"locales"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection"
 							},
 							"response": []
 						}
@@ -972,7 +993,8 @@
 											"value": "10"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/links/retrieval-of-linked-items"
 							},
 							"response": []
 						},
@@ -1018,7 +1040,8 @@
 											"value": "53Qdp8JSTrNa5w75I28dky"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/links/links-to-a-specific-item"
 							},
 							"response": []
 						}
@@ -1065,7 +1088,8 @@
 											"value": "en-US"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/localization/retrieve-localized-entries"
 							},
 							"response": []
 						}
@@ -1108,7 +1132,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/order"
 					},
 					"response": []
 				},
@@ -1151,7 +1175,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/limit\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/skip"
 					},
 					"response": []
 				},
@@ -1190,7 +1214,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/filtering-assets-by-mime-type"
 					},
 					"response": []
 				},
@@ -1229,7 +1253,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/reverse-order\n\nhttps://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/order-with-multiple-parameters"
 					},
 					"response": []
 				},
@@ -1271,7 +1295,8 @@
 									"value": "sys.id,sys.environment"
 								}
 							]
-						}
+						},
+						"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/select-operator"
 					},
 					"response": []
 				},
@@ -1315,7 +1340,8 @@
 									"value": "10"
 								}
 							]
-						}
+						},
+						"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization"
 					},
 					"response": []
 				}
@@ -1353,7 +1379,8 @@
 									"path": [
 										"spaces"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/spaces-collection"
 							},
 							"response": []
 						},
@@ -1382,7 +1409,8 @@
 										"spaces",
 										"ymcs3dx5hc2h"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
 							},
 							"response": []
 						},
@@ -1431,7 +1459,8 @@
 										"spaces",
 										"ymcs3dx5hc2h"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
 							},
 							"response": []
 						},
@@ -1480,7 +1509,8 @@
 										"spaces",
 										"ymcs3dx5hc2h"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
 							},
 							"response": []
 						},
@@ -1523,7 +1553,8 @@
 									"path": [
 										"spaces"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
 							},
 							"response": []
 						}
@@ -1560,7 +1591,8 @@
 										"{{space_id}}",
 										"environments"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment-collection"
 							},
 							"response": []
 						},
@@ -1600,7 +1632,8 @@
 										"{{space_id}}",
 										"environments"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
 							},
 							"response": []
 						},
@@ -1646,7 +1679,8 @@
 										"environments",
 										"ljzpsal195l9"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
 							},
 							"response": []
 						},
@@ -1695,7 +1729,8 @@
 										"environments",
 										"ljzpsal195l9"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
 							},
 							"response": []
 						},
@@ -1741,7 +1776,8 @@
 										"environments",
 										"staging"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
 							},
 							"response": []
 						}
@@ -1778,7 +1814,8 @@
 										"{{space_id}}",
 										"environment_aliases"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias-collection"
 							},
 							"response": []
 						},
@@ -1809,7 +1846,8 @@
 										"environment_aliases",
 										"master"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias"
 							},
 							"response": []
 						},
@@ -1855,7 +1893,8 @@
 										"environment_aliases",
 										"master"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias"
 							},
 							"response": []
 						}
@@ -1890,7 +1929,8 @@
 									"path": [
 										"organizations"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/organizations/organizations-collection"
 							},
 							"response": []
 						}
@@ -1929,7 +1969,8 @@
 										"master",
 										"content_types"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-collection"
 							},
 							"response": []
 						},
@@ -1970,7 +2011,8 @@
 										"master",
 										"content_types"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						},
@@ -2018,7 +2060,8 @@
 										"content_types",
 										"2CybV4O3C7PvLzsqBI2qcs"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						},
@@ -2051,7 +2094,8 @@
 										"content_types",
 										"2CybV4O3C7PvLzsqBI2qcs"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						},
@@ -2084,7 +2128,8 @@
 										"content_types",
 										"2CybV4O3C7PvLzsqBI2qcs"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						},
@@ -2133,7 +2178,8 @@
 										"2CybV4O3C7PvLzsqBI2qcs",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation"
 							},
 							"response": []
 						},
@@ -2178,7 +2224,8 @@
 										"public",
 										"content_types"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/activated-content-type-collection"
 							},
 							"response": []
 						},
@@ -2227,7 +2274,8 @@
 										"2CybV4O3C7PvLzsqBI2qcs",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation"
 							},
 							"response": []
 						}
@@ -2278,7 +2326,8 @@
 										"master",
 										"editor_interfaces"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface-collection"
 							},
 							"response": []
 						},
@@ -2324,7 +2373,8 @@
 										"person",
 										"editor_interfaces"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface"
 							},
 							"response": []
 						},
@@ -2373,7 +2423,8 @@
 										"person",
 										"editor_interfaces"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface"
 							},
 							"response": []
 						}
@@ -2424,7 +2475,8 @@
 										"master",
 										"extensions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extensions-collection"
 							},
 							"response": []
 						},
@@ -2471,12 +2523,13 @@
 										"master",
 										"extensions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
 							},
 							"response": []
 						},
 						{
-							"name": "Extension Copy",
+							"name": "Extension",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2519,7 +2572,8 @@
 										"extensions",
 										"1F8UNNZ84CCG8hGQ27j2Nb"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
 							},
 							"response": []
 						},
@@ -2564,7 +2618,8 @@
 										"extensions",
 										"1F8UNNZ84CCG8hGQ27j2Nb"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
 							},
 							"response": []
 						},
@@ -2606,7 +2661,8 @@
 										"extensions",
 										"1F8UNNZ84CCG8hGQ27j2Nb"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
 							},
 							"response": []
 						}
@@ -2645,7 +2701,8 @@
 										"master",
 										"entries"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entries-collection"
 							},
 							"response": []
 						},
@@ -2678,7 +2735,8 @@
 										"entries",
 										"15jwOBqpxqSAOy2eOO4S0m"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
 							},
 							"response": []
 						},
@@ -2711,7 +2769,8 @@
 										"entries",
 										"15jwOBqpxqSAOy2eOO4S0m"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
 							},
 							"response": []
 						},
@@ -2763,7 +2822,8 @@
 										"master",
 										"entries"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
 							},
 							"response": []
 						},
@@ -2816,7 +2876,8 @@
 										"entries",
 										"15jwOBqpxqSAOy2eOO4S0m"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
 							},
 							"response": []
 						},
@@ -2865,7 +2926,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing"
 							},
 							"response": []
 						},
@@ -2914,7 +2976,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"archived"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving"
 							},
 							"response": []
 						},
@@ -2963,7 +3026,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"archived"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving"
 							},
 							"response": []
 						},
@@ -3012,7 +3076,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing"
 							},
 							"response": []
 						}
@@ -3066,7 +3131,8 @@
 										"{{space_id}}",
 										"uploads"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/upload-a-file"
 							},
 							"response": []
 						},
@@ -3097,7 +3163,8 @@
 										"uploads",
 										"4MVoerI2vRdFpW3mi6a1wf"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/retrieving-an-upload"
 							},
 							"response": []
 						},
@@ -3128,7 +3195,8 @@
 										"uploads",
 										"4MVoerI2vRdFpW3mi6a1wf"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/deleting-an-upload"
 							},
 							"response": []
 						}
@@ -3167,7 +3235,8 @@
 										"master",
 										"assets"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/assets-collection"
 							},
 							"response": []
 						},
@@ -3200,7 +3269,8 @@
 										"public",
 										"assets"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/published-assets-collection"
 							},
 							"response": []
 						},
@@ -3247,7 +3317,8 @@
 										"master",
 										"assets"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
 							},
 							"response": []
 						},
@@ -3295,7 +3366,8 @@
 										"assets",
 										"6Od9v3wzLOysiMum0Wkmme"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
 							},
 							"response": []
 						},
@@ -3328,7 +3400,8 @@
 										"assets",
 										"6Od9v3wzLOysiMum0Wkmme"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
 							},
 							"response": []
 						},
@@ -3369,7 +3442,8 @@
 										"files",
 										"en-us"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-processing"
 							},
 							"response": []
 						},
@@ -3409,7 +3483,8 @@
 										"6Od9v3wzLOysiMum0Wkmme",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing"
 							},
 							"response": []
 						},
@@ -3449,7 +3524,8 @@
 										"6Od9v3wzLOysiMum0Wkmme",
 										"archived"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving"
 							},
 							"response": []
 						},
@@ -3489,7 +3565,8 @@
 										"6Od9v3wzLOysiMum0Wkmme",
 										"archived"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving"
 							},
 							"response": []
 						},
@@ -3529,7 +3606,8 @@
 										"6Od9v3wzLOysiMum0Wkmme",
 										"published"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing"
 							},
 							"response": []
 						},
@@ -3562,7 +3640,8 @@
 										"assets",
 										"6Od9v3wzLOysiMum0Wkmme"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
 							},
 							"response": []
 						}
@@ -3601,7 +3680,8 @@
 										"master",
 										"locales"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale-collection"
 							},
 							"response": []
 						},
@@ -3648,7 +3728,8 @@
 										"master",
 										"locales"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
 							},
 							"response": []
 						},
@@ -3693,7 +3774,8 @@
 										"locales",
 										"0tquV4RqKSbaICHZ9tzXfl"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
 							},
 							"response": []
 						},
@@ -3746,7 +3828,8 @@
 										"locales",
 										"0tquV4RqKSbaICHZ9tzXfl"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
 							},
 							"response": []
 						},
@@ -3799,7 +3882,8 @@
 										"locales",
 										"0tquV4RqKSbaICHZ9tzXfl"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
 							},
 							"response": []
 						}
@@ -3836,7 +3920,8 @@
 										"{{space_id}}",
 										"webhook_definitions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhooks-collection"
 							},
 							"response": []
 						},
@@ -3868,7 +3953,8 @@
 										"13LGvUWmcRknoHBkDt5EXv",
 										"calls"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhook-calls"
 							},
 							"response": []
 						},
@@ -3945,7 +4031,52 @@
 										"{{space_id}}",
 										"webhook_definitions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": [],\n  \"headers\": [\n    {\n      \"key\": \"header1\",\n      \"value\": \"value1\"\n    },\n    {\n      \"key\": \"header2\",\n      \"value\": \"value2\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"spaces",
+										"{{space_id}}",
+										"webhook_definitions",
+										"13LGvUWmcRknoHBkDt5EXv"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
 							},
 							"response": []
 						},
@@ -3991,50 +4122,8 @@
 										"webhook_definitions",
 										"13LGvUWmcRknoHBkDt5EXv"
 									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Webhook",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cma_access_token}}",
-											"type": "string"
-										}
-									]
 								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"My webhook\",\n  \"url\": \"https://www.example.com/test\",\n  \"topics\": [\n    \"Entry.create\",\n    \"ContentType.create\",\n    \"*.publish\",\n    \"Asset.*\"\n  ],\n  \"httpBasicUsername\": \"yolo\",\n  \"httpBasicPassword\": \"yolo\",\n  \"filters\": [],\n  \"headers\": [\n    {\n      \"key\": \"header1\",\n      \"value\": \"value1\"\n    },\n    {\n      \"key\": \"header2\",\n      \"value\": \"value2\"\n    }\n  ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
-									"protocol": "https",
-									"host": [
-										"{{cma_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"webhook_definitions",
-										"13LGvUWmcRknoHBkDt5EXv"
-									]
-								}
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
 							},
 							"response": []
 						},
@@ -4074,7 +4163,8 @@
 										"webhook_definitions",
 										"13LGvUWmcRknoHBkDt5EXv"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
 							},
 							"response": []
 						}
@@ -4111,7 +4201,8 @@
 										"{{space_id}}",
 										"roles"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/roles-collection"
 							},
 							"response": []
 						},
@@ -4156,7 +4247,8 @@
 										"{{space_id}}",
 										"roles"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
 							},
 							"response": []
 						},
@@ -4202,7 +4294,8 @@
 										"roles",
 										"4F8dqhLSPKIUd06luqJrRR"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
 							},
 							"response": []
 						},
@@ -4239,7 +4332,8 @@
 										"roles",
 										"4F8dqhLSPKIUd06luqJrRR"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
 							},
 							"response": []
 						},
@@ -4282,7 +4376,8 @@
 										"roles",
 										"4F8dqhLSPKIUd06luqJrRR"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
 							},
 							"response": []
 						}
@@ -4323,7 +4418,8 @@
 										"AAAA",
 										"snapshots"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshots-collection"
 							},
 							"response": []
 						},
@@ -4357,7 +4453,8 @@
 										"AAAAA",
 										"snapshots"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshots-collection"
 							},
 							"response": []
 						},
@@ -4392,7 +4489,8 @@
 										"snapshots",
 										"BBBBB"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshot"
 							},
 							"response": []
 						},
@@ -4427,7 +4525,8 @@
 										"snapshots",
 										"BBBB"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshot"
 							},
 							"response": []
 						}
@@ -4464,7 +4563,8 @@
 										"{{space_id}}",
 										"space_memberships"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-memberships-collection"
 							},
 							"response": []
 						},
@@ -4509,7 +4609,8 @@
 										"{{space_id}}",
 										"space_memberships"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
 							},
 							"response": []
 						},
@@ -4555,7 +4656,8 @@
 										"space_memberships",
 										"aaaaa"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
 							},
 							"response": []
 						},
@@ -4595,7 +4697,8 @@
 										"space_memberships",
 										"aaaaa"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
 							},
 							"response": []
 						},
@@ -4638,7 +4741,8 @@
 										"space_memberships",
 										"aaaaaa"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
 							},
 							"response": []
 						}
@@ -4675,7 +4779,8 @@
 										"{{space_id}}",
 										"api_keys"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-keys-collection"
 							},
 							"response": []
 						},
@@ -4705,7 +4810,8 @@
 										"{{space_id}}",
 										"preview_api_keys"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/preview-api-keys-collection"
 							},
 							"response": []
 						},
@@ -4736,7 +4842,8 @@
 										"preview_api_keys",
 										"0uVxA8jnkmhBsGbrgGSL4v"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/preview-api-key"
 							},
 							"response": []
 						},
@@ -4781,7 +4888,8 @@
 										"{{space_id}}",
 										"api_keys"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
 							},
 							"response": []
 						},
@@ -4830,7 +4938,8 @@
 										"api_keys",
 										"0uR282nmLzwLbgmQavSafV"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
 							},
 							"response": []
 						},
@@ -4881,7 +4990,8 @@
 										"api_keys",
 										"0uR282nmLzwLbgmQavSafV"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
 							},
 							"response": []
 						},
@@ -4932,7 +5042,8 @@
 										"api_keys",
 										"0uR282nmLzwLbgmQavSafV"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
 							},
 							"response": []
 						}
@@ -4979,7 +5090,8 @@
 										"me",
 										"access_tokens"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-token"
 							},
 							"response": []
 						},
@@ -5009,7 +5121,8 @@
 										"me",
 										"access_tokens"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-tokens-collection"
 							},
 							"response": []
 						},
@@ -5040,12 +5153,13 @@
 										"access_tokens",
 										"322wK6yCMAryglTS4089bR"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-token"
 							},
 							"response": []
 						},
 						{
-							"name": "Personal access token",
+							"name": "Personal access token revoke",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -5072,7 +5186,8 @@
 										"322wK6yCMAryglTS4089bR",
 										"revoked"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/token-revoking"
 							},
 							"response": []
 						}
@@ -5108,7 +5223,8 @@
 										"users",
 										"me"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/users/user"
 							},
 							"response": []
 						}
@@ -5149,7 +5265,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"tasks"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/tasks-collection"
 							},
 							"response": []
 						},
@@ -5193,7 +5310,8 @@
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"tasks"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
 							},
 							"response": []
 						},
@@ -5241,7 +5359,8 @@
 										"tasks",
 										"7BslKh9TdKGOK41VmLDjFZ"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
 							},
 							"response": []
 						},
@@ -5286,7 +5405,8 @@
 										"tasks",
 										"7BslKh9TdKGOK41VmLDjFZ"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
 							},
 							"response": []
 						},
@@ -5336,7 +5456,8 @@
 										"tasks",
 										"7BslKh9TdKGOK41VmLDjFZ"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
 							},
 							"response": []
 						}
@@ -5383,7 +5504,8 @@
 											"value": "master"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-actions-collection"
 							},
 							"response": []
 						},
@@ -5433,7 +5555,8 @@
 											"value": "master"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action"
 							},
 							"response": []
 						},
@@ -5483,7 +5606,8 @@
 											"value": "master"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action"
 							},
 							"response": []
 						}
@@ -5520,7 +5644,8 @@
 										"2CKrUXflqGC6iamnTgtYBu",
 										"app_definitions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definitions-collection"
 							},
 							"response": []
 						},
@@ -5560,7 +5685,8 @@
 										"2CKrUXflqGC6iamnTgtYBu",
 										"app_definitions"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
 							"response": []
 						},
@@ -5604,7 +5730,8 @@
 										"app_definitions",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
 							"response": []
 						},
@@ -5645,7 +5772,8 @@
 										"app_definitions",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
 							"response": []
 						},
@@ -5686,7 +5814,8 @@
 										"app_definitions",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
 							"response": []
 						}
@@ -5725,7 +5854,8 @@
 										"master",
 										"app_installations"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installations-collection"
 							},
 							"response": []
 						},
@@ -5771,7 +5901,8 @@
 										"app_installations",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
 							},
 							"response": []
 						},
@@ -5814,7 +5945,8 @@
 										"app_installations",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
 							},
 							"response": []
 						},
@@ -5857,7 +5989,8 @@
 										"app_installations",
 										"3RtNYiWs5bKKFhTO2FH2WG"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
 							},
 							"response": []
 						}
@@ -5884,14 +6017,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/organization_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"raw": "https://{{cma_url}}/organizations/{ORGANIZATION_ID}/organization_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{ORGANIZATION_ID}",
 										"organization_periodic_usages"
 									],
 									"query": [
@@ -5912,7 +6045,8 @@
 											"value": "2020-01-05"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/usage/organization-usage"
 							},
 							"response": []
 						},
@@ -5932,14 +6066,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/space_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"raw": "https://{{cma_url}}/organizations/{ORGANIZATION_ID}/space_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{ORGANIZATION_ID}",
 										"space_periodic_usages"
 									],
 									"query": [
@@ -5960,7 +6094,8 @@
 											"value": "2020-01-05"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/usage/space-usage"
 							},
 							"response": []
 						}
@@ -6011,7 +6146,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/content-type"
 							},
 							"response": []
 						},
@@ -6053,7 +6189,8 @@
 											"value": "Center-aligned"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inclusion"
 							},
 							"response": []
 						},
@@ -6095,7 +6232,8 @@
 											"value": "Center-aligned"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/exclusion"
 							},
 							"response": []
 						},
@@ -6137,7 +6275,8 @@
 											"value": "Homepage hero banner (B)"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/array-equality-inequality"
 							},
 							"response": []
 						},
@@ -6175,7 +6314,8 @@
 											"value": "54u9lXUVBJlg8BiIXhz9Y"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inequality-operator"
 							},
 							"response": []
 						},
@@ -6213,7 +6353,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/equality-operator"
 							},
 							"response": []
 						},
@@ -6255,7 +6396,8 @@
 											"value": "false"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/existence"
 							},
 							"response": []
 						},
@@ -6313,7 +6455,8 @@
 											"description": "lower than or equal"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/ranges"
 							},
 							"response": []
 						},
@@ -6351,7 +6494,8 @@
 											"value": "home"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search"
 							},
 							"response": []
 						},
@@ -6393,7 +6537,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search-on-a-field"
 							},
 							"response": []
 						},
@@ -6435,7 +6580,8 @@
 											"value": "componentImageGallery"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/location-proximity-search"
 							},
 							"response": []
 						},
@@ -6473,7 +6619,8 @@
 											"value": "aaaa"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-entry"
 							},
 							"response": []
 						},
@@ -6511,7 +6658,8 @@
 											"value": "aaaa"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-asset"
 							},
 							"response": []
 						},
@@ -6554,7 +6702,7 @@
 										}
 									]
 								},
-								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/locations-in-a-bounding-object"
 							},
 							"response": []
 						},
@@ -6637,7 +6785,8 @@
 										"spaces",
 										"{{space_id}}"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space"
 							},
 							"response": []
 						}
@@ -6676,7 +6825,8 @@
 										"{{environment_id}}",
 										"content_types"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/content-types/content-model"
 							},
 							"response": []
 						},
@@ -6709,7 +6859,8 @@
 										"content_types",
 										"imageWithFocalPoint"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/content-types/content-type"
 							},
 							"response": []
 						}
@@ -6748,7 +6899,8 @@
 										"{{environment_id}}",
 										"entries"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entries-collection"
 							},
 							"response": []
 						},
@@ -6781,7 +6933,8 @@
 										"entries",
 										"6Lng3TPchCEw9cGvDiYDHs"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entry"
 							},
 							"response": []
 						}
@@ -6820,7 +6973,8 @@
 										"{{environment_id}}",
 										"assets"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets/assets-collection"
 							},
 							"response": []
 						},
@@ -6853,7 +7007,8 @@
 										"assets",
 										"6Od9v3wzLOysiMum0Wkmme"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets/asset"
 							},
 							"response": []
 						}
@@ -6892,7 +7047,8 @@
 										"{{environment_id}}",
 										"locales"
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/locales/locale-collection"
 							},
 							"response": []
 						}
@@ -6937,7 +7093,8 @@
 											"value": "10"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links/retrieval-of-linked-items"
 							},
 							"response": []
 						},
@@ -6983,7 +7140,8 @@
 											"value": "53Qdp8JSTrNa5w75I28dky"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links/links-to-a-specific-item"
 							},
 							"response": []
 						}
@@ -7031,7 +7189,8 @@
 											"value": "en-US"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/localization/retrieve-localized-entries"
 							},
 							"response": []
 						}
@@ -7074,7 +7233,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order-with-multiple-parameters"
 					},
 					"response": []
 				},
@@ -7117,7 +7276,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/limit\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/skip"
 					},
 					"response": []
 				},
@@ -7156,7 +7315,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/filtering-assets-by-mime-type"
 					},
 					"response": []
 				},
@@ -7195,7 +7354,7 @@
 								}
 							]
 						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/reverse-order"
 					},
 					"response": []
 				},
@@ -7237,7 +7396,8 @@
 									"value": "sys.id,sys.environment"
 								}
 							]
-						}
+						},
+						"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/select-operator"
 					},
 					"response": []
 				},
@@ -7301,45 +7461,19 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Retrive image",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg",
-									"protocol": "https",
-									"host": [
-										"{{images_url}}"
-									],
-									"path": [
-										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
-									],
-									"query": [
-										{
-											"key": "fm",
-											"value": "jpg"
-										}
-									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/retrieval/image"
 							},
 							"response": []
 						},
@@ -7349,16 +7483,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg&fl=progressive",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?fm=jpg&fl=progressive",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7370,7 +7504,8 @@
 											"value": "progressive"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/changing-formats/progressive-jpegs"
 							},
 							"response": []
 						}
@@ -7387,16 +7522,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7408,7 +7543,8 @@
 											"value": "100"
 										}
 									]
-								}
+								},
+								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/specify-width-&-height"
 							},
 							"response": []
 						},
@@ -7418,16 +7554,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100&fit=pad",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100&fit=pad",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7444,7 +7580,7 @@
 										}
 									]
 								},
-								"description": "fit Possible values:\n\npad: Resize the image to the specified dimensions, padding the image if needed.\nfill: Resize the image to the specified dimensions, cropping the image if needed.\nscale: Resize the image to the specified dimensions, changing the original aspect ratio if needed.\ncrop: Crop a part of the original image to fit into the specified dimensions.\nthumb: Create a thumbnail from the image."
+								"description": "fit Possible values:\n\npad: Resize the image to the specified dimensions, padding the image if needed.\nfill: Resize the image to the specified dimensions, cropping the image if needed.\nscale: Resize the image to the specified dimensions, changing the original aspect ratio if needed.\ncrop: Crop a part of the original image to fit into the specified dimensions.\nthumb: Create a thumbnail from the image.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/change-the-resizing-behavior"
 							},
 							"response": []
 						},
@@ -7454,16 +7590,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?f=face&fit=thumb",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?f=face&fit=thumb",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7476,7 +7612,7 @@
 										}
 									]
 								},
-								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/specify-focus-area"
 							},
 							"response": []
 						},
@@ -7486,16 +7622,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?r=20",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?r=20",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7504,7 +7640,7 @@
 										}
 									]
 								},
-								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/crop-rounded-corners-&-circle-elipsis"
 							},
 							"response": []
 						}
@@ -7521,16 +7657,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?fm=jpg&q=50",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?fm=jpg&q=50",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7543,7 +7679,7 @@
 										}
 									]
 								},
-								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/image-manipulation/quality"
 							},
 							"response": []
 						},
@@ -7553,16 +7689,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/6Od9v3wzLOysiMum0Wkmme/7625743369807117f4dc8c252d1a207c/cameron-kirby-88711.jpg?w=100&h=100&fit=pad&bg=red",
+									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100&fit=pad&bg=red",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"6Od9v3wzLOysiMum0Wkmme",
-										"7625743369807117f4dc8c252d1a207c",
-										"cameron-kirby-88711.jpg"
+										"{asset_id}",
+										"{token}",
+										"{name}"
 									],
 									"query": [
 										{
@@ -7583,7 +7719,7 @@
 										}
 									]
 								},
-								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected."
+								"description": "f Possible values:\n\ncenter, top, right, left, bottom.\ntop_right, top_left, bottom_right, bottom_left.\nface for the largest face detected.\nfaces for all the faces detected.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/image-manipulation/background-color"
 							},
 							"response": []
 						}
@@ -7593,6 +7729,124 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GraphQL",
+			"item": [
+				{
+					"name": "Space",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($preview: Boolean){\n  blogPostCollection(preview: $preview){\n    items{\n      title\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}",
+							"protocol": "https",
+							"host": [
+								"{{graphql_url}}"
+							],
+							"path": [
+								"content",
+								"v1",
+								"spaces",
+								"{{space_id}}"
+							]
+						},
+						"description": "https://www.contentful.com/developers/docs/references/graphql/#/introduction"
+					},
+					"response": []
+				},
+				{
+					"name": "Space & environment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cda_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n  germanUser: friendlyUser(id: \"hans\", locale: \"de-DE\") {\n    name\n    germanPetsInFrench: petsCollection(locale: \"fr-FR\") {\n      items {\n        name\n      }\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}/environments/master",
+							"protocol": "https",
+							"host": [
+								"{{graphql_url}}"
+							],
+							"path": [
+								"content",
+								"v1",
+								"spaces",
+								"{{space_id}}",
+								"environments",
+								"master"
+							]
+						},
+						"description": "https://www.contentful.com/developers/docs/references/graphql/#/introduction"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Contentful API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{cma_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.contentful.com/organizations/YOUR-ORG-ID-GOES-HERE/app_definitions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"organizations",
+						"YOUR-ORG-ID-GOES-HERE",
+						"app_definitions"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
