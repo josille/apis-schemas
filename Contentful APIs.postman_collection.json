@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b8e7fa0f-de5b-46e4-ad5e-764deb2b73bd",
+		"_postman_id": "32f627f8-af21-4f18-b9e1-afb2ef30e381",
 		"name": "Contentful APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -27,7 +27,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -36,13 +36,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -66,7 +72,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -75,7 +81,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -86,6 +92,12 @@
 										{
 											"key": "fields.headerAlignment",
 											"value": "Center-aligned"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -109,7 +121,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -118,7 +130,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -129,6 +141,12 @@
 										{
 											"key": "fields.headerAlignment[nin]",
 											"value": "Center-aligned"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -152,7 +170,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -161,7 +179,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -172,6 +190,12 @@
 										{
 											"key": "fields.internalName",
 											"value": "Homepage hero banner (B)"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -195,7 +219,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -204,13 +228,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "sys.id[ne]",
 											"value": "54u9lXUVBJlg8BiIXhz9Y"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -234,7 +264,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -243,13 +273,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -273,7 +309,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[exists]=false",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[exists]=false",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -282,7 +318,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -293,6 +329,12 @@
 										{
 											"key": "field.tags[exists]",
 											"value": "false"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -316,7 +358,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -325,7 +367,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -353,6 +395,12 @@
 											"value": "2",
 											"description": "lower than or equal"
 										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/ranges"
@@ -375,7 +423,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?query=home",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?query=home",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -384,13 +432,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "query",
 											"value": "home"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -414,7 +468,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -423,7 +477,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -434,6 +488,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -457,7 +517,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -466,7 +526,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -477,6 +537,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -500,7 +566,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_entry=aaaa",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_entry=aaaa",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -509,13 +575,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "links_to_entry",
 											"value": "aaaa"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -539,7 +611,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_asset=aaaa",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_asset=aaaa",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -548,13 +620,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "links_to_asset",
 											"value": "aaaa"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -578,7 +656,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -587,7 +665,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -598,6 +676,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -621,7 +705,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -630,7 +714,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -645,6 +729,12 @@
 										{
 											"key": "fields.{reference_field}{search_field}",
 											"value": "{search_value}"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -713,7 +803,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/content_types",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -722,8 +812,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"content_types"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model"
@@ -746,7 +842,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -755,9 +851,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"content_types",
-										"imageWithFocalPoint"
+										":content_type_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "imageWithFocalPoint",
+											"description": "imageWithFocalPoint"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type"
@@ -787,7 +894,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -796,8 +903,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entries-collection"
@@ -820,7 +933,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -829,9 +942,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries",
-										"6Lng3TPchCEw9cGvDiYDHs"
+										":entry_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": "6Lng3TPchCEw9cGvDiYDHs",
+											"description": "6Lng3TPchCEw9cGvDiYDHs"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry"
@@ -861,7 +985,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -870,9 +994,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme"
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": "6Od9v3wzLOysiMum0Wkmme",
+											"description": "6Od9v3wzLOysiMum0Wkmme"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset"
@@ -895,7 +1030,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/assets",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -904,8 +1039,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"assets"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection"
@@ -935,7 +1076,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/locales",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -944,8 +1085,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"locales"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection"
@@ -975,7 +1122,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -984,13 +1131,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "include",
 											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -1014,7 +1167,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -1023,7 +1176,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -1038,6 +1191,12 @@
 										{
 											"key": "fields.featuredImages.sys.id",
 											"value": "53Qdp8JSTrNa5w75I28dky"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -1068,7 +1227,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
+									"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/?locale=en-US",
 									"protocol": "https",
 									"host": [
 										"{{cda_url}}"
@@ -1077,15 +1236,26 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries",
-										"qcYpt0du7nO3Bl4HP4uBI",
+										":entry_id",
 										""
 									],
 									"query": [
 										{
 											"key": "locale",
 											"value": "en-US"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": "qcYpt0du7nO3Bl4HP4uBI",
+											"description": "qcYpt0du7nO3Bl4HP4uBI"
 										}
 									]
 								},
@@ -1113,7 +1283,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=sys.createdAt,sys.id",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=sys.createdAt,sys.id",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1122,13 +1292,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
 								{
 									"key": "order",
 									"value": "sys.createdAt,sys.id"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -1152,7 +1328,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?limit=5&skip=0",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?limit=5&skip=0",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1161,7 +1337,7 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
@@ -1172,6 +1348,12 @@
 								{
 									"key": "skip",
 									"value": "0"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -1195,7 +1377,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets?mimetype_group=image",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/assets?mimetype_group=image",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1204,13 +1386,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"assets"
 							],
 							"query": [
 								{
 									"key": "mimetype_group",
 									"value": "image"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -1234,7 +1422,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=-sys.createdAt",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=-sys.createdAt",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1243,13 +1431,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
 								{
 									"key": "order",
 									"value": "-sys.createdAt"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -1273,7 +1467,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
+							"raw": "https://{{cda_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
 							"protocol": "https",
 							"host": [
 								"{{cda_url}}"
@@ -1282,7 +1476,7 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
@@ -1293,6 +1487,12 @@
 								{
 									"key": "select",
 									"value": "sys.id,sys.environment"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -1400,14 +1600,21 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"raw": "https://{{cma_url}}/spaces/:space_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"spaces",
-										"ymcs3dx5hc2h"
+										":space_id"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": "XXXX",
+											"description": "XXXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
@@ -1450,14 +1657,21 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"raw": "https://{{cma_url}}/spaces/:space_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"spaces",
-										"ymcs3dx5hc2h"
+										":space_id"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
@@ -1500,14 +1714,21 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/ymcs3dx5hc2h",
+									"raw": "https://{{cma_url}}/spaces/:space_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"spaces",
-										"ymcs3dx5hc2h"
+										":space_id"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": "XXXX",
+											"description": "XXXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space"
@@ -1668,7 +1889,7 @@
 									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/ljzpsal195l9",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1677,7 +1898,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"ljzpsal195l9"
+										":environment_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
@@ -1718,7 +1946,7 @@
 									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/ljzpsal195l9",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1727,7 +1955,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"ljzpsal195l9"
+										":environment_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
@@ -1765,7 +2000,7 @@
 									"raw": "{\n  \"name\": \"Staging aaabb\"\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/staging",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1774,7 +2009,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"staging"
+										":environment_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment"
@@ -1835,7 +2077,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/master",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/:environment_alias_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1844,7 +2086,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environment_aliases",
-										"master"
+										":environment_alias_id"
+									],
+									"variable": [
+										{
+											"key": "environment_alias_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias"
@@ -1882,7 +2131,7 @@
 									"raw": "{\n  \"environment\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"Environment\",\n      \"id\": \"staging\"\n    }\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/master",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environment_aliases/:environment_alias_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1891,7 +2140,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environment_aliases",
-										"master"
+										":environment_alias_id"
+									],
+									"variable": [
+										{
+											"key": "environment_alias_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias"
@@ -1957,7 +2213,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -1966,8 +2222,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-collection"
@@ -1999,7 +2261,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2008,8 +2270,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
@@ -2047,7 +2315,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2056,9 +2324,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"2CybV4O3C7PvLzsqBI2qcs"
+										":content_type_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
@@ -2081,7 +2360,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2090,9 +2369,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"2CybV4O3C7PvLzsqBI2qcs"
+										":content_type_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
@@ -2115,7 +2405,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2124,9 +2414,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"2CybV4O3C7PvLzsqBI2qcs"
+										":content_type_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type"
@@ -2164,7 +2465,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2173,10 +2474,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"2CybV4O3C7PvLzsqBI2qcs",
+										":content_type_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation"
@@ -2211,7 +2523,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/public/content_types",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/public/content_types",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2220,9 +2532,15 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"public",
 										"content_types"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/activated-content-type-collection"
@@ -2260,7 +2578,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/2CybV4O3C7PvLzsqBI2qcs/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2269,10 +2587,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"2CybV4O3C7PvLzsqBI2qcs",
+										":content_type_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation"
@@ -2314,7 +2643,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/editor_interfaces",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/editor_interfaces",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2323,8 +2652,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"editor_interfaces"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface-collection"
@@ -2359,7 +2694,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/person/editor_interfaces",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id/editor_interfaces",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2368,10 +2703,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"person",
+										":content_type_id",
 										"editor_interfaces"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface"
@@ -2409,7 +2755,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/person/editor_interfaces",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/content_types/:content_type_id/editor_interfaces",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2418,10 +2764,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"content_types",
-										"person",
+										":content_type_id",
 										"editor_interfaces"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "content_type_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface"
@@ -2463,7 +2820,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/extensions",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2472,8 +2829,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"extensions"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extensions-collection"
@@ -2511,7 +2874,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/extensions",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2520,8 +2883,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"extensions"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
@@ -2559,7 +2928,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/extensions/:extension_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2568,9 +2937,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"extensions",
-										"1F8UNNZ84CCG8hGQ27j2Nb"
+										":extension_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "extension_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
@@ -2605,7 +2985,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/extensions/:extension_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2614,9 +2994,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"extensions",
-										"1F8UNNZ84CCG8hGQ27j2Nb"
+										":extension_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "extension_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
@@ -2648,7 +3039,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/extensions/1F8UNNZ84CCG8hGQ27j2Nb",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/extensions/:extension_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2657,9 +3048,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"extensions",
-										"1F8UNNZ84CCG8hGQ27j2Nb"
+										":extension_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "extension_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
@@ -2722,7 +3124,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2731,9 +3133,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m"
+										":entry_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
@@ -2756,7 +3170,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2765,9 +3179,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m"
+										":entry_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": "XXX",
+											"description": "XXX"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
@@ -2810,7 +3236,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2819,8 +3245,15 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
@@ -2863,7 +3296,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2872,9 +3305,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m"
+										":entry_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry"
@@ -2912,7 +3356,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2921,10 +3365,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing"
@@ -2962,7 +3417,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/archived",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/archived",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -2971,10 +3426,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"archived"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving"
@@ -3012,7 +3478,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/archived",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/archived",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3021,10 +3487,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"archived"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving"
@@ -3062,7 +3539,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3071,10 +3548,21 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "master",
+											"description": "master"
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing"
@@ -3152,7 +3640,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/4MVoerI2vRdFpW3mi6a1wf",
+									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/:upload_id",
 									"protocol": "https",
 									"host": [
 										"{{upload_url}}"
@@ -3161,7 +3649,13 @@
 										"spaces",
 										"{{space_id}}",
 										"uploads",
-										"4MVoerI2vRdFpW3mi6a1wf"
+										":upload_id"
+									],
+									"variable": [
+										{
+											"key": "upload_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/retrieving-an-upload"
@@ -3184,7 +3678,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/4MVoerI2vRdFpW3mi6a1wf",
+									"raw": "https://{{upload_url}}/spaces/{{space_id}}/uploads/upload_id",
 									"protocol": "https",
 									"host": [
 										"{{upload_url}}"
@@ -3193,7 +3687,7 @@
 										"spaces",
 										"{{space_id}}",
 										"uploads",
-										"4MVoerI2vRdFpW3mi6a1wf"
+										"upload_id"
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/deleting-an-upload"
@@ -3223,7 +3717,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3232,8 +3726,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/assets-collection"
@@ -3256,7 +3756,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/public/assets",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/public/assets",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3265,9 +3765,15 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"public",
 										"assets"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/published-assets-collection"
@@ -3305,7 +3811,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3314,8 +3820,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
@@ -3353,7 +3865,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3362,9 +3874,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme"
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
@@ -3387,7 +3909,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3396,9 +3918,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme"
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
@@ -3427,7 +3959,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/files/en-us",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id/files/:locale_code",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3436,11 +3968,26 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme",
+										":asset_id",
 										"files",
-										"en-us"
+										":locale_code"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "locale_code",
+											"value": "en-us",
+											"description": "en-us"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-processing"
@@ -3469,7 +4016,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3478,10 +4025,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme",
+										":asset_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing"
@@ -3510,7 +4067,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/archived",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id/archived",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3519,10 +4076,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme",
+										":asset_id",
 										"archived"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving"
@@ -3551,7 +4118,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/archived",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id/archived",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3560,10 +4127,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme",
+										":asset_id",
 										"archived"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving"
@@ -3592,7 +4169,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme/published",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id/published",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3601,10 +4178,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme",
+										":asset_id",
 										"published"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing"
@@ -3627,7 +4214,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/assets/6Od9v3wzLOysiMum0Wkmme",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3636,9 +4223,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme"
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset"
@@ -3668,7 +4265,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/locales",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3677,8 +4274,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"locales"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale-collection"
@@ -3716,7 +4319,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/locales",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3725,8 +4328,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"locales"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
@@ -3761,7 +4370,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/locales/:locale_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3770,9 +4379,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"locales",
-										"0tquV4RqKSbaICHZ9tzXfl"
+										":locale_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "locale_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
@@ -3815,7 +4434,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/locales/:locale_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3824,9 +4443,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"locales",
-										"0tquV4RqKSbaICHZ9tzXfl"
+										":locale_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "locale_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
@@ -3869,7 +4498,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/locales/0tquV4RqKSbaICHZ9tzXfl",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/locales/:locale_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3878,9 +4507,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"locales",
-										"0tquV4RqKSbaICHZ9tzXfl"
+										":locale_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "locale_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
@@ -3974,7 +4613,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhooks/13LGvUWmcRknoHBkDt5EXv/health",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhooks/:webhook_definition_id/health",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -3983,8 +4622,14 @@
 										"spaces",
 										"{{space_id}}",
 										"webhooks",
-										"13LGvUWmcRknoHBkDt5EXv",
+										":webhook_definition_id",
 										"health"
+									],
+									"variable": [
+										{
+											"key": "webhook_definition_id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -4064,7 +4709,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/:webhook_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4073,7 +4718,13 @@
 										"spaces",
 										"{{space_id}}",
 										"webhook_definitions",
-										"13LGvUWmcRknoHBkDt5EXv"
+										":webhook_definition_id"
+									],
+									"variable": [
+										{
+											"key": "webhook_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
@@ -4111,7 +4762,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/:webhook_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4120,7 +4771,13 @@
 										"spaces",
 										"{{space_id}}",
 										"webhook_definitions",
-										"13LGvUWmcRknoHBkDt5EXv"
+										":webhook_definition_id"
+									],
+									"variable": [
+										{
+											"key": "webhook_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
@@ -4152,7 +4809,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/13LGvUWmcRknoHBkDt5EXv",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/webhook_definitions/:webhook_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4161,7 +4818,13 @@
 										"spaces",
 										"{{space_id}}",
 										"webhook_definitions",
-										"13LGvUWmcRknoHBkDt5EXv"
+										":webhook_definition_id"
+									],
+									"variable": [
+										{
+											"key": "webhook_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook"
@@ -4283,7 +4946,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/:role_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4292,7 +4955,13 @@
 										"spaces",
 										"{{space_id}}",
 										"roles",
-										"4F8dqhLSPKIUd06luqJrRR"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
@@ -4321,7 +4990,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/:role_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4330,7 +4999,13 @@
 										"spaces",
 										"{{space_id}}",
 										"roles",
-										"4F8dqhLSPKIUd06luqJrRR"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
@@ -4365,7 +5040,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/4F8dqhLSPKIUd06luqJrRR",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/roles/:role_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4374,7 +5049,13 @@
 										"spaces",
 										"{{space_id}}",
 										"roles",
-										"4F8dqhLSPKIUd06luqJrRR"
+										":role_id"
+									],
+									"variable": [
+										{
+											"key": "role_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role"
@@ -4404,7 +5085,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/AAAA/snapshots",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/:entry_id/snapshots",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4415,8 +5096,14 @@
 										"environments",
 										"master",
 										"entries",
-										"AAAA",
+										":entry_id",
 										"snapshots"
+									],
+									"variable": [
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshots-collection"
@@ -4439,7 +5126,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/AAAAA/snapshots",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/:content_type_id/snapshots",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4450,8 +5137,14 @@
 										"environments",
 										"master",
 										"content_types",
-										"AAAAA",
+										":content_type_id",
 										"snapshots"
+									],
+									"variable": [
+										{
+											"key": "content_type_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshots-collection"
@@ -4474,7 +5167,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/AAAAA/snapshots/BBBBB",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/content_types/:content_type_id/snapshots/:snapshot_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4485,9 +5178,19 @@
 										"environments",
 										"master",
 										"content_types",
-										"AAAAA",
+										":content_type_id",
 										"snapshots",
-										"BBBBB"
+										":snapshot_id"
+									],
+									"variable": [
+										{
+											"key": "content_type_id",
+											"value": ""
+										},
+										{
+											"key": "snapshot_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshot"
@@ -4510,7 +5213,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/AAAA/snapshots/BBBB",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/:entry_id/snapshots/:snapshot_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4521,9 +5224,19 @@
 										"environments",
 										"master",
 										"entries",
-										"AAAA",
+										":entry_id",
 										"snapshots",
-										"BBBB"
+										":snapshot_id"
+									],
+									"variable": [
+										{
+											"key": "entry_id",
+											"value": ""
+										},
+										{
+											"key": "snapshot_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshot"
@@ -4645,7 +5358,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaa",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/:space_membership_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4654,7 +5367,13 @@
 										"spaces",
 										"{{space_id}}",
 										"space_memberships",
-										"aaaaa"
+										":space_membership_id"
+									],
+									"variable": [
+										{
+											"key": "space_membership_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
@@ -4686,7 +5405,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaa",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/:space_membership_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4695,7 +5414,13 @@
 										"spaces",
 										"{{space_id}}",
 										"space_memberships",
-										"aaaaa"
+										":space_membership_id"
+									],
+									"variable": [
+										{
+											"key": "space_membership_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
@@ -4730,7 +5455,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/aaaaaa",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/space_memberships/:space_membership_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4739,7 +5464,13 @@
 										"spaces",
 										"{{space_id}}",
 										"space_memberships",
-										"aaaaaa"
+										":space_membership_id"
+									],
+									"variable": [
+										{
+											"key": "space_membership_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership"
@@ -4831,7 +5562,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/preview_api_keys/0uVxA8jnkmhBsGbrgGSL4v",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/preview_api_keys/:preview_api_key_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4840,7 +5571,13 @@
 										"spaces",
 										"{{space_id}}",
 										"preview_api_keys",
-										"0uVxA8jnkmhBsGbrgGSL4v"
+										":preview_api_key_id"
+									],
+									"variable": [
+										{
+											"key": "preview_api_key_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/preview-api-key"
@@ -4927,7 +5664,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/:api_key_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4936,7 +5673,13 @@
 										"spaces",
 										"{{space_id}}",
 										"api_keys",
-										"0uR282nmLzwLbgmQavSafV"
+										":api_key_id"
+									],
+									"variable": [
+										{
+											"key": "api_key_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
@@ -4979,7 +5722,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/:api_key_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -4988,7 +5731,13 @@
 										"spaces",
 										"{{space_id}}",
 										"api_keys",
-										"0uR282nmLzwLbgmQavSafV"
+										":api_key_id"
+									],
+									"variable": [
+										{
+											"key": "api_key_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
@@ -5031,7 +5780,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/0uR282nmLzwLbgmQavSafV",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/api_keys/:api_key_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5040,7 +5789,13 @@
 										"spaces",
 										"{{space_id}}",
 										"api_keys",
-										"0uR282nmLzwLbgmQavSafV"
+										":api_key_id"
+									],
+									"variable": [
+										{
+											"key": "api_key_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key"
@@ -5142,7 +5897,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/users/me/access_tokens/322wK6yCMAryglTS4089bR",
+									"raw": "https://{{cma_url}}/users/me/access_tokens/:token_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5151,7 +5906,13 @@
 										"users",
 										"me",
 										"access_tokens",
-										"322wK6yCMAryglTS4089bR"
+										":token_id"
+									],
+									"variable": [
+										{
+											"key": "token_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-token"
@@ -5174,7 +5935,7 @@
 								"method": "PUT",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/users/me/access_tokens/322wK6yCMAryglTS4089bR/revoked",
+									"raw": "https://{{cma_url}}/users/me/access_tokens/:token_id/revoked",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5183,8 +5944,14 @@
 										"users",
 										"me",
 										"access_tokens",
-										"322wK6yCMAryglTS4089bR",
+										":token_id",
 										"revoked"
+									],
+									"variable": [
+										{
+											"key": "token_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/token-revoking"
@@ -5251,7 +6018,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/15jwOBqpxqSAOy2eOO4S0m/tasks",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5260,10 +6027,16 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
 										"15jwOBqpxqSAOy2eOO4S0m",
 										"tasks"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/tasks-collection"
@@ -5296,7 +6069,7 @@
 									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/tasks",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5305,10 +6078,20 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"tasks"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
@@ -5344,7 +6127,7 @@
 									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/tasks/:task_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5353,11 +6136,25 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"tasks",
-										"7BslKh9TdKGOK41VmLDjFZ"
+										":task_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										},
+										{
+											"key": "task_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
@@ -5390,7 +6187,7 @@
 									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/tasks/:task_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5399,11 +6196,25 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"tasks",
-										"7BslKh9TdKGOK41VmLDjFZ"
+										":task_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										},
+										{
+											"key": "task_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
@@ -5441,7 +6252,7 @@
 									"raw": "{\n  \"body\": \"Review translation\",\n  \"status\": \"active\",\n  \"assignedTo\": {\n    \"sys\": {\n      \"type\": \"Link\",\n      \"linkType\": \"User\",\n      \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n    }\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/entries/15jwOBqpxqSAOy2eOO4S0m/tasks/7BslKh9TdKGOK41VmLDjFZ",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/tasks/:task_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5450,11 +6261,25 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"entries",
-										"15jwOBqpxqSAOy2eOO4S0m",
+										":entry_id",
 										"tasks",
-										"7BslKh9TdKGOK41VmLDjFZ"
+										":task_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": ""
+										},
+										{
+											"key": "task_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task"
@@ -5634,14 +6459,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/app_definitions",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{{organization_id}}",
 										"app_definitions"
 									]
 								},
@@ -5675,14 +6500,14 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/app_definitions",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{{organization_id}}",
 										"app_definitions"
 									]
 								},
@@ -5719,16 +6544,22 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/app_definitions/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{{organization_id}}",
 										"app_definitions",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
@@ -5761,16 +6592,22 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/app_definitions/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{{organization_id}}",
 										"app_definitions",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
@@ -5803,16 +6640,22 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/2CKrUXflqGC6iamnTgtYBu/app_definitions/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/app_definitions/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"2CKrUXflqGC6iamnTgtYBu",
+										"{{organization_id}}",
 										"app_definitions",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
@@ -5842,7 +6685,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/app_installations",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5851,8 +6694,14 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"app_installations"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installations-collection"
@@ -5888,7 +6737,7 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/app_installations/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5897,9 +6746,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"app_installations",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
@@ -5932,7 +6791,7 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/app_installations/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5941,9 +6800,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"app_installations",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
@@ -5976,7 +6845,7 @@
 									"raw": "{\n  \"name\": \"Hello world!\",\n  \"src\": \"https://example.com/app.html\",\n  \"locations\": [\n    {\n      \"location\": \"entry-sidebar\"\n    }\n  ]\n}"
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/master/app_installations/3RtNYiWs5bKKFhTO2FH2WG",
+									"raw": "https://{{cma_url}}/spaces/{{space_id}}/environments/:environment_id/app_installations/:app_definition_id",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
@@ -5985,9 +6854,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"master",
+										":environment_id",
 										"app_installations",
-										"3RtNYiWs5bKKFhTO2FH2WG"
+										":app_definition_id"
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation"
@@ -6017,14 +6896,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/{ORGANIZATION_ID}/organization_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/organization_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"{ORGANIZATION_ID}",
+										"{{organization_id}}",
 										"organization_periodic_usages"
 									],
 									"query": [
@@ -6066,14 +6945,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cma_url}}/organizations/{ORGANIZATION_ID}/space_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
+									"raw": "https://{{cma_url}}/organizations/{{organization_id}}/space_periodic_usages?order=usage&metric[in]=cma,cpa,gql&dateRange.startAt=2020-01-01&dateRange.endAt=2020-01-05",
 									"protocol": "https",
 									"host": [
 										"{{cma_url}}"
 									],
 									"path": [
 										"organizations",
-										"{ORGANIZATION_ID}",
+										"{{organization_id}}",
 										"space_periodic_usages"
 									],
 									"query": [
@@ -6128,7 +7007,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6137,13 +7016,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6167,7 +7052,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6176,7 +7061,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6187,6 +7072,12 @@
 										{
 											"key": "fields.headerAlignment",
 											"value": "Center-aligned"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6210,7 +7101,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6219,7 +7110,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6230,6 +7121,12 @@
 										{
 											"key": "fields.headerAlignment[nin]",
 											"value": "Center-aligned"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6253,7 +7150,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6262,7 +7159,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6273,6 +7170,12 @@
 										{
 											"key": "fields.internalName",
 											"value": "Homepage hero banner (B)"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6296,7 +7199,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6305,13 +7208,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "sys.id[ne]",
 											"value": "54u9lXUVBJlg8BiIXhz9Y"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6335,7 +7244,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6344,13 +7253,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6374,7 +7289,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[exists]=false",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[exists]=false",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6383,7 +7298,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6394,6 +7309,12 @@
 										{
 											"key": "field.tags[exists]",
 											"value": "false"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6417,7 +7338,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6426,7 +7347,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6454,6 +7375,12 @@
 											"value": "2",
 											"description": "lower than or equal"
 										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/ranges"
@@ -6476,7 +7403,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?query=home",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?query=home",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6485,13 +7412,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "query",
 											"value": "home"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6515,7 +7448,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6524,7 +7457,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6535,6 +7468,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6558,7 +7497,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6567,7 +7506,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6578,6 +7517,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6601,7 +7546,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_entry=aaaa",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_entry=aaaa",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6610,13 +7555,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "links_to_entry",
 											"value": "aaaa"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6640,7 +7591,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?links_to_asset=aaaa",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_asset=aaaa",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6649,13 +7600,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "links_to_asset",
 											"value": "aaaa"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6679,7 +7636,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6688,7 +7645,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6699,6 +7656,12 @@
 										{
 											"key": "content_type",
 											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6722,7 +7685,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6731,7 +7694,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -6746,6 +7709,12 @@
 										{
 											"key": "fields.{reference_field}{search_field}",
 											"value": "{search_value}"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -6846,7 +7815,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/imageWithFocalPoint",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6857,7 +7826,14 @@
 										"environments",
 										"{{environment_id}}",
 										"content_types",
-										"imageWithFocalPoint"
+										":content_type_id"
+									],
+									"variable": [
+										{
+											"key": "content_type_id",
+											"value": "imageWithFocalPoint",
+											"description": "imageWithFocalPoint"
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/content-types/content-type"
@@ -6920,7 +7896,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/6Lng3TPchCEw9cGvDiYDHs",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -6931,7 +7907,13 @@
 										"environments",
 										"{{environment_id}}",
 										"entries",
-										"6Lng3TPchCEw9cGvDiYDHs"
+										":entry_id"
+									],
+									"variable": [
+										{
+											"key": "entry_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entry"
@@ -6994,7 +7976,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/6Od9v3wzLOysiMum0Wkmme",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -7005,7 +7987,13 @@
 										"environments",
 										"{{environment_id}}",
 										"assets",
-										"6Od9v3wzLOysiMum0Wkmme"
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets/asset"
@@ -7075,7 +8063,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -7084,13 +8072,19 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
 										{
 											"key": "include",
 											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -7114,7 +8108,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -7123,7 +8117,7 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
 									],
 									"query": [
@@ -7138,6 +8132,12 @@
 										{
 											"key": "fields.featuredImages.sys.id",
 											"value": "53Qdp8JSTrNa5w75I28dky"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -7169,7 +8169,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/qcYpt0du7nO3Bl4HP4uBI/?locale=en-US",
+									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/?locale=en-US",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -7178,15 +8178,25 @@
 										"spaces",
 										"{{space_id}}",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries",
-										"qcYpt0du7nO3Bl4HP4uBI",
+										":entry_id",
 										""
 									],
 									"query": [
 										{
 											"key": "locale",
 											"value": "en-US"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "entry_id",
+											"value": ""
 										}
 									]
 								},
@@ -7214,7 +8224,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=sys.createdAt,sys.id",
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=sys.createdAt,sys.id",
 							"protocol": "https",
 							"host": [
 								"{{cpa_url}}"
@@ -7223,13 +8233,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
 								{
 									"key": "order",
 									"value": "sys.createdAt,sys.id"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -7253,7 +8269,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?limit=5&skip=0",
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?limit=5&skip=0",
 							"protocol": "https",
 							"host": [
 								"{{cpa_url}}"
@@ -7262,7 +8278,7 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
@@ -7273,6 +8289,12 @@
 								{
 									"key": "skip",
 									"value": "0"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -7296,7 +8318,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets?mimetype_group=image",
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/assets?mimetype_group=image",
 							"protocol": "https",
 							"host": [
 								"{{cpa_url}}"
@@ -7305,13 +8327,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"assets"
 							],
 							"query": [
 								{
 									"key": "mimetype_group",
 									"value": "image"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -7335,7 +8363,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?order=-sys.createdAt",
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=-sys.createdAt",
 							"protocol": "https",
 							"host": [
 								"{{cpa_url}}"
@@ -7344,13 +8372,19 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
 								{
 									"key": "order",
 									"value": "-sys.createdAt"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -7374,7 +8408,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
+							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
 							"protocol": "https",
 							"host": [
 								"{{cpa_url}}"
@@ -7383,7 +8417,7 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"{{environment_id}}",
+								":environment_id",
 								"entries"
 							],
 							"query": [
@@ -7394,6 +8428,12 @@
 								{
 									"key": "select",
 									"value": "sys.id,sys.environment"
+								}
+							],
+							"variable": [
+								{
+									"key": "environment_id",
+									"value": ""
 								}
 							]
 						},
@@ -7461,16 +8501,30 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/retrieval/image"
@@ -7483,16 +8537,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?fm=jpg&fl=progressive",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?fm=jpg&fl=progressive",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
 									],
 									"query": [
 										{
@@ -7502,6 +8556,20 @@
 										{
 											"key": "fl",
 											"value": "progressive"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7522,16 +8590,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?w=100&h=100",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
 									],
 									"query": [
 										{
@@ -7541,6 +8609,20 @@
 										{
 											"key": "h",
 											"value": "100"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7554,16 +8636,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100&fit=pad",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id:/:token/:name?w=100&h=100&fit=pad",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id:",
+										":token",
+										":name"
 									],
 									"query": [
 										{
@@ -7578,6 +8660,20 @@
 											"key": "fit",
 											"value": "pad"
 										}
+									],
+									"variable": [
+										{
+											"key": "asset_id:",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
+										}
 									]
 								},
 								"description": "fit Possible values:\n\npad: Resize the image to the specified dimensions, padding the image if needed.\nfill: Resize the image to the specified dimensions, cropping the image if needed.\nscale: Resize the image to the specified dimensions, changing the original aspect ratio if needed.\ncrop: Crop a part of the original image to fit into the specified dimensions.\nthumb: Create a thumbnail from the image.\n\nhttps://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/change-the-resizing-behavior"
@@ -7590,16 +8686,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?f=face&fit=thumb",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?f=face&fit=thumb",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
 									],
 									"query": [
 										{
@@ -7609,6 +8705,20 @@
 										{
 											"key": "fit",
 											"value": "thumb"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7622,21 +8732,35 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?r=20",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?r=20",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
 									],
 									"query": [
 										{
 											"key": "r",
 											"value": "20"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7657,16 +8781,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?fm=jpg&q=50",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?fm=jpg&q=50",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id",
+										":token",
+										":name"
 									],
 									"query": [
 										{
@@ -7676,6 +8800,20 @@
 										{
 											"key": "q",
 											"value": "50"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id",
+											"value": ""
+										},
+										{
+											"key": "token",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7689,16 +8827,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/{asset_id}/{token}/{name}?w=100&h=100&fit=pad&bg=red",
+									"raw": "https://{{images_url}}/{{space_id}}/:asset_id:/:token:/:name?w=100&h=100&fit=pad&bg=red",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										"{{space_id}}",
-										"{asset_id}",
-										"{token}",
-										"{name}"
+										":asset_id:",
+										":token:",
+										":name"
 									],
 									"query": [
 										{
@@ -7716,6 +8854,20 @@
 										{
 											"key": "bg",
 											"value": "red"
+										}
+									],
+									"variable": [
+										{
+											"key": "asset_id:",
+											"value": ""
+										},
+										{
+											"key": "token:",
+											"value": ""
+										},
+										{
+											"key": "name",
+											"value": ""
 										}
 									]
 								},
@@ -7795,7 +8947,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}/environments/master",
+							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}/environments/:ENVIRONMENT",
 							"protocol": "https",
 							"host": [
 								"{{graphql_url}}"
@@ -7806,7 +8958,13 @@
 								"spaces",
 								"{{space_id}}",
 								"environments",
-								"master"
+								":ENVIRONMENT"
+							],
+							"variable": [
+								{
+									"key": "ENVIRONMENT",
+									"value": ""
+								}
 							]
 						},
 						"description": "https://www.contentful.com/developers/docs/references/graphql/#/introduction"
@@ -7814,6 +8972,519 @@
 					"response": []
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SCIM API",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "User",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/scim+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users/:userID",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Users",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "aaa",
+													"description": "aaa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "User",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users/:userID",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Users",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": ""
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "User",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Users"
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								}
+							],
+							"description": "https://www.contentful.com/developers/docs/references/scim-api/#/reference/users/user",
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "User - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/scim+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users",
+									"protocol": "https",
+									"host": [
+										"{{scim_api_url}}"
+									],
+									"path": [
+										"v2",
+										"organizations",
+										"{{organization_id}}",
+										"Users"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Collection Filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users?filter=userName eq \"someone@example.com\"",
+									"protocol": "https",
+									"host": [
+										"{{scim_api_url}}"
+									],
+									"path": [
+										"v2",
+										"organizations",
+										"{{organization_id}}",
+										"Users"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "userName eq \"someone@example.com\""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/scim-api/#/reference/users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2fa7a0cc-1de7-47bc-afdc-2fc361c11367",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25333f71-4c62-43d2-a08d-b8d7c1776717",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Groups",
+					"item": [
+						{
+							"name": "Group",
+							"item": [
+								{
+									"name": "Group",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Groups",
+												":groupId"
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "aa",
+													"description": "aa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Group",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"givenName\": \"Kasia\",\n  \"familyName\": \"Kowalska\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Groups",
+												":groupId"
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "aa",
+													"description": "aa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Group",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Groups",
+												":groupId"
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "aa",
+													"description": "aa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Group",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/scim+json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"v2",
+												"organizations",
+												"{{organization_id}}",
+												"Groups"
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								}
+							],
+							"description": "https://www.contentful.com/developers/docs/references/scim-api/#/reference/groups/group",
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Group - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups",
+									"protocol": "https",
+									"host": [
+										"{{scim_api_url}}"
+									],
+									"path": [
+										"v2",
+										"organizations",
+										"{{organization_id}}",
+										"Groups"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/scim-api/#/reference/groups",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "https://www.contentful.com/developers/docs/references/scim-api/",
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -7832,7 +9503,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.contentful.com/organizations/YOUR-ORG-ID-GOES-HERE/app_definitions",
+					"raw": "https://api.contentful.com/organizations/{{organization_id}}/app_definitions",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -7841,7 +9512,39 @@
 					],
 					"path": [
 						"organizations",
-						"YOUR-ORG-ID-GOES-HERE",
+						"{{organization_id}}",
+						"app_definitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contentful API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{cma_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.contentful.com/organizations/{{organization_id}}/app_definitions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"organizations",
+						"{{organization_id}}",
 						"app_definitions"
 					]
 				}
