@@ -1,4 +1,4 @@
-# API's Postman schemas
+# Contentful API's Postman schemas
 Postman JSON schema for contentful REST and GraphQL APIs.
 
 * Content Delivery API (CDA) used to retrieve published content to display in your application
