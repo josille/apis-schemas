@@ -27,4 +27,5 @@ JSON endpoints definition and environment schema.
 ## Refernce and links
 
 [Personal access tokens](https://www.contentful.com/help/personal-access-tokens/)
+
 [API's detail documentation](https://www.contentful.com/developers/docs/references/)
