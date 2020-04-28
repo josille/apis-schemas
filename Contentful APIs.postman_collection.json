@@ -9488,6 +9488,1909 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "User Management API",
+			"item": [
+				{
+					"name": "Organization Memberships",
+					"item": [
+						{
+							"name": "Organization membership - Collection",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/organization_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"organization_memberships"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Organization membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/organization_memberships/:organizationMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"organization_memberships",
+										":organizationMembershipId"
+									],
+									"variable": [
+										{
+											"key": "organizationMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Organization membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/organization_memberships/:organizationMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"organization_memberships",
+										":organizationMembershipId"
+									],
+									"variable": [
+										{
+											"key": "organizationMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Organization membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/organization_memberships/:organizationMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"organization_memberships",
+										":organizationMembershipId"
+									],
+									"variable": [
+										{
+											"key": "organizationMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Invitations",
+					"item": [
+						{
+							"name": "Invitation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/invitations",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"invitations"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/invitations"
+							},
+							"response": []
+						},
+						{
+							"name": "Invitation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/invitations/:invitationId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"invitations",
+										":invitationId"
+									],
+									"variable": [
+										{
+											"key": "invitationId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/invitations"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/invitations",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Teams",
+					"item": [
+						{
+							"name": "Teams - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams"
+							},
+							"response": []
+						},
+						{
+							"name": "Team",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams"
+							},
+							"response": []
+						},
+						{
+							"name": "Team",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams"
+							},
+							"response": []
+						},
+						{
+							"name": "Team",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams"
+							},
+							"response": []
+						},
+						{
+							"name": "Team",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Team membership",
+					"item": [
+						{
+							"name": "Team memberships - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId/team_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId",
+										"team_memberships"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team membership",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId/team_memberships/:teamMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId",
+										"team_memberships",
+										":teamMembershipId"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										},
+										{
+											"key": "teamMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId/team_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId",
+										"team_memberships"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/teams/:teamId/team_memberships/:teamMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"teams",
+										":teamId",
+										"team_memberships",
+										":teamMembershipId"
+									],
+									"variable": [
+										{
+											"key": "teamId",
+											"value": ""
+										},
+										{
+											"key": "teamMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team memberships(organization) - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/team_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"team_memberships"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Space Memberships",
+					"item": [
+						{
+							"name": "Space memberships - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_memberships"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships/:spaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_memberships",
+										":spaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "spaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships/:spaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_memberships",
+										":spaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "spaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_memberships"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_memberships"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space memberships (organization) - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"space_memberships"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Space membership (organization)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/space_memberships/:spaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"space_memberships",
+										":spaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Team Space Memberships",
+					"item": [
+						{
+							"name": "Team Space memberships - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"team_space_memberships"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space membership",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships/:teamSpaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"team_space_memberships",
+										":teamSpaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "teamSpaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships/:teamSpaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"team_space_memberships",
+										":teamSpaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "teamSpaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships/:teamSpaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"team_space_memberships",
+										":teamSpaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "teamSpaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space membership",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"team_space_memberships"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space memberships (organization) - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/team_space_memberships",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"team_space_memberships"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						},
+						{
+							"name": "Team Space membership (organization)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/team_space_memberships/:teamSpaceMembershipId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"team_space_memberships",
+										":teamSpaceMembershipId"
+									],
+									"variable": [
+										{
+											"key": "teamSpaceMembershipId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Space Members",
+					"item": [
+						{
+							"name": "Space members - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_members",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_members"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-members"
+							},
+							"response": []
+						},
+						{
+							"name": "Space member",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_members/:spaceMemberId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"space_members",
+										":spaceMemberId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "spaceMemberId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-members"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-members",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Space Roles",
+					"item": [
+						{
+							"name": "Space roles - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/roles",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"roles"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-roles"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-roles",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Users (organization) - Collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/users",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"users"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User (organization)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/organizations/{{organization_id}}/users/:userId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"organizations",
+										"{{organization_id}}",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users"
+							},
+							"response": []
+						},
+						{
+							"name": "Users - collection",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/users",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"users"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users"
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{uma_api_url}}/spaces/:spaceId/users/:userId",
+									"protocol": "https",
+									"host": [
+										"{{uma_api_url}}"
+									],
+									"path": [
+										"spaces",
+										":spaceId",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "spaceId",
+											"value": ""
+										},
+										{
+											"key": "userId",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users"
+							},
+							"response": []
+						}
+					],
+					"description": "https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "https://www.contentful.com/developers/docs/references/user-management-api/\n\nDisclaimer: The User Management API is available for Enterprise customers on current pricing plans.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adf015e7-a4aa-4b54-8357-cad29783f02f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e9f1abf-9b7f-4d2f-b61b-acaaeb34e862",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Contentful API",
 			"request": {
 				"auth": {
