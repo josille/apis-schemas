@@ -10708,757 +10708,6 @@
 			"name": "CPA",
 			"item": [
 				{
-					"name": "Search",
-					"item": [
-						{
-							"name": "Search (by content_type)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/content-type"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Inclusion IN)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment=Center-aligned",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										},
-										{
-											"key": "fields.headerAlignment",
-											"value": "Center-aligned"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inclusion"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Exclusion not IN)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.headerAlignment[nin]=Center-aligned",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										},
-										{
-											"key": "fields.headerAlignment[nin]",
-											"value": "Center-aligned"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/exclusion"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Array Equality/Inequality)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentHeroBanner&fields.internalName=Homepage hero banner (B)",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentHeroBanner"
-										},
-										{
-											"key": "fields.internalName",
-											"value": "Homepage hero banner (B)"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/array-equality-inequality"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Inequality operator)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "sys.id[ne]",
-											"value": "54u9lXUVBJlg8BiIXhz9Y"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inequality-operator"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Equality operator)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/equality-operator"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Existence)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[exists]=false",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										},
-										{
-											"key": "field.tags[exists]",
-											"value": "false"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/existence"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Ranges)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&field.tags[gte]=2&field.tags[gt]=2&field.tags[lt]=2&field.tags[lte]=2",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										},
-										{
-											"key": "field.tags[gte]",
-											"value": "2",
-											"description": "greather than or equal"
-										},
-										{
-											"key": "field.tags[gt]",
-											"value": "2",
-											"description": "greater than"
-										},
-										{
-											"key": "field.tags[lt]",
-											"value": "2",
-											"description": "lower than"
-										},
-										{
-											"key": "field.tags[lte]",
-											"value": "2",
-											"description": "lower than or equal"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/ranges"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Full text)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?query=home",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "query",
-											"value": "home"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Full text on field)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.backgroundVisual[match]=home&content_type=componentImageGallery",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "fields.backgroundVisual[match]",
-											"value": "home"
-										},
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search-on-a-field"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Location proximty)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "fields.center[near]",
-											"value": "38,-122"
-										},
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/location-proximity-search"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Links to entry)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_entry=aaaa",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "links_to_entry",
-											"value": "aaaa"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-entry"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Links to asset)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?links_to_asset=aaaa",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "links_to_asset",
-											"value": "aaaa"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-asset"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (Location bounding object)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "fields.center[within]",
-											"value": "40,-124,36,-12"
-										},
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/locations-in-a-bounding-object"
-							},
-							"response": []
-						},
-						{
-							"name": "Search (by reference)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cpa_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
-									"protocol": "https",
-									"host": [
-										"{{cpa_url}}"
-									],
-									"path": [
-										"spaces",
-										"{{space_id}}",
-										"environments",
-										":environment_id",
-										"entries"
-									],
-									"query": [
-										{
-											"key": "content_type",
-											"value": "componentImageGallery"
-										},
-										{
-											"key": "fields.{reference_field}.sys.contentType.sys.id",
-											"value": "{reference_content_type}"
-										},
-										{
-											"key": "fields.{reference_field}{search_field}",
-											"value": "{search_value}"
-										}
-									],
-									"variable": [
-										{
-											"key": "environment_id",
-											"value": "",
-											"type": "string"
-										}
-									]
-								},
-								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "Spaces",
 					"item": [
 						{
@@ -11477,14 +10726,21 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}"
+										":space_id",
+										""
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space"
@@ -11512,17 +10768,27 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/content_types",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"content_types"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/content-types/content-model"
@@ -11545,20 +10811,28 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/content_types/:content_type_id",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/content_types/:content_type_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"content_types",
 										":content_type_id"
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										},
 										{
 											"key": "content_type_id",
 											"value": "imageWithFocalPoint",
@@ -11592,17 +10866,27 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries",
+									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/entries",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id:",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries"
+									],
+									"variable": [
+										{
+											"key": "space_id:",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/entries/entries-collection"
@@ -11625,20 +10909,28 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/entries/:entry_id",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"entries",
 										":entry_id"
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										},
 										{
 											"key": "entry_id",
 											"value": "",
@@ -11671,17 +10963,27 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets",
+									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id:/assets",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id:",
 										"environments",
-										"{{environment_id}}",
+										":environment_id:",
 										"assets"
+									],
+									"variable": [
+										{
+											"key": "space_id:",
+											"value": ""
+										},
+										{
+											"key": "environment_id:",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets/assets-collection"
@@ -11704,24 +11006,100 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/assets/:asset_id",
+									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id:",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"assets",
 										":asset_id"
 									],
 									"variable": [
 										{
+											"key": "space_id:",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets/asset"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Asset key",
+					"item": [
+						{
+							"name": "Asset key",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expiresAt\": 1613590465\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/asset_keys",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id:",
+										"environments",
+										":environment_id",
+										"asset_keys"
+									],
+									"variable": [
+										{
+											"key": "space_id:",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -11750,17 +11128,27 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/{{environment_id}}/locales",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/locales",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
-										"{{environment_id}}",
+										":environment_id",
 										"locales"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/locales/locale-collection"
@@ -11770,10 +11158,10 @@
 					]
 				},
 				{
-					"name": "Links",
+					"name": "Content tags",
 					"item": [
 						{
-							"name": "Entries Collection (Include)",
+							"name": "Tag - collection",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -11788,14 +11176,172 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/tags",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
+										"environments",
+										":environment_id",
+										"tags"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/locales/locale-collection"
+							},
+							"response": []
+						},
+						{
+							"name": "Tag",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/tags/:tags_id",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"tags",
+										":tags_id"
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										},
+										{
+											"key": "tags_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/locales/locale-collection"
+							},
+							"response": []
+						},
+						{
+							"name": "Querying content based on a set of tags",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?TAG_KEY=TAG_VALUE",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "TAG_KEY",
+											"value": "TAG_VALUE"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Links",
+					"item": [
+						{
+							"name": "Retrieval of linked items",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?include=10",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
 										"environments",
 										":environment_id",
 										"entries"
@@ -11807,6 +11353,10 @@
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "environment_id",
 											"value": "",
@@ -11819,7 +11369,7 @@
 							"response": []
 						},
 						{
-							"name": "Entries Collection (Links to item)",
+							"name": "Links to a specific item",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -11834,14 +11384,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?include=10&content_type=componentImageGallery&fields.featuredImages.sys.id=53Qdp8JSTrNa5w75I28dky",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?include=10&content_type=content_type&fields.LINKING_FIELD.sys.id=target_entry_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
 										":environment_id",
 										"entries"
@@ -11853,14 +11403,18 @@
 										},
 										{
 											"key": "content_type",
-											"value": "componentImageGallery"
+											"value": "content_type"
 										},
 										{
-											"key": "fields.featuredImages.sys.id",
-											"value": "53Qdp8JSTrNa5w75I28dky"
+											"key": "fields.LINKING_FIELD.sys.id",
+											"value": "target_entry_id"
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "environment_id",
 											"value": "",
@@ -11874,6 +11428,1179 @@
 						}
 					],
 					"description": "retrival of linked items"
+				},
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Search (by content_type)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/content-type"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Select)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&select=value",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "select",
+											"value": "value"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/content-type"
+							},
+							"response": []
+						},
+						{
+							"name": "Select (Entries and Assets)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "select",
+											"value": "sys.id,sys.environment"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/select-operator"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Equality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/equality-operator"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inequality operator)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/space_id/environments/:environment_id/entries?sys.id[ne]=54u9lXUVBJlg8BiIXhz9Y",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										"space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "sys.id[ne]",
+											"value": "54u9lXUVBJlg8BiIXhz9Y"
+										}
+									],
+									"variable": [
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inequality-operator"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Array Equality/Inequality)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentHeroBanner&fields.FIELD_ID=value",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentHeroBanner"
+										},
+										{
+											"key": "fields.FIELD_ID",
+											"value": "value"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/array-equality-inequality"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Array with multiple values) Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentHeroBanner&fields.FIELD_ID[all]=values",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentHeroBanner"
+										},
+										{
+											"key": "fields.FIELD_ID[all]",
+											"value": "values"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/array-equality-inequality"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Inclusion IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&ATTRIBUTE[in]=value",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "ATTRIBUTE[in]",
+											"value": "value"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/inclusion"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Exclusion not IN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&ATTRIBUTE[nin]=value",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "ATTRIBUTE[nin]",
+											"value": "value"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/exclusion"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Existence)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&ATTRIBUTE[exists]=value",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "ATTRIBUTE[exists]",
+											"value": "value"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/existence"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Ranges)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&ATTRIBUTE[gte]=2&ATTRIBUTE[gt]=2&ATTRIBUTE[lt]=2&ATTRIBUTE[lte]=2",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "ATTRIBUTE[gte]",
+											"value": "2",
+											"description": "greather than or equal"
+										},
+										{
+											"key": "ATTRIBUTE[gt]",
+											"value": "2",
+											"description": "greater than"
+										},
+										{
+											"key": "ATTRIBUTE[lt]",
+											"value": "2",
+											"description": "lower than"
+										},
+										{
+											"key": "ATTRIBUTE[lte]",
+											"value": "2",
+											"description": "lower than or equal"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/ranges"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?query=home",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "home"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Full text on field)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?fields.FIELD_ID[match]=value&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.FIELD_ID[match]",
+											"value": "value"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/full-text-search-on-a-field"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location proximty)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?fields.center[near]=38,-122&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[near]",
+											"value": "38,-122"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/location-proximity-search"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Location bounding object)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?fields.center[within]=40,-124,36,-12&content_type=componentImageGallery",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "fields.center[within]",
+											"value": "40,-124,36,-12"
+										},
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/locations-in-a-bounding-object"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to entry)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?links_to_entry=entry_id",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_entry",
+											"value": "entry_id"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-entry"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Links to asset)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?links_to_asset=asset_id",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "links_to_asset",
+											"value": "asset_id"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/links-to-asset"
+							},
+							"response": []
+						},
+						{
+							"name": "Order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?order=sys.createdAt,sys.id",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "sys.createdAt,sys.id"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order-with-multiple-parameters"
+							},
+							"response": []
+						},
+						{
+							"name": "Order (Reverse)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?order=-sys.createdAt",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "-sys.createdAt"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/reverse-order"
+							},
+							"response": []
+						},
+						{
+							"name": "Limit - Skip",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?limit=5&skip=0",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/limit\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/skip"
+							},
+							"response": []
+						},
+						{
+							"name": "MIME type",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/assets?mimetype_group=image",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"assets"
+									],
+									"query": [
+										{
+											"key": "mimetype_group",
+											"value": "image"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/filtering-assets-by-mime-type"
+							},
+							"response": []
+						},
+						{
+							"name": "Search (by reference)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?content_type=componentImageGallery&fields.{reference_field}.sys.contentType.sys.id={reference_content_type}&fields.{reference_field}{search_field}={search_value}",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "content_type",
+											"value": "componentImageGallery"
+										},
+										{
+											"key": "fields.{reference_field}.sys.contentType.sys.id",
+											"value": "{reference_content_type}"
+										},
+										{
+											"key": "fields.{reference_field}{search_field}",
+											"value": "{search_value}"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km)."
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Localization",
@@ -11894,14 +12621,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries/:entry_id/?locale=en-US",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id/?locale=en-US",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										"{{space_id}}",
+										":space_id",
 										"environments",
 										":environment_id",
 										"entries",
@@ -11915,6 +12642,10 @@
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "environment_id",
 											"value": "",
@@ -11932,288 +12663,6 @@
 							"response": []
 						}
 					]
-				},
-				{
-					"name": "Order",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=sys.createdAt,sys.id",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								":environment_id",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "order",
-									"value": "sys.createdAt,sys.id"
-								}
-							],
-							"variable": [
-								{
-									"key": "environment_id",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/order-with-multiple-parameters"
-					},
-					"response": []
-				},
-				{
-					"name": "Limit - Skip",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?limit=5&skip=0",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								":environment_id",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "5"
-								},
-								{
-									"key": "skip",
-									"value": "0"
-								}
-							],
-							"variable": [
-								{
-									"key": "environment_id",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/limit\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/skip"
-					},
-					"response": []
-				},
-				{
-					"name": "MIME type",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/assets?mimetype_group=image",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								":environment_id",
-								"assets"
-							],
-							"query": [
-								{
-									"key": "mimetype_group",
-									"value": "image"
-								}
-							],
-							"variable": [
-								{
-									"key": "environment_id",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/filtering-assets-by-mime-type"
-					},
-					"response": []
-				},
-				{
-					"name": "Order (Reverse)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?order=-sys.createdAt",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								":environment_id",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "order",
-									"value": "-sys.createdAt"
-								}
-							],
-							"variable": [
-								{
-									"key": "environment_id",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"description": "1. Using a bounding rectangle:\nTo search for locations within a rectangle area object, use the structure field.center[within]=latitude1,longitude1,latitude2,longitude2, where:\n\nlatitude1 and longitude1 refer to the coordinates of the bottom left corner of the rectangle.\n\nlatitude2 and longitude2 refer to the coordinates of the top right corner of the rectangle.\n\n2. Using a bounding circle:\nThe structure field.center[within]=latitute,longitude,radius will return entries included in the circle with fields.center of the given latitude, longitude and radius (in km).\n\nhttps://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/reverse-order"
-					},
-					"response": []
-				},
-				{
-					"name": "Select (Entries and Assets)",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/environments/:environment_id/entries?content_type=componentImageGallery&select=sys.id,sys.environment",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"environments",
-								":environment_id",
-								"entries"
-							],
-							"query": [
-								{
-									"key": "content_type",
-									"value": "componentImageGallery"
-								},
-								{
-									"key": "select",
-									"value": "sys.id,sys.environment"
-								}
-							],
-							"variable": [
-								{
-									"key": "environment_id",
-									"value": "",
-									"type": "string"
-								}
-							]
-						},
-						"description": "https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/search-parameters/select-operator"
-					},
-					"response": []
-				},
-				{
-					"name": "Synchronization",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{cpa_access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{cpa_url}}/spaces/{{space_id}}/sync?initial=true&type=Deletion&limit=10",
-							"protocol": "https",
-							"host": [
-								"{{cpa_url}}"
-							],
-							"path": [
-								"spaces",
-								"{{space_id}}",
-								"sync"
-							],
-							"query": [
-								{
-									"key": "initial",
-									"value": "true"
-								},
-								{
-									"key": "type",
-									"value": "Deletion"
-								},
-								{
-									"key": "limit",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"description": "Content delivery API"
