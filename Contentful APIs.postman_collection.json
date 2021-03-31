@@ -13345,15 +13345,148 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users/:userID",
+											"raw": "https://{{scim_api_url}}/Users/:userID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
+												"Users",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "aaa",
+													"type": "string",
+													"description": "aaa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Create a user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/scim+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  }\n}"
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/Users/",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"Users",
+												""
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Update a single user with PUT",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/scim+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/Users/:userID",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
+												"Users",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "aaa",
+													"type": "string",
+													"description": "aaa"
+												}
+											]
+										},
+										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+									},
+									"response": []
+								},
+								{
+									"name": "Update a single user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{personal_access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/scim+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": []\n}"
+										},
+										"url": {
+											"raw": "https://{{scim_api_url}}/Users/:userID",
+											"protocol": "https",
+											"host": [
+												"{{scim_api_url}}"
+											],
+											"path": [
 												"Users",
 												":userID"
 											],
@@ -13392,15 +13525,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users/:userID",
+											"raw": "https://{{scim_api_url}}/Users/:userID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
 												"Users",
 												":userID"
 											],
@@ -13410,53 +13540,6 @@
 													"value": "",
 													"type": "string"
 												}
-											]
-										},
-										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
-									},
-									"response": []
-								},
-								{
-									"name": "User",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{personal_access_token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"type": "text",
-												"value": "application/scim+json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  }\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users",
-											"protocol": "https",
-											"host": [
-												"{{scim_api_url}}"
-											],
-											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
-												"Users"
 											]
 										},
 										"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
@@ -13488,15 +13571,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users",
+									"raw": "https://{{scim_api_url}}/Users",
 									"protocol": "https",
 									"host": [
 										"{{scim_api_url}}"
 									],
 									"path": [
-										"v2",
-										"organizations",
-										"{{organization_id}}",
 										"Users"
 									]
 								},
@@ -13526,15 +13606,12 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Users?filter=userName eq \"someone@example.com\"",
+									"raw": "https://{{scim_api_url}}/Users?filter=userName eq \"someone@example.com\"",
 									"protocol": "https",
 									"host": [
 										"{{scim_api_url}}"
 									],
 									"path": [
-										"v2",
-										"organizations",
-										"{{organization_id}}",
 										"Users"
 									],
 									"query": [
@@ -13599,15 +13676,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupId",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
 												"Groups",
 												":groupId"
 											],
@@ -13647,7 +13721,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"givenName\": \"Kasia\",\n  \"familyName\": \"Kowalska\"\n}",
+											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": [\n    {\n      \"op\": \"replace\",\n      \"path\": \"displayName\",\n      \"value\": \"My Group\"\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -13655,15 +13729,12 @@
 											}
 										},
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupId",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
 												"Groups",
 												":groupId"
 											],
@@ -13702,15 +13773,12 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupId",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
 												"Groups",
 												":groupId"
 											],
@@ -13758,15 +13826,12 @@
 											}
 										},
 										"url": {
-											"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups",
+											"raw": "https://{{scim_api_url}}/Groups",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
-												"v2",
-												"organizations",
-												"{{organization_id}}",
 												"Groups"
 											]
 										},
@@ -13799,16 +13864,54 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{scim_api_url}}/v2/organizations/{{organization_id}}/Groups",
+									"raw": "https://{{scim_api_url}}/Groups",
 									"protocol": "https",
 									"host": [
 										"{{scim_api_url}}"
 									],
 									"path": [
-										"v2",
-										"organizations",
-										"{{organization_id}}",
 										"Groups"
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
+							},
+							"response": []
+						},
+						{
+							"name": "Group - Collection filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{personal_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/scim+json"
+									}
+								],
+								"url": {
+									"raw": "https://{{scim_api_url}}/Groups?filter=displayName eq \"My Group\"",
+									"protocol": "https",
+									"host": [
+										"{{scim_api_url}}"
+									],
+									"path": [
+										"Groups"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "displayName eq \"My Group\""
+										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale"
