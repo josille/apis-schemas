@@ -13239,7 +13239,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}",
+							"raw": "https://{{graphql_url}}/content/v1/spaces/:space_id",
 							"protocol": "https",
 							"host": [
 								"{{graphql_url}}"
@@ -13248,7 +13248,13 @@
 								"content",
 								"v1",
 								"spaces",
-								"{{space_id}}"
+								":space_id"
+							],
+							"variable": [
+								{
+									"key": "space_id",
+									"value": ""
+								}
 							]
 						},
 						"description": "https://www.contentful.com/developers/docs/references/graphql/#/introduction"
@@ -13278,7 +13284,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{graphql_url}}/content/v1/spaces/{{space_id}}/environments/:ENVIRONMENT",
+							"raw": "https://{{graphql_url}}/content/v1/spaces/:space_id/environments/:environment",
 							"protocol": "https",
 							"host": [
 								"{{graphql_url}}"
@@ -13287,15 +13293,18 @@
 								"content",
 								"v1",
 								"spaces",
-								"{{space_id}}",
+								":space_id",
 								"environments",
-								":ENVIRONMENT"
+								":environment"
 							],
 							"variable": [
 								{
-									"key": "ENVIRONMENT",
-									"value": "",
-									"type": "string"
+									"key": "space_id",
+									"value": ""
+								},
+								{
+									"key": "environment",
+									"value": ""
 								}
 							]
 						},
