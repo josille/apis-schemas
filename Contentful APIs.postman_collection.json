@@ -12679,27 +12679,84 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
+											"key": "unique_id",
+											"value": ""
+										},
+										{
+											"key": "name",
 											"value": "",
 											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/retrieval/image"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Changing formats",
+					"item": [
+						{
+							"name": "Image format",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?fm=image_format",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										":space_id",
+										":asset_id",
+										":unique_id",
+										":name"
+									],
+									"query": [
+										{
+											"key": "fm",
+											"value": "image_format",
+											"description": "jpg,png,webp"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12718,15 +12775,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?fm=jpg&fl=progressive",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?fm=jpg&fl=progressive",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
@@ -12741,14 +12798,69 @@
 									],
 									"variable": [
 										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
+											"key": "unique_id",
+											"value": ""
+										},
+										{
+											"key": "name",
 											"value": "",
 											"type": "string"
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/images-api/#/reference/changing-formats/progressive-jpegs"
+							},
+							"response": []
+						},
+						{
+							"name": "8-bit PNGs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?fm=png&fl=png8",
+									"protocol": "https",
+									"host": [
+										"{{images_url}}"
+									],
+									"path": [
+										":space_id",
+										":asset_id",
+										":unique_id",
+										":name"
+									],
+									"query": [
+										{
+											"key": "fm",
+											"value": "png"
+										},
+										{
+											"key": "fl",
+											"value": "png8"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "asset_id",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12767,20 +12879,20 @@
 					"name": "Rezise & Cropping",
 					"item": [
 						{
-							"name": "Width height",
+							"name": "Specify width & height",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?w=100&h=100",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?w=100&h=100",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
@@ -12795,14 +12907,17 @@
 									],
 									"variable": [
 										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
-											"value": "",
-											"type": "string"
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12816,20 +12931,20 @@
 							"response": []
 						},
 						{
-							"name": "Rezising behavior",
+							"name": "Change the resizing behavior",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id:/:token/:name?w=100&h=100&fit=pad",
+									"raw": "https://{{images_url}}/:space_id/:asset_id:/:unique_id/:name?w=100&h=100&fit=TYPE",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id:",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
@@ -12843,19 +12958,22 @@
 										},
 										{
 											"key": "fit",
-											"value": "pad"
+											"value": "TYPE"
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "asset_id:",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
-											"value": "",
-											"type": "string"
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12869,26 +12987,27 @@
 							"response": []
 						},
 						{
-							"name": "Focus area",
+							"name": "Specify focus area",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?f=face&fit=thumb",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?f=TYPE&fit=thumb",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
 										{
 											"key": "f",
-											"value": "face"
+											"value": "TYPE",
+											"description": "One of the types."
 										},
 										{
 											"key": "fit",
@@ -12897,14 +13016,17 @@
 									],
 									"variable": [
 										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
-											"value": "",
-											"type": "string"
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12918,38 +13040,42 @@
 							"response": []
 						},
 						{
-							"name": "Crop rounded corners",
+							"name": "Crop rounded corners & circle/elipsis",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?r=20",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?r=RADIUS",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
 										{
 											"key": "r",
-											"value": "20"
+											"value": "RADIUS",
+											"description": "A value as described."
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
-											"value": "",
-											"type": "string"
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -12973,15 +13099,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id/:token/:name?fm=jpg&q=50",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?fm=jpg&q=QUALITY",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id",
-										":token",
+										":unique_id",
 										":name"
 									],
 									"query": [
@@ -12991,19 +13117,23 @@
 										},
 										{
 											"key": "q",
-											"value": "50"
+											"value": "QUALITY",
+											"description": "Quality as a percentage, between 1 and 100."
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "asset_id",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token",
-											"value": "",
-											"type": "string"
+											"key": "unique_id",
+											"value": ""
 										},
 										{
 											"key": "name",
@@ -13022,25 +13152,27 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/{{space_id}}/:asset_id:/:token:/:name?w=100&h=100&fit=pad&bg=red",
+									"raw": "https://{{images_url}}/:space_id/:asset_id:/:unique_id:/:name?w=100&h=100&fit=pad&bg=COLOR",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
-										"{{space_id}}",
+										":space_id",
 										":asset_id:",
-										":token:",
+										":unique_id:",
 										":name"
 									],
 									"query": [
 										{
 											"key": "w",
-											"value": "100"
+											"value": "100",
+											"description": "The desired width of the image."
 										},
 										{
 											"key": "h",
-											"value": "100"
+											"value": "100",
+											"description": "The desired height of the image."
 										},
 										{
 											"key": "fit",
@@ -13048,19 +13180,23 @@
 										},
 										{
 											"key": "bg",
-											"value": "red"
+											"value": "COLOR",
+											"description": "A color constant"
 										}
 									],
 									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
 										{
 											"key": "asset_id:",
 											"value": "",
 											"type": "string"
 										},
 										{
-											"key": "token:",
-											"value": "",
-											"type": "string"
+											"key": "unique_id:",
+											"value": ""
 										},
 										{
 											"key": "name",
