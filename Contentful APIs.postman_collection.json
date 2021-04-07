@@ -3380,6 +3380,12 @@
 										"key": "Content-Type",
 										"value": "application/vnd.contentful.management.v1+json",
 										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n\n",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3548,17 +3554,14 @@
 										"key": "Content-Type",
 										"type": "text",
 										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "x",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n\n",
+										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/content_types/:content_type_id/published",
 									"protocol": "https",
@@ -3864,6 +3867,12 @@
 										"key": "Content-Type",
 										"value": "application/vnd.contentful.management.v1+json",
 										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -4050,6 +4059,12 @@
 									{
 										"key": "Content-Type",
 										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
 										"type": "text"
 									}
 								],
@@ -4506,6 +4521,12 @@
 									{
 										"key": "X-Contentful-Content-Type",
 										"value": "aaaa",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
 										"type": "text"
 									}
 								],
@@ -5200,6 +5221,12 @@
 										"key": "Content-Type",
 										"type": "text",
 										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -6836,6 +6863,12 @@
 										"key": "Content-Type",
 										"type": "text",
 										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -7026,6 +7059,12 @@
 									{
 										"key": "Content-Type",
 										"value": "application/vnd.contentful.management.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
 										"type": "text"
 									}
 								],
@@ -7472,6 +7511,12 @@
 										"key": "Content-Type",
 										"type": "text",
 										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -8084,6 +8129,13 @@
 										"key": "Content-Type",
 										"value": "application/vnd.contentful.management.v1+json",
 										"type": "text"
+									},
+									{
+										"key": "X-Contentful-Version",
+										"value": "X",
+										"description": "Contentful uses optimistic locking. When updating an existing resource, you need to specify its current version with the X-Contentful-Version HTTP header (this header is automatically set when using our official SDKs). Contentful compares this version with the current version stored to ensure that a client doesn't overwrite a resource that has since been updated. If the version changed in-between, Contentful would reject the update.\n",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"url": {
