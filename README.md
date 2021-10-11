@@ -12,6 +12,12 @@ Postman JSON schema for contentful REST and GraphQL APIs.
 
 JSON endpoints definition and environment schema.
 
+## openAPI
+please use 'https://editor.swagger.io/' to edit online
+## postman
+
+## insomnia
+
 ## How to use
 1. Import `Contentful APIs.postman_collection.json` into postman.
 2. Import `Contentful-API.postman_environment.json`into postman.
