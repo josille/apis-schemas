@@ -1194,12 +1194,11 @@ paths:
           schema:
             type: string
           example: application/scim+json
-        - name: space_Id
+        - name: organization_id
           in: path
           schema:
             type: string
           required: true
-          example: 5nvk6q4s3ttw
         - name: user_Id
           in: path
           schema:
