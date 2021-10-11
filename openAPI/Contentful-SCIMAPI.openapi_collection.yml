@@ -1,0 +1,369 @@
+openapi: 3.0.0
+info:
+  title: SCIM API
+  description:  >-
+    System for Cross-domain Identity Management, or SCIM, is an API specification created to facilitate the management of people and groups of people in cloud-based applications and services.
+    
+    
+    Contentful's SCIM API is built on top of the SCIM 2.0 specification and can be integrated with major Identity Providers like Okta and OneLogin. It is possible to use our SCIM API to programatically create and manage organization memberships and teams within your Contentful organization.
+    
+    
+    To learn more about our SCIM support and to see the full list of supported Identity Providers, visit our FAQs.
+  version: 1.0.0
+externalDocs:
+  url: https://www.contentful.com/developers/docs/references/scim-api/
+servers:
+  - url: https://api.contentful.com/scim/v2/organizations/{org_id}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: User
+  - name: Users
+  - name: Group
+  - name: Groups
+paths:
+  /Users/{userId}:
+    get:
+      tags:
+        - User
+      summary: Get a single user
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: userId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the SCIM User
+          example: 1xGZIRXr2WPnsLkKfREo0z
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - User
+      summary: Update a single user with PUT
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                schemas:
+                  - urn:ietf:params:scim:schemas:core:2.0:User
+                id: 1xGZIRXr2WPnsLkKfREo0z
+                meta:
+                  resourceType: User
+                  created: '2018-05-11T20:04:37Z'
+                  lastModified: '2019-05-11T20:04:37Z'
+                  location: >-
+                    https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z
+                userName: user@example.com
+                name:
+                  givenName: Kasia
+                  familyName: Kowalska
+                active: true
+                emails:
+                  - value: user@example.com
+                    type: work
+                    primary: true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: userId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the SCIM User
+          example: 1xGZIRXr2WPnsLkKfREo0z
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - User
+      summary: Update a single user with PATCH
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                schemas:
+                  - urn:ietf:params:scim:api:messages:2.0:PatchOp
+                Operations: []
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: userId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the SCIM User
+          example: 1xGZIRXr2WPnsLkKfREo0z
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - User
+      summary: Delete a single user
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: userId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the SCIM User
+          example: 1xGZIRXr2WPnsLkKfREo0z
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /Users/:
+    post:
+      tags:
+        - Users
+      summary: Create a user
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                schemas:
+                  - urn:ietf:params:scim:schemas:core:2.0:User
+                userName: user@example.com
+                name:
+                  givenName: Kasia
+                  familyName: Kowalska
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Users
+      summary: Get all users in the organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: filter
+          in: query
+          schema:
+            type: string
+          example: userName eq "someone@example.com"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+   
+  /Groups/{groupId}:
+    get:
+      tags:
+        - Group
+      summary: Get a single group
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: groupId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the Contentful team
+          example: <group_id>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Group
+      summary: Update a single group
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                schemas:
+                  - urn:ietf:params:scim:api:messages:2.0:PatchOp
+                Operations:
+                  - op: replace
+                    path: displayName
+                    value: My Group
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: groupId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the Contentful team
+          example: <group_id>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Group
+      summary: Delete a single group
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: groupId
+          in: path
+          schema:
+            type: string
+          required: true
+          description: ID of the Contentful team
+          example: <group_id>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /Groups:
+    post:
+      tags:
+        - Groups
+      summary: Create a group
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                schemas:
+                  - urn:ietf:params:scim:schemas:core:2.0:Group
+                displayName: My Group
+                members:
+                  - value: '123'
+                    display: Kasia Kowalska
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Groups
+      summary: Get all groups in the organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: filter
+          in: query
+          schema:
+            type: string
+          example: displayName eq "My Group"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,0 +1,5496 @@
+openapi: 3.0.0
+info:
+  title: CMA - Contentful Management API
+  description:  >-
+      Contentful's Content Management API (CMA) helps you manage content in your
+      spaces. To learn more about how to model your content, read our modeling
+      guide.
+      
+
+      Note: You can use the CMA to deliver and manage content, but you shouldn't
+      use it to deliver large amounts of content and instead use the Content
+      Delivery API. The structure of responses from the CMA differs from the CDA
+      as GET responses retrieve the entirety of items (i.e. all localized and
+      unpublished content).
+  version: 1.0.0
+externalDocs:
+  url: https://www.contentful.com/developers/docs/references/content-management-api/
+servers:
+  - url: https://api.contentful.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: Spaces
+  - name: Enviroments
+  - name: Environment alias
+  - name: Organizations
+  - name: Content Types
+  - name: Editor Interface
+  - name: UI Extensions
+  - name: Entry
+  - name: Entries collection
+  - name: Entry references
+  - name: Entry publishing
+  - name: Entry archiving
+  - name: Uploads
+  - name: Assets
+  - name: Assets keys
+  - name: Locale
+  - name: Content tags
+  - name: Webhook
+  - name: Roles
+  - name: Snapshots
+  - name: Space memberships
+  - name: Space teams
+  - name: API keys
+  - name: Personal Access token
+  - name: Users
+  - name: Tasks
+  - name: Schedule actions
+  - name: Releases
+  - name: Bulk Actions
+  - name: App definitions
+  - name: App uploads
+  - name: App bundles
+  - name: App event subscriptions
+  - name: App signing secret
+  - name: App signed request
+  - name: App keys
+  - name: App Installations
+  - name: App access token
+  - name: Usage
+paths:
+  /spaces:
+    get:
+      tags:
+        - Spaces
+      summary: Get all spaces an account has access to
+      description: >-
+        Spaces are containers for content types and content, and API clients can
+        fetch data from one or more spaces. You can be a member of multiple
+        organizations, and owner and admin roles in the organization can create
+        spaces in organizations.
+
+
+        When you sign up to Contentul for the first time, you create a new
+        organization. When you're invited to an existing organization, you
+        become a member of that organization.
+
+
+        Note: If you have a single organization, any space you create will be
+        automatically associated with that organization. If you're an admin or
+        an owner in multiple organizations you need to pass the ID of the
+        organization with the X-Contentful-Organization header that you want to
+        create the space in.
+
+
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/spaces-collection](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/spaces-collection)
+        `
+
+        curl --include --request GET --header 'Authorization: Bearer
+        <cma_token>' https://api.contentful.com/spaces
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Spaces
+      summary: Create a space
+      description: >-
+        Create a new space, specifying attributes in the request body.
+
+
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)
+
+
+        `
+
+        curl --include --request POST --header 'Authorization: Bearer
+        <cma_token>' --header 'Content-Type:
+        application/vnd.contentful.management.v1+json' --header
+        'X-Contentful-Organization: 1PLOOEmTI2S1NYald2TemO' --data-binary '{
+               "name": "Example Space",
+               "defaultLocale": "en"
+             }' https://api.contentful.com/spaces
+        `
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Example Space
+                defaultLocale: en
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Organization
+          in: header
+          schema:
+            type: string
+          example: ORG_ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}:
+    get:
+      tags:
+        - Spaces
+      summary: Get a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)
+
+
+        `
+
+        curl --include --request GET --header 'Authorization: Bearer
+        <cma_token>' https://api.contentful.com/spaces/{space_id}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXXX
+          example: XXXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Spaces
+      summary: Update a space name
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)
+
+
+        `
+
+        curl --include --request PUT --header 'Authorization: Bearer
+        <cma_token>' --header 'Content-Type:
+        application/vnd.contentful.management.v1+json' --header
+        'X-Contentful-Version: 1' --data-binary '{
+               "name": "Hyper Space"
+             }' https://api.contentful.com/spaces/{space_id}
+        `
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Hyper Space
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: X-Contentful-Organization
+          in: header
+          schema:
+            type: string
+          example: ORG_ID
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Spaces
+      summary: Delete a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)
+
+
+        `
+
+        curl --include --request DELETE --header 'Authorization: Bearer
+        <cma_token>' https://api.contentful.com/spaces/{space_id}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXXX
+          example: XXXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments:
+    get:
+      tags:
+        - Enviroments
+      summary: Get all enviroments of a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment-collection](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment-collection)
+
+
+        `
+
+        curl --include --request GET --header 'Authorization: Bearer
+        <cma_token>' https://api.contentful.com/spaces/{space_id}/environments
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Enviroments
+      summary: Create an environment
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Staging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Source-Environment
+          in: header
+          required: false
+          schema:
+            type: string
+          example: <source_environment_id>
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}:
+    put:
+      tags:
+        - Enviroments
+      summary: Update an environment
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Staging aaabb
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Enviroments
+      summary: Get a single environment
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Enviroments
+      summary: Delete an environment
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environments/environment
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment_aliases:
+    get:
+      tags:
+        - Environment alias
+      summary: Get all environment aliases of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment_aliases/{environment_alias_id}:
+    get:
+      tags:
+        - Environment alias
+      summary: Get a single environment alias
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_alias_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Environment alias
+      summary: Create/Update an environment alias
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                environment:
+                  sys:
+                    type: Link
+                    linkType: Environment
+                    id: staging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_alias_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Environment alias
+      summary: Delete an environment alias
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/environment-aliases/environment-alias
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_alias_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations:
+    get:
+      tags:
+        - Organizations
+      summary: Get all organizations an account has access to
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/organizations/organizations-collection
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types:
+    get:
+      tags:
+        - Content Types
+      summary: Get all content types of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Content Types
+      summary: Create a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Blog Post
+                fields:
+                  - id: title
+                    name: Title
+                    required: true
+                    localized: true
+                    type: Text
+                  - id: body
+                    name: Body
+                    required: true
+                    localized: true
+                    type: Text
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types/{content_type_id}:
+    put:
+      tags:
+        - Content Types
+      summary: Create/update a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Blog Post
+                fields:
+                  - id: title
+                    name: Title
+                    required: true
+                    localized: true
+                    type: Text
+                  - id: body
+                    name: Body
+                    required: true
+                    localized: true
+                    type: Text
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >+
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Content Types
+      summary: Get a single content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: master
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: testValid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Content Types
+      summary: Delete a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types/{content_type_id}/published:
+    put:
+      tags:
+        - Content Types
+      summary: Activate a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >+
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+
+          example: x
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Content Types
+      summary: Deactivate a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/content-type-activation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/public/content_types:
+    get:
+      tags:
+        - Content Types
+      summary: Get all activated content types of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/content-types/activated-content-type-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/editor_interfaces:
+    get:
+      tags:
+        - Editor Interface
+      summary: Get all editor interfaces of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types/{content_type_id}/editor_interfaces:
+    get:
+      tags:
+        - Editor Interface
+      summary: Get the editor interface
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Editor Interface
+      summary: Update the editor interface
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/editor-interface/editor-interface
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                controls:
+                  - fieldId: name
+                    widgetNamespace: builtin
+                    widgetId: singleLine
+                    settings: {}
+                sidebar:
+                  - widgetNamespace: extension
+                    widgetId: someuiextension
+                    settings: {}
+                    disabled: false
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/extensions:
+    get:
+      tags:
+        - UI Extensions
+      summary: Get all extensions of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extensions-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - UI Extensions
+      summary: Create an extension
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                extension:
+                  src: https://example.com/my
+                  name: My awesome extension
+                  fieldTypes:
+                    - type: Symbol
+                    - type: Text
+                  sidebar: false
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/extensions/{extension_id}:
+    put:
+      tags:
+        - UI Extensions
+      summary: Create/update an extension
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                extension:
+                  src: https://example.com/my
+                  name: My awesome extension
+                  fieldTypes:
+                    - type: Symbol
+                    - type: Text
+                  sidebar: false
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: extension_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - UI Extensions
+      summary: Get a single extension
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: extension_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - UI Extensions
+      summary: Delete an extension
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: extension_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries:
+    post:
+      tags:
+        - Entries collection
+      summary: Entries
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  title:
+                    en-US: Hello, World!
+                  body:
+                    en-US: Bacon is healthy!
+                metadata:
+                  tags:
+                    - sys:
+                        type: Link
+                        linkType: Tag
+                        id: nyCampaign
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Content-Type
+          in: header
+          schema:
+            type: string
+          example: aaaa
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Entries collection
+      summary: Get entries of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entries-collection
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: TAG_KEY
+          in: query
+          schema:
+            type: string
+          example: TAG_VALUE
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}:
+    get:
+      tags:
+        - Entry
+      summary: Get a single entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: 4Mxj1aVYccLOCunUzsNcNL
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Entry
+      summary: Delete an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: XXX
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Entry
+      summary: Create/update an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  title:
+                    en-US: Hello, World!
+                  body:
+                    en-US: Bacon is healthy!
+                metadata:
+                  tags: []
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Content-Type
+          in: header
+          schema:
+            type: string
+          example: hfM9RCJIk0wIm06WkEOQY
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Entry
+      summary: Patch an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                - op: add
+                  path: /fields/title/en-US
+                  value: Hello, World!
+                - op: add
+                  path: /fields/body/en-US
+                  value: Bacon is healthy!
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Content-Type
+          in: header
+          schema:
+            type: string
+          example: aaaa
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}/references:
+    get:
+      tags:
+        - Entry references
+      summary: Get entry references
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: XXX
+          example: 4Mxj1aVYccLOCunUzsNcNL
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}/published:
+    put:
+      tags:
+        - Entry publishing
+      summary: Publish an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '6'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Entry publishing
+      summary: Unpublish an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-publishing
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '6'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}/archived:
+    put:
+      tags:
+        - Entry archiving
+      summary: Archive an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '6'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Entry archiving
+      summary: Unarchive an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entries/entry-archiving
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '6'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: master
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/uploads:
+    post:
+      tags:
+        - Uploads
+      summary: Creating an upload resource
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/upload-a-file
+      requestBody:
+        content:
+          text/plain: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/octet-stream
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/uploads/{upload_id}:
+    get:
+      tags:
+        - Uploads
+      summary: Retrieve an upload
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/retrieving-an-upload
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: upload_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Uploads
+      summary: Deleting an upload
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/uploads/deleting-an-upload
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: upload_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets:
+    get:
+      tags:
+        - Assets
+      summary: Get all assets of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/assets-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Assets
+      summary: Create an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  title:
+                    en-US: Playsam Streamliner
+                  file:
+                    en-US:
+                      contentType: image/jpeg
+                      fileName: example.jpeg
+                      upload: https://example.com/example.jpg
+                metadata:
+                  tags:
+                    - sys:
+                        type: Link
+                        linkType: Tag
+                        id: nyCampaign
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/public/assets:
+    get:
+      tags:
+        - Assets
+      summary: Get all published assets of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/published-assets-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/{asset_id}:
+    put:
+      tags:
+        - Assets
+      summary: Create/update an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  title:
+                    en-US: Playsam Streamliner
+                  file:
+                    en-US:
+                      contentType: image/jpeg
+                      fileName: example.jpeg
+                      upload: https://example.com/example.jpg
+                metadata:
+                  tags:
+                    - sys:
+                        type: Link
+                        linkType: Tag
+                        id: nyCampaign
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Assets
+      summary: Get a single asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: B1fZbskHLWGKIVuZySN5P
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Assets
+      summary: Delete an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/{asset_id}/files/{locale_code}/process:
+    put:
+      tags:
+        - Assets
+      summary: Process an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-processing
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '2'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: locale_code
+          in: path
+          schema:
+            type: string
+          required: true
+          description: en-us
+          example: en-us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/{asset_id}/published:
+    put:
+      tags:
+        - Assets
+      summary: Publish an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '2'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Assets
+      summary: Unpublish an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-publishing
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '2'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/{asset_id}/archived:
+    put:
+      tags:
+        - Assets
+      summary: Archive an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '2'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Assets
+      summary: Unarchive an asset
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset-archiving
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '2'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/asset_keys:
+    post:
+      tags:
+        - Assets keys
+      summary: Create an asset key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/assets/asset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                expiresAt: 1613590465
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/locales:
+    get:
+      tags:
+        - Locale
+      summary: Get all locales of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Locale
+      summary: Create a locale
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: general defualt
+                code: gen-DEFAULT
+                optional: false
+                default: true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: r0926rqjrebl
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/locales/{locale_id}:
+    get:
+      tags:
+        - Locale
+      summary: Get a locale
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: locale_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Locale
+      summary: Update a locale
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: English (United States)
+                code: en-US
+                fallbackCode: en-US
+                optional: false
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '3'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: locale_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Locale
+      summary: Deleting a locale
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/locales/locale
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: locale_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/tags:
+    get:
+      tags:
+        - Content tags
+      summary: Get all tags
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extensions-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/tags/{tag_id}:
+    post:
+      tags:
+        - Content tags
+      summary: Create a tag
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: NY Campaign
+                sys:
+                  visibility: public
+                  id: nyCampaign
+                  type: Tag
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Content tags
+      summary: Update a tag
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: NewYork Campaign
+                sys:
+                  id: nyCampaign
+                  type: Tag
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Content tags
+      summary: Get a single tag
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Content tags
+      summary: Delete a tag
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/tags/{query_parameter}:
+    get:
+      tags:
+        - Content tags
+      summary: Query tag by visibility
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: query_parameter
+          in: path
+          schema:
+            type: string
+          required: true
+          description: sys.visibility=public
+          example: sys.visibility=public
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/webhook_definitions:
+    get:
+      tags:
+        - Webhook
+      summary: Get all webhooks of a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhooks-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Webhook
+      summary: Create a webhook
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: My webhook
+                url: https://www.example.com/test
+                topics:
+                  - Entry.create
+                  - ContentType.create
+                  - '*.publish'
+                  - Asset.*
+                httpBasicUsername: yolo
+                httpBasicPassword: yolo
+                filters: []
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/webhooks/{webhook_id}/calls:
+    get:
+      tags:
+        - Webhook
+      summary: Get an overview of recent calls
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhook-calls
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/webhooks/{webhook_id}/calls/{call_id}:
+    get:
+      tags:
+        - Webhook
+      summary: Get the webhook call details
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhook-calls
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: call_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/webhooks/{webhook_id}/health:
+    get:
+      tags:
+        - Webhook
+      summary: Get webhook health
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/webhook_definitions/{webhook_definition_id}:
+    get:
+      tags:
+        - Webhook
+      summary: Get a single Webhook
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Webhook
+      summary: Create/update a webhook
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: My webhook
+                url: https://www.example.com/test
+                topics:
+                  - Entry.create
+                  - ContentType.create
+                  - '*.publish'
+                  - Asset.*
+                httpBasicUsername: yolo
+                httpBasicPassword: yolo
+                filters: []
+                headers:
+                  - key: header1
+                    value: value1
+                  - key: header2
+                    value: value2
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Webhook
+      summary: Delete a webhook
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/webhooks/webhook
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: webhook_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/roles:
+    get:
+      tags:
+        - Roles
+      summary: Get all roles
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/roles-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Roles
+      summary: Create a role
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Some role
+                description: Test role
+                permissions:
+                  ContentModel:
+                    - read
+                  ContentDelivery: all
+                  Environments: all
+                  EnvironmentAliases: all
+                  Settings: all
+                policies:
+                  - effect: allow
+                    actions:
+                      - read
+                      - create
+                      - update
+                      - delete
+                      - publish
+                      - unpublish
+                      - archive
+                      - unarchive
+                    constraint:
+                      and:
+                        - - equals
+                          - doc: sys.type
+                          - Entry
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/roles/{role_id}:
+    put:
+      tags:
+        - Roles
+      summary: Update a single role
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Some role
+                description: Test role
+                permissions:
+                  ContentModel:
+                    - read
+                  ContentDelivery: all
+                  Environments: all
+                  EnvironmentAliases: all
+                  Settings: all
+                policies:
+                  - effect: allow
+                    actions:
+                      - read
+                      - create
+                      - update
+                      - delete
+                      - publish
+                      - unpublish
+                      - archive
+                      - unarchive
+                    constraint:
+                      and:
+                        - - equals
+                          - doc: sys.type
+                          - Entry
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: role_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Roles
+      summary: Delete a single role
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: role_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Roles
+      summary: Get a single role
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/roles/role
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: role_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/master/entries/{entry_id}/snapshots:
+    get:
+      tags:
+        - Snapshots
+      summary: Get all snapshots of an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshots-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1NeJVTh6t1qtWTWYhvTaxd
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/master/content_types/{content_type_id}/snapshots:
+    get:
+      tags:
+        - Snapshots
+      summary: Get all snapshots of a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshots-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/master/content_types/{content_type_id}/snapshots/{snapshot_id}:
+    get:
+      tags:
+        - Snapshots
+      summary: Get a snapshot of a content type
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/content-type-snapshot
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: snapshot_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/master/entries/{entry_id}/snapshots/{snapshot_id}:
+    get:
+      tags:
+        - Snapshots
+      summary: Get a snapshot of an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/snapshots/entry-snapshot
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: snapshot_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/space_memberships:
+    get:
+      tags:
+        - Space memberships
+      summary: Get all space memberships
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-memberships-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Space memberships
+      summary: Create a space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                admin: false
+                roles:
+                  - sys:
+                      type: Link
+                      linkType: Role
+                      id: 1ElgCn1mi1UHSBLTP2v4TD
+                email: foo@example.com
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/space_memberships/{space_membership_id}:
+    put:
+      tags:
+        - Space memberships
+      summary: Update a single space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                admin: false
+                roles:
+                  - sys:
+                      type: Link
+                      linkType: Role
+                      id: 1ElgCn1mi1UHSBLTP2v4TD
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: space_membership_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Space memberships
+      summary: Delete a single space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: space_membership_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get: 
+      tags:
+        - Space memberships
+      summary: Get a single space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/space-memberships/space-membership
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: space_membership_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/teams:
+    get:
+      tags:
+        - Space teams
+      summary: Get all teams for a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/teams-for-a-space
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: api_key_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/api_keys/{api_key_id}:
+    get:
+      tags:
+        - API keys
+      summary: Get a single Delivery API key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: api_key_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - API keys
+      summary: Update a single Delivery API key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Example API Key
+                environments:
+                  - sys:
+                      type: Link
+                      linkType: Environment
+                      id: staging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: api_key_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - API keys
+      summary: Delete a single Delivery API key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: api_key_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/api_keys:
+    get:
+      tags:
+        - API keys
+      summary: Get all Delivery API keys
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-keys-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - API keys
+      summary: Create a Delivery API key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/delivery-api-key
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Example API Key
+                environments:
+                  - sys:
+                      type: Link
+                      linkType: Environment
+                      id: staging
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/preview_api_keys:
+    get:
+      tags:
+        - API keys
+      summary: Get all Preview API keys
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/preview-api-keys-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/preview_api_keys/{preview_api_key_id}:
+    get:
+      tags:
+        - API keys
+      summary: Get a single Preview API key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/api-keys/preview-api-key
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: preview_api_key_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/me/access_tokens:
+    post:
+      tags:
+        - Personal Access token
+      summary: Create a personal access token
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: My Token
+                scopes:
+                  - content_management_manage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Personal Access token
+      summary: Get all personal access tokens
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-tokens-collection
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/me/access_tokens/{token_id}:
+    get:
+      tags:
+        - Personal Access token
+      summary: Get a single personal access token
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/personal-access-token
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: token_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/me/access_tokens/{token_id}/revoked:
+    put:
+      tags:
+        - Personal Access token
+      summary: Revoke a personal access token
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens/token-revoking
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: string
+          description: >
+            Contentful uses optimistic locking. When updating an existing
+            resource, you need to specify its current version with the
+            X-Contentful-Version HTTP header (this header is automatically set
+            when using our official SDKs). Contentful compares this version with
+            the current version stored to ensure that a client doesn't overwrite
+            a resource that has since been updated. If the version changed
+            in-between, Contentful would reject the update.
+          example: X
+        - name: token_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/me:
+    get:
+      tags:
+        - Users
+      summary: Get the authenticated user
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/users/user
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}/tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Get all tasks of an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/tasks-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Tasks
+      summary: Create a task
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                body: Review translation
+                status: active
+                assignedTo:
+                  sys:
+                    type: Link
+                    linkType: User
+                    id: 7BslKh9TdKGOK41VmLDjFZ
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}/tasks/{task_id}:
+    get:
+      tags:
+        - Tasks
+      summary: Get a single task
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: task_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Tasks
+      summary: Delete a task
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: task_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Tasks
+      summary: Update a task
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/entry-tasks/task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                body: Review translation
+                status: active
+                assignedTo:
+                  sys:
+                    type: Link
+                    linkType: User
+                    id: 7BslKh9TdKGOK41VmLDjFZ
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: X-Contentful-Version
+          in: header
+          schema:
+            type: integer
+          example: '4'
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: task_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/scheduled_actions:
+    get:
+      tags:
+        - Schedule actions
+      summary: Get all scheduled actions of an entry
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-actions-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: entity.sys.id
+          in: query
+          schema:
+            type: string
+          description: ENTRY_ID
+          example: ENTRY_ID
+        - name: environment.sys.id
+          in: query
+          schema:
+            type: string
+          description: ENVIRONMENT_ID
+          example: ENVIRONMENT_ID
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Schedule actions
+      summary: Create a scheduled action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                entity:
+                  sys:
+                    type: Link
+                    linkType: Entry
+                    id: 5KsDBWseXY6QegucYAoacS
+                environment:
+                  sys:
+                    type: Link
+                    linkType: Environment
+                    id: staging
+                scheduledFor:
+                  datetime: '2119-09-02T14:00:00.000Z'
+                action: publish
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: entity.sys.id
+          in: query
+          schema:
+            type: string
+          description: ENTRY_ID
+          example: ENTRY_ID
+        - name: environment.sys.id
+          in: query
+          schema:
+            type: string
+          description: ENVIRONMENT_ID
+          example: ENVIRONMENT_ID
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/scheduled_actions/{scheduled_action_id}:
+    put:
+      tags:
+        - Schedule actions
+      summary: Update a scheduled action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/update-a-scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: scheduled_action_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Schedule actions
+      summary: Cancel a scheduled action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/cancel-a-scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: environment.sys.id
+          in: query
+          schema:
+            type: string
+          description: ENVIRONMENT_ID
+          example: ENVIRONMENT_ID
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: scheduled_action_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/:
+    post:
+      tags:
+        - Releases
+      summary: Create release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: ''
+                entities:
+                  items:
+                    - sys:
+                        id: string
+                        type: '''Link'''
+                        linkType: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Releases
+      summary: Query releases
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/{releases_id}/validate:
+    post:
+      tags:
+        - Releases
+      summary: Create validation release action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/{releases_id}/actions:
+    get:
+      tags:
+        - Releases
+      summary: Query release actions
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/{releases_id}/actions/{release_action_id}:
+    get:
+      tags:
+        - Releases
+      summary: Get single release actions
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: release_action_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/{releases_id}/published:
+    put:
+      tags:
+        - Releases
+      summary: Publish release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/releases/published-release
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Releases
+      summary: Unpublish release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/releases/{releases_id}:
+    get:
+      tags:
+        - Releases
+      summary: Get single release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Releases
+      summary: Update release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: ''
+                entities:
+                  items:
+                    - sys:
+                        id: string
+                        type: '''Link'''
+                        linkType: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Releases
+      summary: Remove release
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: releases_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/bulk_actions/actions/{bulk_action_id}:
+    get:
+      tags:
+        - Bulk Actions
+      summary: Fetch bulk action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: bulk_action_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/bulk_actions/publish:
+    post:
+      tags:
+        - Bulk Actions
+      summary: Publish bulk action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/bulk_actions/unpublish:
+    post:
+      tags:
+        - Bulk Actions
+      summary: Unpublish bulk action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environment/{environment_id}/bulk_actions/validate:
+    post:
+      tags:
+        - Bulk Actions
+      summary: Validate bulk action
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions:
+    get:
+      tags:
+        - App definitions
+      summary: Get all app definitions
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definitions-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - App definitions
+      summary: Create a new app definition
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Hello world!
+                src: https://example.com/app.html
+                locations:
+                  - location: entry-sidebar
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}:
+    get:
+      tags:
+        - App definitions
+      summary: Get one app definition
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - App definitions
+      summary: Update an app definition
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Hello world!
+                src: https://example.com/app.html
+                locations:
+                  - location: entry-sidebar
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App definitions
+      summary: Delete an app definition
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_uploads/{app_upload_id}:
+    get:
+      tags:
+        - App uploads
+      summary: Get one app upload
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-uploads
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_upload_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - App uploads
+      summary: Creating an app upload
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-uploads/app-uploads-collection
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_upload_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/app_bundles:
+    get:
+      tags:
+        - App bundles
+      summary: Get all app bundles
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-bundles/app-bundles-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - App bundles
+      summary: Create a new app bundle
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-bundles/app-bundles-collection/create-a-new-app-bundle/console/curl
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/app_bundles/{app_bundle_id}:
+    get:
+      tags:
+        - App bundles
+      summary: Get one app bundle
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-bundles/app-bundles-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_bundle_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App bundles
+      summary: Delete an app bundle
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-bundles/app-bundles-collection/create-a-new-app-bundle/console/curl
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_bundle_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/event_subscription:
+    get:
+      tags:
+        - App event subscriptions
+      summary: Get an app event subscription
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - App event subscriptions
+      summary: Update or subscribe to events
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                targetUrl: https://example.com/
+                topics:
+                  - Entry.create
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App event subscriptions
+      summary: Delete an app event subscription
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/signing_secret:
+    get:
+      tags:
+        - App signing secret
+      summary: Get the current app signing secret
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - App signing secret
+      summary: Create or overwrite the app signing secret
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                value: <64-characters-secret>
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App signing secret
+      summary: Remove the current app signing secret
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_instalations/{app_definition_id}/signed_request: 
+    post:
+      tags:
+        - App signed request
+      summary: Create a signed request
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                method: GET|PUT|POST|DELETE|PATCH|HEAD
+                path: <path-without-protocol-or-hostname>
+                body: <optional-request-body-as-string>
+                headers:
+                  Content-Type: application/json
+                  X-Some-Header: some-value
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/keys:
+    get:
+      tags:
+        - App keys
+      summary: Get all app keys
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - App keys
+      summary: Create a new app key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                generate: true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/app_definitions/{app_definition_id}/keys/{key_kid}:
+    get:
+      tags:
+        - App keys
+      summary: Get one app key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: key_kid
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App keys
+      summary: Delete an app key
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: key_kid
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/app_installations:
+    get:
+      tags:
+        - App Installations
+      summary: Get all app installations
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installations-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/app_installations/{app_definition_id}:
+    get:
+      tags:
+        - App Installations
+      summary: Get one app installation
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - App Installations
+      summary: Install or update an app
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                parameters:
+                  hello: world
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/vnd.contentful.management.v1+json
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - App Installations
+      summary: Uninstall an app
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/app_installations/{app_definition_id}/access_tokens:
+    post:
+      tags:
+        - App access token
+      summary: Issue a token for an app installation in a space environment
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-installations/app-installation
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: app_definition_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/organization_periodic_usages:
+    get:
+      tags:
+        - Usage
+      summary: Get organization usage
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/usage/organization-usage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: order
+          in: query
+          schema:
+            type: string
+          example: usage
+        - name: metric[in]
+          in: query
+          schema:
+            type: string
+          example: cma,cpa,gql
+        - name: dateRange.startAt
+          in: query
+          schema:
+            type: string
+          example: '2020-01-01'
+        - name: dateRange.endAt
+          in: query
+          schema:
+            type: string
+          example: '2020-01-05'
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/space_periodic_usages:
+    get:
+      tags:
+        - Usage
+      summary: Get space usage
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-management-api/#/reference/usage/space-usage
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: order
+          in: query
+          schema:
+            type: string
+          example: usage
+        - name: metric[in]
+          in: query
+          schema:
+            type: string
+          example: cma,cpa,gql
+        - name: dateRange.startAt
+          in: query
+          schema:
+            type: string
+          example: '2020-01-01'
+        - name: dateRange.endAt
+          in: query
+          schema:
+            type: string
+          example: '2020-01-05'
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

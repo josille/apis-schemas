@@ -1,0 +1,164 @@
+openapi: 3.0.0
+info:
+  title: Images API
+  description:  >-
+      The Contentful Images API allows the retrieval and manipulation of image files referenced from assets.
+  version: 1.0.0
+externalDocs:
+  url: https://www.contentful.com/developers/docs/references/images-api/
+servers:
+  - url: https://images.ctfassets.net
+tags:
+  - name: Parameters
+paths:
+  /{space_id}/{asset_id}/{unique_id}/{name}:
+    get:
+      tags:
+        - Parameters
+      summary: You can retrieve the original image.
+      description: >-
+        f Possible values:
+
+
+        center, top, right, left, bottom.
+
+        top_right, top_left, bottom_right, bottom_left.
+
+        face for the largest face detected.
+
+        faces for all the faces detected.
+
+
+        https://www.contentful.com/developers/docs/references/images-api/#/reference/image-manipulation/quality
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: unique_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: name
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: fm
+          description: Convert the image to a different format. jpg,png,webp,gif
+          in: query
+          schema:
+            type: string
+          examples:
+            jpg:
+              value: fm=jpg
+              summary: jpg format
+            png:
+              value: fm=png
+              summary: png format
+            webp:
+              value: fm=webp
+              summary: webp format
+            gif:
+              value: fm=gif
+              summary: gif format
+        - name: fl
+          description: Chamge format of image.
+          in: query
+          schema:
+            type: string
+          examples:
+            progressive:
+              value: fm=jpg&fl=progressive
+              summary: You can request a JPEG image as a progressive JPEG.
+            png8:
+              value: fm=png&fl=png8
+              summary: You can request a PNG image as a 8-bit PNG
+        - name: w
+          description: Width
+          in: query
+          schema:
+            type: integer
+          example: w=1000
+        - name: h
+          description: Height
+          in: query
+          schema:
+            type: integer
+          example: h=1000
+        - name: fit
+          description: Change the resizing behavior
+          in: query
+          schema:
+            type: string
+          examples:
+            pad:
+              value: fit=pad
+              summary: pad - Resize the image to the specified dimensions, padding the image if needed.
+            fill:
+              value: fit=fill
+              summary: fill - Resize the image to the specified dimensions, cropping the image if needed.
+            scale:
+              value: fit=scale
+              summary: scale - Resize the image to the specified dimensions, changing the original aspect ratio if needed.
+            crop:
+              value: fit=crop
+              summary: crop - Crop a part of the original image to fit into the specified dimensions.
+            thumb:
+              value: fit=thumb
+              summary: thumb - Create a thumbnail from the image.
+        - name: f
+          description: >- 
+            You can choose the focus area for resizing when using fit type pad, fill, crop or thumb. Focus area has no effect on the default or scale fit type.
+            Possible values:
+
+              center, top, right, left, bottom.
+
+              top_right, top_left, bottom_right, bottom_left.
+
+              face for the largest face detected.
+
+              faces for all the faces detected.
+          in: query
+          schema:
+            type: string
+          examples:
+            center:
+              value: f=center&fit=thumb
+              summary: center
+            top:
+              value: f=top&fit=thumb
+              summary: top
+            right:
+              value: f=right&fit=thumb
+              summary: right
+        - name: r
+          description: Crop rounded corners & circle/elipsis
+          in: query
+          schema:
+            type: integer
+          example: r=20
+        - name: q
+          description: You can alter the quality of the image, expressed as a percentage value between 1 and 100.
+          in: query
+          schema:
+            type: integer
+          example: fm=jpg&q=50
+        - name: bg
+          description: ou can choose the background color when using corner radius or the pad fit type.
+          in: query
+          schema:
+            type: string
+          example: fit=pad&bg=rgb:ffffff
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

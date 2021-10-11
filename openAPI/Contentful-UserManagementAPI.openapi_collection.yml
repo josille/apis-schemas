@@ -1,0 +1,1213 @@
+openapi: 3.0.0
+info:
+  title: User Management API
+  description:  >-
+      Contentful's User Management API helps organizations programmatically manage their organizations, organization memberships, teams, space memberships and more.
+  
+      
+      Disclaimer: The User Management API is available for Enterprise customers on current pricing plans.
+
+  version: 1.0.0
+externalDocs:
+  url: https://www.contentful.com/developers/docs/references/user-management-api/
+servers:
+  - url: https://api.contentful.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: Organization Memberships
+  - name: Invitations
+  - name: Teams
+  - name: Team membership
+  - name: Space Memberships
+  - name: Team Space Memberships
+  - name: Space Members
+  - name: Space Roles
+  - name: Users
+paths:
+  /organizations/{organization_id}/organization_memberships:
+    get:
+      tags:
+        - Organization Memberships
+      summary: Get all organization memberships
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: query
+          in: query
+          required: false
+          schema:
+            type: string
+          description: >-
+            OPTIONAL - Specify a string to search for matching resources
+            against. Fields searched: sys.user.id, sys.user.firstName,
+            sys.user.lastName, sys.user.email
+          example: rodrigo.contentful
+        - name: skip
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+        - name: order
+          in: query
+          schema:
+            type: string
+          description: >-
+            OPTIONAL - Supported values: role, sys.createdAt, sys.lastActiveAt,
+            sys.user.firstName, sys.user.lastName, sys.user.email
+        - name: include
+          in: query
+          schema:
+            type: string
+          description: >-
+            OPTIONAL - Specify linked resources to include in response.
+            Supported values: sys.user, sys.createdBy, sys.updatedBy
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/organization_memberships/{organizationMembershipId}:
+    get:
+      tags:
+        - Organization Memberships
+      summary: Get a single organization membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: organizationMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Organization Memberships
+      summary: Organization membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                role: member
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: organizationMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Organization Memberships
+      summary: Delete a single organization membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/organization-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: organizationMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/invitations:
+    post:
+      tags:
+        - Invitations
+      summary: Create an invitation (alpha)
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/invitations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/invitations/{invitationId}:
+    get:
+      tags:
+        - Invitations
+      summary: Get a single invitation (alpha)
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/invitations
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: invitationId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{spaceId}/teams:
+    get:
+      tags:
+        - Teams
+      summary: Get all teams for a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: skip
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/teams:
+    get:
+      tags:
+        - Teams
+      summary: Get all teams for an organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: skip
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL - Specify requested page of result set
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Teams
+      summary: Create a team
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/teams/{teamId}:
+    get:
+      tags:
+        - Teams
+      summary: Get a single team
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Teams
+      summary: Update a single team
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Teams
+      summary: Delete a single team
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/teams
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/teams/{teamId}/team_memberships:
+    get:
+      tags:
+        - Team membership
+      summary: Get all team memberships in a team
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Team membership
+      summary: Create a team membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/team_memberships:
+    get:
+      tags:
+        - Team membership
+      summary: Get all team memberships in an organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/teams/{teamId}/team_memberships/{teamMembershipId}:
+    get:
+      tags:
+        - Team membership
+      summary: Get a single team membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Team membership
+      summary: Delete a single team membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/space_memberships:
+    get:
+      tags:
+        - Space Memberships
+      summary: Get all space memberships in a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Space Memberships
+      summary: Create a space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/space_memberships:
+    get:
+      tags:
+        - Space Memberships
+      summary: Get all space memberships in an organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: include
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL
+          example: roles,sys.space,sys.createdBy
+        - name: sys.user.sys.id
+          in: query
+          schema:
+            type: string
+          description: OPTIONAL
+          example: 3lypMkmZdY6ZUbBTZMoXkS
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/space_memberships/{spaceMembershipId}:
+    get:
+      tags:
+        - Space Memberships
+      summary: Get a single space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: spaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/space_memberships/{spaceMembershipId}:
+    get:
+      tags:
+        - Space Memberships
+      summary: Get a single space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: spaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Space Memberships
+      summary: Update a space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: spaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Space Memberships
+      summary: Delete a space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: spaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/team_space_memberships:
+    get:
+      tags:
+        - Team Space Memberships
+      summary: Get all team space memberships in a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Team Space Memberships
+      summary: Create a team space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/team_space_memberships:
+    get:
+      tags:
+        - Team Space Memberships
+      summary: Get all team space memberships in an organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/team_space_memberships/{teamSpaceMembershipId}:
+    get:
+      tags:
+        - Team Space Memberships
+      summary: Get a single team space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamSpaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Team Space Memberships
+      summary: Update a team space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamSpaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Team Space Memberships
+      summary: Delete a team space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamSpaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/team_space_memberships/{teamSpaceMembershipId}:
+    get:
+      tags:
+        - Team Space Memberships
+      summary: Get a single team space membership
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/team-space-memberships
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: teamSpaceMembershipId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/space_members:
+    get:
+      tags:
+        - Space Members
+      summary: Get all space members in a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-members
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{spaceId}/space_members/{spaceMemberId}:
+    get:
+      tags:
+        - Space Members
+      summary: Get a single space member
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-members
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: spaceId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: spaceMemberId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/roles:
+    get:
+      tags:
+        - Space Roles
+      summary: Get all space roles in an organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/space-roles
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/users:
+    get:
+      tags:
+        - Users
+      summary: Get all users in organization
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: organization_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_Id}/users:
+    get:
+      tags:
+        - Users
+      summary: Get all users in a space
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: space_Id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_Id}/users/{user_Id}:
+    get:
+      tags:
+        - Users
+      summary: Get a single user
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: space_Id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: user_Id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 2CybV4O3C7PvLzsqBI2qcs
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /organizations/{organization_id}/users/{user_Id}:
+    get:
+      tags:
+        - Users
+      summary: Get a single user
+      description: >-
+        https://www.contentful.com/developers/docs/references/user-management-api/#/reference/users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/scim+json
+        - name: space_Id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 5nvk6q4s3ttw
+        - name: user_Id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 2CybV4O3C7PvLzsqBI2qcs
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

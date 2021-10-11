@@ -1,0 +1,779 @@
+openapi: 3.0.0
+info:
+  title: CDA - Content Delivery API
+  description:  >-
+      Contentful's Content Management API (CMA) helps you manage content in your
+      spaces. To learn more about how to model your content, read our modeling
+      guide.
+      
+
+      Note: You can use the CMA to deliver and manage content, but you shouldn't
+      use it to deliver large amounts of content and instead use the Content
+      Delivery API. The structure of responses from the CMA differs from the CDA
+      as GET responses retrieve the entirety of items (i.e. all localized and
+      unpublished content).
+  version: 1.0.0
+externalDocs:
+  url: https://www.contentful.com/developers/docs/references/content-delivery-api/
+servers:
+  - url: https://cdn.contentful.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: Spaces
+  - name: Content Types
+  - name: Entries
+  - name: Assets
+  - name: Asset keys
+  - name: Locales
+  - name: Content tags
+  - name: Search
+  - name: Synchronization
+paths:
+  /spaces/{space_id}:
+    get:
+      tags:
+        - Spaces
+      summary: Get a space
+      description: >-
+        All content and assets in Contentful belong to a space. You will
+        generally have at least one space for a project, but use separate spaces
+        for testing or staging.
+
+
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/spaces](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/spaces
+        "https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/spaces")
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types:
+    get:
+      tags:
+        - Content Types
+      summary: Get the content model of a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/content_types?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/content_types/{content_type_id}:
+    get:
+      tags:
+        - Content Types
+      summary: Get a single content type
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/content_types/{content_type_id}?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+        - name: content_type_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: imageWithFocalPoint
+          example: imageWithFocalPoint
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries:
+    get:
+      tags:
+        - Entries
+      summary: Get all entries of a Space
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entries-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}:
+    get:
+      tags:
+        - Entries
+      summary: Get a single entry
+      description: >-
+        The include array is not applicable while retrieving a single entry.
+
+
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+        - name: entry_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: 6Lng3TPchCEw9cGvDiYDHs
+          example: 34b0QSe0NSzPxnkRwmBfbr
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets:
+    get:
+      tags:
+        - Assets
+      summary: Get all assets of a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/assets?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/{asset_id}:
+    get:
+      tags:
+        - Assets
+      summary: Get a single asset
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/assets/{asset_id}?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+        - name: asset_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: 6Od9v3wzLOysiMum0Wkmme
+          example: 6Od9v3wzLOysiMum0Wkmme
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/asset_keys/:
+    post:
+      tags:
+        - Asset keys
+      summary: Create an asset key
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/assets/{asset_id}?access_token={access_token}
+
+        `
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/locales:
+    get:
+      tags:
+        - Locales
+      summary: Get all locales of a space
+      description: >-
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/locales?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/tags:
+    get:
+      tags:
+        - Content tags
+      summary: Get all tags
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags/tag-collection
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: master
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/tags/{tag_id}:
+    get:
+      tags:
+        - Content tags
+      summary: Get a single tag
+      description: >-
+        https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags/tag
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: tag_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/sync:
+    get:
+      tags:
+        - Synchronization
+      summary: The Sync API allows you to keep a local copy of all content in a space up-to-date via delta updates, or only the content that has changed.
+      description: >-
+        Synchronization responses contain either a **nextPageUrl** or
+        **nextSyncUrl** attribute. If there is more content for the current
+        sync, **nextPageUrl** will contain an URL with a **sync_token** which
+        will retrieve the next page. This continues until you have retrieved all
+        content.
+
+
+        At this point, the response will contain a **nextSyncUrl** which you use
+        to make requests in the future and retrieve delta updates between the
+        current content on Contentful and what you retrieved with your last sync
+        request. Upon completion, you will receive a new **nextSyncUrl** which
+        you can again use for future updates.
+
+
+        If a client loses the **nextSyncUrl**, the client should delete its
+        local content and perform an initial synchronization again.
+
+
+        NOTE: The initial query with **sync_token** will persist across
+        subsequent syncs.
+
+
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/pagination-and-subsequent-syncs](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/pagination-and-subsequent-syncs)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/sync?access_token={access_token}&sync_token={sync_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: sync_token
+          in: query
+          schema:
+            type: string
+          description: >-
+            An opaque token which is used to identify your previous sync.
+            Examplew7Ese3kdwpMbMhhgw7QAUsKiw6bCi09CwpFYwpwywqVYw6DDh8OawrTDpWvCgMOhw6jCuAhxWX_CocOPwowhcsOzeEJSbcOvwrfDlCjDr8O1YzLDvi9FOTXCmsOqT8OFcHPDuFDCqyMMTsKNw7rDmsOqKcOnw7FCwpIfNMOcFMOxFnHCoCzDpAjCucOdwpwfw4YTK8Kpw6zCtDrChVQlNsO2ZybDnw
+          example: SYNC_TOKEN
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+        - name: initial
+          in: path
+          schema:
+            type: boolean
+          required: true
+          description: Initial synchronization
+          example: initial=true
+        - name: type
+          in: path
+          schema:
+            type: string
+          required: true
+          description: Synchronization of entries of specific content type
+          example: initial=true&type=Entry&content_type=2PqfXUJwE8qSYKuM0U6w8M&limit=42
+        - name: sync_token
+          in: path
+          schema:
+            type: string
+          required: true
+          description: Pagination and subsequent syncs
+          example: sync_token=w7Ese3kdwpMbMhhgw7QA...
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Maximum number of results
+          example: limit=100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/entries/:
+    get:
+      tags:
+        - Search
+      summary: Search in entries
+      description: >-
+        The include array is not applicable while retrieving a single entry.
+
+
+        [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entry)
+
+
+        `
+
+        curl --include --request GET
+        https://cdn.contentful.com/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}?access_token={access_token}
+
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+        - name: include
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Number of levels to include (defaults to 1)
+        - name: content_type
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Alphanumeric id of the content type to retrieve.
+          example: 2PqfXUJwE8qSYKuM0U6w8M
+        - name: locale
+          in: query
+          schema:
+            type: string
+          description: The locale to use. Exampleen-US
+          example: LOCALE
+        - name: select
+          in: query
+          schema:
+            type: string
+          description: select operator allows you to choose what fields to return from an entity.
+          example: sys.id
+        - name: key
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Part of the query parameter to search on
+          examples:
+            all:
+              value: metadata.tags.sys.id[all]
+              summary: Querying content based on a set of tags
+            in:
+              value: metadata.tags.sys.id[in]
+              summary: You can filter a field by multiple values with the [in] operator
+            nin:
+              value: metadata.tags.sys.id[nin]
+              summary: You can filter a field by multiple (exclude) values with the [nin] operator
+            exist:
+              value: metadata.tags[exists]
+              summary: You can check for the presence of a field using the [exists] operator
+            lt:
+              value: metadata.revision[lt]
+              summary: Range operator - Less than
+            lte:
+              value: metadata.revision[lte]
+              summary: Range operator - Less than or equal
+            gt:
+              value: metadata.revision[gt]
+              summary: Range operator - Greater than
+            gte:
+              value: metadata.revision[gte]
+              summary: Range operator - Greater than or equal
+        - name: query
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Full-text search.
+          example: design,some text here
+        - name: fields.{field_id}[match]
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Full-text search on a field.
+          example: fields.website[match]=content
+        - name: fields.center[near]
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Location proximity search.
+          example: fields.center[near]=38,-122
+        - name: fields.center[within]
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Locations in a bounding object, rectangle or circle.
+          examples:
+            rectangle:
+              value: field.center[within]=latitude1,longitude1,latitude2,longitude2
+              summary: Using a bounding rectangle
+            circle:
+              value: field.center[within]=latitute,longitude,radius
+              summary: Using a bounding circle
+        - name: links_to_entry
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Links to entry ID.
+          example: links_to_entry=4LgMotpNF6W20YKmuemW0a
+        - name: links_to_asset
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Links to asset ID.
+          example: links_to_asset=4LgMotpNF6W20YKmuemW0a
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Order by of results.
+          examples:
+            asc:
+              value: order=sys.createdAt
+              summary: Asc
+            desc:
+              value: order=-sys.createdAt
+              summary: Desc
+            multiple:
+              value: order=sys.createdAt,sys.publishedAt
+              summary: Multiple parameters
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Maximum number of results
+          example: limit=100
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Offset
+          example: skip=100
+        - name: locale
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Retrieve localized entries
+          examples:
+            locale:
+              value: locale=EN-us
+              summary: single locale
+            all_locales:
+              value: locale=*
+              summary: all locales
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /spaces/{space_id}/environments/{environment_id}/assets/:
+    get:
+      tags:
+        - Search
+      summary: Search in assets
+      description: >-
+       You can filter assets by their MIME type group by using the mimetype_group query parameter. Valid groups are attachment, plaintext, image, audio, video, richtext, presentation, spreadsheet, pdfdocument, archive, code and markup. By default, the API will return all assets.
+        `
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: space_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space to use
+          example: 5nvk6q4s3ttw
+        - name: environment_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: space environment to use
+          example: master
+        
+        - name: mimetype_group
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filtering assets by MIME type
+          examples:
+            attachment:
+              value: mimetype_group=attachment
+              summary: attachment
+            plaintext:
+              value: mimetype_group=plaintext
+              summary: plaintext
+            image:
+              value: mimetype_group=image
+              summary: image
+            audio:
+              value: mimetype_group=audio
+              summary: audio
+            video:
+              value: mimetype_group=video
+              summary: video
+            richtext:
+              value: mimetype_group=richtext
+              summary: richtext
+            presentation:
+              value: mimetype_group=presentation
+              summary: presentation
+            spreadsheet:
+              value: mimetype_group=spreadsheet
+              summary: spreadsheet
+            pdfdocument:
+              value: mimetype_group=pdfdocument
+              summary: pdfdocument
+            archive:
+              value: mimetype_group=archive
+              summary: archive
+            code:
+              value: mimetype_group=code
+              summary: code
+            markup:
+              value: mimetype_group=markup
+              summary: markup
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
