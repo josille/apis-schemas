@@ -238,11 +238,6 @@ paths:
           in: header
           schema:
             type: string
-          example: application/json
-        - name: Content-Type
-          in: header
-          schema:
-            type: string
           example: application/vnd.contentful.management.v1+json
         - name: environment_id
           in: path
@@ -390,12 +385,6 @@ paths:
             type: string
           description: Alphanumeric id of the content type to retrieve.
           example: 2PqfXUJwE8qSYKuM0U6w8M
-        - name: locale
-          in: query
-          schema:
-            type: string
-          description: The locale to use. Exampleen-US
-          example: LOCALE
         - name: select
           in: query
           schema:
