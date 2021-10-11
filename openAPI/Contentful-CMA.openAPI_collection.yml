@@ -1314,11 +1314,6 @@ paths:
           schema:
             type: string
           example: TAG_VALUE
-        - name: space_id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful response
@@ -3373,11 +3368,6 @@ paths:
           schema:
             type: string
           required: true
-        - name: api_key_id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful response
@@ -4874,11 +4864,6 @@ paths:
       summary: Delete an app bundle
       description: >-
         https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-bundles/app-bundles-collection/create-a-new-app-bundle/console/curl
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
       security:
         - bearerAuth: []
       parameters:
