@@ -484,26 +484,19 @@ paths:
           required: true
           description: space to use
         - name: initial
-          in: path
+          in: query
           schema:
             type: boolean
           required: true
           description: Initial synchronization
           example: initial=true
         - name: type
-          in: path
+          in: query
           schema:
             type: string
           required: true
           description: Synchronization of entries of specific content type
           example: initial=true&type=Entry&content_type=2PqfXUJwE8qSYKuM0U6w8M&limit=42
-        - name: sync_token
-          in: path
-          schema:
-            type: string
-          required: true
-          description: Pagination and subsequent syncs
-          example: sync_token=w7Ese3kdwpMbMhhgw7QA...
         - name: limit
           in: query
           required: false
@@ -564,12 +557,6 @@ paths:
             type: string
           description: Alphanumeric id of the content type to retrieve.
           example: 2PqfXUJwE8qSYKuM0U6w8M
-        - name: locale
-          in: query
-          schema:
-            type: string
-          description: The locale to use. Exampleen-US
-          example: LOCALE
         - name: select
           in: query
           schema:
