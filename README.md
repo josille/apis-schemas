@@ -14,6 +14,13 @@ JSON endpoints definition and environment schema.
 
 ## openAPI
 please use 'https://editor.swagger.io/' to edit online
+
+to generate documentation please use: 
+https://openapi-generator.tech/docs/usage
+
+```
+$ openapi-generator generate -i Contentful-CDA.openapi_collection.yml -g dynamic-html -o ctf_CDA_html/
+```
 ## postman
 
 ## insomnia
