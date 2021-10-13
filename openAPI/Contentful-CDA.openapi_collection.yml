@@ -38,6 +38,7 @@ paths:
       tags:
         - Spaces
       summary: Get a space
+      operationId: Get a space
       description: >-
         All content and assets in Contentful belong to a space. You will
         generally have at least one space for a project, but use separate spaces
@@ -73,6 +74,7 @@ paths:
       tags:
         - Content Types
       summary: Get the content model of a space
+      operationId: Get the content model of a space
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-model)
 
@@ -109,6 +111,7 @@ paths:
       tags:
         - Content Types
       summary: Get a single content type
+      operationId: Get a single content type
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type)
 
@@ -152,6 +155,7 @@ paths:
       tags:
         - Entries
       summary: Get all entries of a Space
+      operationId: Get all entries of a Space
       description: >-
         https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/entries/entries-collection
       security:
@@ -178,6 +182,7 @@ paths:
       tags:
         - Entries
       summary: Get a single entry
+      operationId: Get a single entry
       description: >-
         The include array is not applicable while retrieving a single entry.
 
@@ -225,6 +230,7 @@ paths:
       tags:
         - Assets
       summary: Get all assets of a space
+      operationId: Get all assets of a space
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection)
 
@@ -261,6 +267,7 @@ paths:
       tags:
         - Assets
       summary: Get a single asset
+      operationId: Get a single asset
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset)
 
@@ -304,6 +311,7 @@ paths:
       tags:
         - Asset keys
       summary: Create an asset key
+      operationId: Create an asset key
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/asset)
 
@@ -315,7 +323,13 @@ paths:
 
         `
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                parameters:
+                  "expiresAt": 1613590465
       security:
         - bearerAuth: []
       parameters:
@@ -342,6 +356,7 @@ paths:
       tags:
         - Locales
       summary: Get all locales of a space
+      operationId: Get all locales of a space
       description: >-
         [https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/locales/locale-collection)
 
@@ -378,6 +393,7 @@ paths:
       tags:
         - Content tags
       summary: Get all tags
+      operationId: Get all tags
       description: >-
         https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags/tag-collection
       security:
@@ -404,6 +420,7 @@ paths:
       tags:
         - Content tags
       summary: Get a single tag
+      operationId: Get a single tag
       description: >-
         https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags/tag
       security:
@@ -434,6 +451,7 @@ paths:
       tags:
         - Synchronization
       summary: The Sync API allows you to keep a local copy of all content in a space up-to-date via delta updates, or only the content that has changed.
+      operationId: Syncing specific content
       description: >-
         Synchronization responses contain either a **nextPageUrl** or
         **nextSyncUrl** attribute. If there is more content for the current
@@ -514,6 +532,7 @@ paths:
       tags:
         - Search
       summary: Search in entries
+      operationId: Search in entries
       description: >-
         The include array is not applicable while retrieving a single entry.
 
@@ -695,6 +714,7 @@ paths:
       tags:
         - Search
       summary: Search in assets
+      operationId: Search in assets
       description: >-
        You can filter assets by their MIME type group by using the mimetype_group query parameter. Valid groups are attachment, plaintext, image, audio, video, richtext, presentation, spreadsheet, pdfdocument, archive, code and markup. By default, the API will return all assets.
         `
