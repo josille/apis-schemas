@@ -1,5 +1,5 @@
-# Contentful API's Postman schemas
-Postman JSON schema for contentful REST and GraphQL APIs.
+# Contentful API's schemas
+openAPI, Postman and Insomnia JSON schema for contentful REST and GraphQL APIs.
 
 * Content Delivery API (CDA) used to retrieve published content to display in your application
 * Content Management API (CMA) used to create or update your content
