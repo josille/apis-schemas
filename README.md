@@ -37,7 +37,7 @@ $ openapi-generator generate -i Contentful-CDA.openapi_collection.yml -g dynamic
 * `cma_access_token` - Content management API (CDA)
 * `personal_access_token` - Personal access token
 
-## Refernce and links
+## References and links
 
 [Personal access tokens](https://www.contentful.com/help/personal-access-tokens/)
 
