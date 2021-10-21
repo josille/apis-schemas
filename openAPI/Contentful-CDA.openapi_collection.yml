@@ -224,7 +224,179 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json: 
+              example:
+                metadata:
+                  tags: []
+                sys:
+                  space:
+                    sys:
+                      type: Link
+                      linkType: Space
+                      id: 5nvk6q4s3ttw
+                  id: 2coD0qbA6BPWoNFo75i87N
+                  type: Entry
+                  createdAt: '2021-10-21T07:32:43.986Z'
+                  updatedAt: '2021-10-21T07:32:43.986Z'
+                  environment:
+                    sys:
+                      id: master
+                      type: Link
+                      linkType: Environment
+                  revision: 1
+                  contentType:
+                    sys:
+                      type: Link
+                      linkType: ContentType
+                      id: allTypesTest
+                  locale: en
+                fields:
+                  textFieldShort: HERE a short field
+                  textFieldLong: HERE a long field
+                  textFieldList: value one
+                  numberInteger: 42
+                  dateTimeField: 2021-10-21T09:22+02:00
+                  locationField:
+                    lon: 13.08748
+                    lat: 52.77932
+                  mediaFieldSingle:
+                    sys:
+                      type: Link
+                      linkType: Asset
+                      id: 5WKt2xGG9IksoeaIjcCxjr
+                  mediaFieldMany:
+                    sys:
+                      type: Link
+                      linkType: Asset
+                      id: 5WKt2xGG9IksoeaIjcCxjr
+                  booleanField: true
+                  jsonField:
+                    hola: mundo
+                  referenceFieldOne:
+                    sys:
+                      type: Link
+                      linkType: Entry
+                      id: 1nKfhL9efcaZjGhxbMxpDV
+                  referenceFieldMany:
+                    - sys:
+                        type: Link
+                        linkType: Entry
+                        id: 7tfEnBqQNfodeEyFEiHGn3
+                  richtextField:
+                    nodeType: document
+                    data: {}
+                    content:
+                      - nodeType: paragraph
+                        content:
+                          - nodeType: text
+                            value: Some Richtext here.
+                            marks: []
+                            data: {}
+                        data: {}
+                      - nodeType: heading-1
+                        content:
+                          - nodeType: text
+                            value: Header
+                            marks: []
+                            data: {}
+                        data: {}
+                      - nodeType: paragraph
+                        content:
+                          - nodeType: text
+                            value: bold
+                            marks:
+                              - type: bold
+                            data: {}
+                        data: {}
+                      - nodeType: paragraph
+                        content:
+                          - nodeType: text
+                            value: italics
+                            marks:
+                              - type: italic
+                            data: {}
+                        data: {}
+                      - nodeType: ordered-list
+                        content:
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: orderlist 1
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: orderlist 2
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: orderlist 3
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                        data: {}
+                      - nodeType: unordered-list
+                        content:
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: unorderlist 1
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: unorderlist 2
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                          - nodeType: list-item
+                            content:
+                              - nodeType: paragraph
+                                content:
+                                  - nodeType: text
+                                    value: unorderlist 3
+                                    marks: []
+                                    data: {}
+                                data: {}
+                            data: {}
+                        data: {}
+                      - nodeType: paragraph
+                        content:
+                          - nodeType: text
+                            value: ''
+                            marks: []
+                            data: {}
+                        data: {}
+                      - nodeType: paragraph
+                        content:
+                          - nodeType: text
+                            value: ''
+                            marks: []
+                            data: {}
+                        data: {}
+                
   /spaces/{space_id}/environments/{environment_id}/assets:
     get:
       tags:
