@@ -12,6 +12,8 @@ openAPI, Postman and Insomnia JSON schema for contentful REST and GraphQL APIs.
 
 JSON endpoints definition and environment schema.
 
+![screenshot](screenshot.png)
+
 ## openAPI
 please use 'https://editor.swagger.io/' to edit online
 
