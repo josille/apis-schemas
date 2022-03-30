@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "e44a465f-90b0-4b12-b3d4-0c38022e7104",
-		"name": "Contentful APIs v1.2",
+		"_postman_id": "b9626ef8-7453-4369-b968-47809eb58cb2",
+		"name": "Contentful APIs v1.4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -49,13 +49,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -106,13 +104,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -159,13 +155,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -212,13 +206,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -269,13 +261,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -326,13 +316,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -383,13 +371,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -440,13 +426,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -497,13 +481,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -554,13 +536,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -607,13 +587,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -664,13 +642,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -723,13 +699,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -782,13 +756,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -836,13 +808,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -890,13 +860,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -943,13 +911,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -996,13 +962,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1049,13 +1013,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1108,13 +1070,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1162,13 +1122,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1225,13 +1183,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1295,7 +1251,6 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										}
 									]
@@ -1341,13 +1296,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1389,19 +1342,16 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										},
 										{
 											"key": "content_type_id",
 											"value": "imageWithFocalPoint",
-											"type": "string",
 											"description": "imageWithFocalPoint"
 										}
 									]
@@ -1468,13 +1418,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1516,19 +1464,16 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										},
 										{
 											"key": "entry_id",
 											"value": "6Lng3TPchCEw9cGvDiYDHs",
-											"type": "string",
 											"description": "6Lng3TPchCEw9cGvDiYDHs"
 										}
 									]
@@ -1642,19 +1587,16 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										},
 										{
 											"key": "asset_id",
 											"value": "6Od9v3wzLOysiMum0Wkmme",
-											"type": "string",
 											"description": "6Od9v3wzLOysiMum0Wkmme"
 										}
 									]
@@ -1695,13 +1637,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1769,13 +1709,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1842,13 +1780,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1921,13 +1857,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -1982,13 +1916,11 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										}
 									]
@@ -2060,24 +1992,20 @@
 											"description": "The locale to use. Exampleen-US"
 										}
 									],
-									
 									"variable": [
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "space environment to use"
 										},
 										{
 											"key": "entry_id",
 											"value": "qcYpt0du7nO3Bl4HP4uBI",
-											"type": "string",
 											"description": "qcYpt0du7nO3Bl4HP4uBI"
 										}
 									]
@@ -2137,7 +2065,6 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										}
 									]
@@ -2192,7 +2119,6 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										}
 									]
@@ -2251,7 +2177,6 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										}
 									]
@@ -2297,7 +2222,6 @@
 										{
 											"key": "space_id",
 											"value": "",
-											"type": "string",
 											"description": "space to use"
 										}
 									]
@@ -2379,8 +2303,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "master",
-											"type": "string"
+											"value": "master"
 										}
 									]
 								},
@@ -2399,7 +2322,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{cma_access_token}}",
+											"value": "{{cda_access_token}}",
 											"type": "string"
 										}
 									]
@@ -2416,10 +2339,10 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/tags/:tag_id",
+									"raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/tags/:tag_id",
 									"protocol": "https",
 									"host": [
-										"{{cma_url}}"
+										"{{cda_url}}"
 									],
 									"path": [
 										"spaces",
@@ -2436,8 +2359,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "tag_id",
@@ -2460,7 +2382,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{cma_access_token}}",
+											"value": "{{cda_access_token}}",
 											"type": "string"
 										}
 									]
@@ -2477,10 +2399,10 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/entries?TAG_KEY=TAG_VALUE",
+									"raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags.sys.id[all]=TAG_VALUE",
 									"protocol": "https",
 									"host": [
-										"{{cma_url}}"
+										"{{cda_url}}"
 									],
 									"path": [
 										"spaces",
@@ -2491,8 +2413,9 @@
 									],
 									"query": [
 										{
-											"key": "TAG_KEY",
-											"value": "TAG_VALUE"
+											"key": "metadata.tags.sys.id[all]",
+											"value": "TAG_VALUE",
+											"description": "The query parameter starts with metadata.tags.sys.id with operator [all]"
 										}
 									],
 									"variable": [
@@ -2502,8 +2425,131 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
+							},
+							"response": []
+						},
+						{
+							"name": "Querying content based on one or more tags",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
 											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags.sys.id[in]=TAG_VALUE",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "metadata.tags.sys.id[in]",
+											"value": "TAG_VALUE",
+											"description": "The query parameter starts with metadata.tags.sys.id with operator [in]."
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
+							},
+							"response": []
+						},
+						{
+							"name": "Querying content based on the tag presence",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cda_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags[exists]=TAG_VALUE",
+									"protocol": "https",
+									"host": [
+										"{{cda_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "metadata.tags[exists]",
+											"value": "TAG_VALUE",
+											"description": "The query parameter starts with metadata.tags.sys.id with operator [in]."
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -2592,61 +2638,11 @@
 										{
 											"key": "space_id",
 											"value": "XXXX",
-											"type": "string",
 											"description": "XXXX"
 										}
 									]
 								},
 								"description": "[https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)\n\n`\ncurl --include --request GET --header 'Authorization: Bearer <cma_token>' https://api.contentful.com/spaces/{space_id}\n`"
-							},
-							"response": []
-						},
-						{
-							"name": "Create Space",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cma_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/vnd.contentful.management.v1+json"
-									},
-									{
-										"key": "X-Contentful-Organization",
-										"value": "ORG_ID",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"Example Space\",\n  \"defaultLocale\": \"en\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{cma_url}}/spaces",
-									"protocol": "https",
-									"host": [
-										"{{cma_url}}"
-									],
-									"path": [
-										"spaces"
-									]
-								},
-								"description": "Create a new space, specifying attributes in the request body.\n\n[https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/spaces/space)\n\n`\ncurl --include --request POST --header 'Authorization: Bearer <cma_token>' --header 'Content-Type: application/vnd.contentful.management.v1+json' --header 'X-Contentful-Organization: 1PLOOEmTI2S1NYald2TemO' --data-binary '{\n       \"name\": \"Example Space\",\n       \"defaultLocale\": \"en\"\n     }' https://api.contentful.com/spaces\n`"
 							},
 							"response": []
 						},
@@ -2704,7 +2700,6 @@
 										{
 											"key": "space_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -2762,7 +2757,6 @@
 										{
 											"key": "space_id",
 											"value": "XXXX",
-											"type": "string",
 											"description": "XXXX"
 										}
 									]
@@ -2805,8 +2799,7 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -2853,8 +2846,7 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -2907,13 +2899,11 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "environment_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -2970,13 +2960,11 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "environment_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3030,13 +3018,11 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3079,8 +3065,7 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -3118,13 +3103,11 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "environment_alias_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3183,7 +3166,6 @@
 										{
 											"key": "environment_alias_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3242,7 +3224,6 @@
 										{
 											"key": "environment_alias_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3346,8 +3327,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -3399,8 +3379,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -3465,13 +3444,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3516,13 +3493,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3567,13 +3542,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3631,13 +3604,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3694,8 +3665,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -3755,13 +3725,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3822,8 +3790,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -3880,13 +3847,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -3953,13 +3918,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "content_type_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -4020,8 +3983,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4079,8 +4041,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4145,13 +4106,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "extension_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -4208,13 +4167,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "extension_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -4268,13 +4225,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "extension_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -4465,13 +4420,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
 											"value": "XXX",
-											"type": "string",
 											"description": "XXX"
 										}
 									]
@@ -4536,7 +4489,6 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										}
 									]
@@ -4608,13 +4560,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4679,13 +4629,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4746,13 +4694,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4813,13 +4759,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4880,13 +4824,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -4947,13 +4889,11 @@
 										{
 											"key": "environment_id",
 											"value": "master",
-											"type": "string",
 											"description": "master"
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5049,8 +4989,7 @@
 										},
 										{
 											"key": "upload_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5136,8 +5075,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5181,8 +5119,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5240,8 +5177,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5411,18 +5347,15 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "locale_code",
 											"value": "en-us",
-											"type": "string",
 											"description": "en-us"
 										}
 									]
@@ -5474,13 +5407,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5531,13 +5462,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5588,13 +5517,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5645,13 +5572,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5695,13 +5620,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5769,8 +5692,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5818,8 +5740,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -5877,8 +5798,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "master",
-											"type": "string"
+											"value": "master"
 										}
 									]
 								},
@@ -5940,13 +5860,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "locale_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6010,13 +5928,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "locale_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6066,13 +5982,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "locale_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6120,8 +6034,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6180,8 +6093,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "tag_id",
@@ -6249,8 +6161,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "tag_id",
@@ -6318,8 +6229,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
@@ -6392,8 +6302,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
@@ -6441,8 +6350,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "tag_id",
@@ -6490,8 +6398,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "query_parameter",
@@ -6545,8 +6452,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6596,8 +6502,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "tag_id",
@@ -6882,8 +6787,7 @@
 										},
 										{
 											"key": "webhook_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6942,8 +6846,7 @@
 									"variable": [
 										{
 											"key": "webhook_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -6985,8 +6888,7 @@
 										},
 										{
 											"key": "webhook_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7143,8 +7045,7 @@
 										},
 										{
 											"key": "role_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7192,8 +7093,7 @@
 										},
 										{
 											"key": "role_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7235,8 +7135,7 @@
 										},
 										{
 											"key": "role_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7286,8 +7185,7 @@
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7332,8 +7230,7 @@
 										},
 										{
 											"key": "content_type_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7379,13 +7276,11 @@
 										},
 										{
 											"key": "content_type_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "snapshot_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7431,13 +7326,11 @@
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "snapshot_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7594,8 +7487,7 @@
 										},
 										{
 											"key": "space_membership_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7637,8 +7529,7 @@
 										},
 										{
 											"key": "space_membership_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7680,8 +7571,7 @@
 										},
 										{
 											"key": "space_membership_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7746,8 +7636,7 @@
 										},
 										{
 											"key": "api_key_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7846,8 +7735,7 @@
 										},
 										{
 											"key": "api_key_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -7952,8 +7840,7 @@
 										},
 										{
 											"key": "api_key_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8032,8 +7919,7 @@
 										},
 										{
 											"key": "preview_api_key_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8148,8 +8034,7 @@
 									"variable": [
 										{
 											"key": "token_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8201,8 +8086,7 @@
 									"variable": [
 										{
 											"key": "token_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8293,8 +8177,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
@@ -8353,13 +8236,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8411,18 +8292,15 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "task_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8479,18 +8357,15 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "task_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -8551,18 +8426,15 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "task_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9646,8 +9518,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9699,8 +9570,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9742,8 +9612,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9804,8 +9673,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9858,8 +9726,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9902,8 +9769,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -9964,8 +9830,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10018,8 +9883,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10062,8 +9926,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10121,8 +9984,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10136,7 +9998,7 @@
 					"name": "App keys",
 					"item": [
 						{
-							"name": "App keys",
+							"name": "Get all app keys",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -10183,8 +10045,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10193,7 +10054,7 @@
 							"response": []
 						},
 						{
-							"name": "App keys",
+							"name": "Create a new app key",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10237,8 +10098,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10247,7 +10107,7 @@
 							"response": []
 						},
 						{
-							"name": "New App keys",
+							"name": "Generate a new key pair",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10291,17 +10151,68 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Generate a new key pair",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/vnd.contentful.management.v1+json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"generate\": true\n}"
+										},
+										"url": {
+											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/keys",
+											"protocol": "https",
+											"host": [
+												"{{cma_url}}"
+											],
+											"path": [
+												"organizations",
+												":organization_id",
+												"app_definitions",
+												":app_definition_id",
+												"keys"
+											],
+											"variable": [
+												{
+													"key": "organization_id",
+													"value": ""
+												},
+												{
+													"key": "app_definition_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [
+										{}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppKey\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"lastUsedAt\": \"2020-03-30T13:28:37.324Z\",\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"jwk\": {\n    \"alg\": \"RS256\",\n    \"kty\": \"RSA\",\n    \"use\": \"sig\",\n    \"x5c\": [\n      \"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMII....\"\n    ],\n    \"kid\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"x5t\": \"fpFtDCM7r0I-PyIGITGO...\"\n  },\n  \"generated\": {\n    \"privateKey\": \"-----BEGIN RSA PRIVATE KEY-----...\"\n  }\n}"
+								}
+							]
 						},
 						{
-							"name": "App key",
+							"name": "Get one app key",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10336,8 +10247,7 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "key_kid",
@@ -10347,10 +10257,57 @@
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Get one app key",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/keys/:key_kid",
+											"protocol": "https",
+											"host": [
+												"{{cma_url}}"
+											],
+											"path": [
+												"organizations",
+												":organization_id",
+												"app_definitions",
+												":app_definition_id",
+												"keys",
+												":key_kid"
+											],
+											"variable": [
+												{
+													"key": "organization_id",
+													"value": ""
+												},
+												{
+													"key": "app_definition_id",
+													"value": ""
+												},
+												{
+													"key": "key_kid",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [
+										{}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppKey\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"lastUsedAt\": \"2020-03-30T13:28:37.324Z\",\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"jwk\": {\n    \"alg\": \"RS256\",\n    \"kty\": \"RSA\",\n    \"use\": \"sig\",\n    \"x5c\": [\n      \"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMII....\"\n    ],\n    \"kid\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"x5t\": \"fpFtDCM7r0I-PyIGITGO...\"\n  }\n}"
+								}
+							]
 						},
 						{
-							"name": "App key",
+							"name": "Delete an app key",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10385,11 +10342,258 @@
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "key_kid",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "App access grants",
+					"item": [
+						{
+							"name": "Create One Access Grant",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/vnd.contentful.management.v1+json"
+									},
+									{
+										"key": "X-Contentful-Marketplace",
+										"value": "i-accept-end-user-license-agreement,i-accept-marketplace-terms-of-service,i-accept-privacy-policy",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"granteeId\": \"all\",\n  \"granteeType\": \"all\"\n}"
+								},
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										":organization_id",
+										"app_definitions",
+										":app_definition_id",
+										"access_grants"
+									],
+									"variable": [
+										{
+											"key": "organization_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
+							},
+							"response": [
+								{
+									"name": "Create One Access Grant",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/vnd.contentful.management.v1+json"
+											},
+											{
+												"key": "X-Contentful-Marketplace",
+												"value": "i-accept-end-user-license-agreement,i-accept-marketplace-terms-of-service,i-accept-privacy-policy",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"granteeId\": \"all\",\n  \"granteeType\": \"all\"\n}"
+										},
+										"url": {
+											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
+											"protocol": "https",
+											"host": [
+												"{{cma_url}}"
+											],
+											"path": [
+												"organizations",
+												":organization_id",
+												"app_definitions",
+												":app_definition_id",
+												"access_grants"
+											],
+											"variable": [
+												{
+													"key": "organization_id",
+													"value": ""
+												},
+												{
+													"key": "app_definition_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [
+										{}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppAccessGrant\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"granteeId\": \"all\",\n  \"granteeType\": \"all\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Query Access Grants of a App Definition",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										":organization_id",
+										"app_definitions",
+										":app_definition_id",
+										"access_grants"
+									],
+									"variable": [
+										{
+											"key": "organization_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
+							},
+							"response": [
+								{
+									"name": "Query Access Grants of a App Definition",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
+											"protocol": "https",
+											"host": [
+												"{{cma_url}}"
+											],
+											"path": [
+												"organizations",
+												":organization_id",
+												"app_definitions",
+												":app_definition_id",
+												"access_grants"
+											],
+											"variable": [
+												{
+													"key": "organization_id",
+													"value": ""
+												},
+												{
+													"key": "app_definition_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [
+										{}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 1,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": [\n    {\n      \"sys\": {\n        \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n        \"type\": \"AppAccessGrant\",\n        \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n        \"createdBy\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"User\",\n            \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n          }\n        },\n        \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n        \"updatedBy\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"User\",\n            \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n          }\n        },\n        \"organization\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"Organization\",\n            \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n          }\n        },\n        \"appDefinition\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"AppDefinition\",\n            \"id\": \"<app_definition_id>\"\n          }\n        }\n      },\n      \"granteeId\": \"all\",\n      \"granteeType\": \"all\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Access Grant",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cma_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
+									"protocol": "https",
+									"host": [
+										"{{cma_url}}"
+									],
+									"path": [
+										"organizations",
+										":organization_id",
+										"app_definitions",
+										":app_definition_id",
+										"access_grants"
+									],
+									"variable": [
+										{
+											"key": "organization_id",
+											"value": ""
+										},
+										{
+											"key": "app_definition_id",
 											"value": ""
 										}
 									]
@@ -10438,8 +10642,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10448,7 +10651,7 @@
 							"response": []
 						},
 						{
-							"name": "App installation",
+							"name": "Get one app installation",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10483,13 +10686,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10498,7 +10699,7 @@
 							"response": []
 						},
 						{
-							"name": "App installation",
+							"name": "Install or update an app",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10543,13 +10744,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10558,7 +10757,7 @@
 							"response": []
 						},
 						{
-							"name": "App installation",
+							"name": "Uninstall an app",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10593,13 +10792,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10613,7 +10810,7 @@
 					"name": "App access token",
 					"item": [
 						{
-							"name": "App access token",
+							"name": "Issue a token for an app installation in a space environment",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -10649,13 +10846,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "app_definition_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -10935,7 +11130,6 @@
 										{
 											"key": "content_type_id",
 											"value": "imageWithFocalPoint",
-											"type": "string",
 											"description": "imageWithFocalPoint"
 										}
 									]
@@ -11032,8 +11226,7 @@
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11129,8 +11322,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11361,7 +11553,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{cma_access_token}}",
+											"value": "{{cpa_access_token}}",
 											"type": "string"
 										}
 									]
@@ -11378,7 +11570,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?TAG_KEY=TAG_VALUE",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags.sys.id[all]=TAG_VALUE",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
@@ -11392,7 +11584,7 @@
 									],
 									"query": [
 										{
-											"key": "TAG_KEY",
+											"key": "metadata.tags.sys.id[all]",
 											"value": "TAG_VALUE"
 										}
 									],
@@ -11403,8 +11595,129 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
+							},
+							"response": []
+						},
+						{
+							"name": "Querying content based on one or more tags",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
 											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags.sys.id[in]=TAG_VALUE",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "metadata.tags.sys.id[in]",
+											"value": "TAG_VALUE"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/ui-extensions/extension"
+							},
+							"response": []
+						},
+						{
+							"name": "Querying content based on the tag presence",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cpa_access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"extension\": {\n    \"src\": \"https://example.com/my\",\n    \"name\": \"My awesome extension\",\n    \"fieldTypes\": [\n      {\n        \"type\": \"Symbol\"\n      },\n      {\n        \"type\": \"Text\"\n      }\n    ],\n    \"sidebar\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?metadata.tags[exists]=TAG_VALUE",
+									"protocol": "https",
+									"host": [
+										"{{cpa_url}}"
+									],
+									"path": [
+										"spaces",
+										":space_id",
+										"environments",
+										":environment_id",
+										"entries"
+									],
+									"query": [
+										{
+											"key": "metadata.tags[exists]",
+											"value": "TAG_VALUE"
+										}
+									],
+									"variable": [
+										{
+											"key": "space_id",
+											"value": ""
+										},
+										{
+											"key": "environment_id",
+											"value": ""
 										}
 									]
 								},
@@ -11458,8 +11771,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11516,8 +11828,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11572,8 +11883,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11626,8 +11936,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11680,8 +11989,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11730,8 +12038,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11776,8 +12083,7 @@
 									"variable": [
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11830,8 +12136,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11884,8 +12189,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11938,8 +12242,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -11992,8 +12295,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12046,8 +12348,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12116,8 +12417,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12166,8 +12466,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12220,8 +12519,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12274,8 +12572,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12328,8 +12625,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12378,8 +12674,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12428,8 +12723,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12478,8 +12772,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12528,8 +12821,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12582,8 +12874,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12632,8 +12923,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12690,8 +12980,7 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12747,13 +13036,11 @@
 										},
 										{
 											"key": "environment_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "entry_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12796,8 +13083,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -12805,8 +13091,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12850,8 +13135,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -12859,8 +13143,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12902,8 +13185,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -12911,8 +13193,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -12954,8 +13235,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -12963,8 +13243,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13011,8 +13290,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -13020,8 +13298,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13067,8 +13344,7 @@
 										},
 										{
 											"key": "asset_id:",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -13076,8 +13352,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13120,8 +13395,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -13129,8 +13403,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13169,8 +13442,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -13178,8 +13450,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13227,8 +13498,7 @@
 										},
 										{
 											"key": "asset_id",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id",
@@ -13236,8 +13506,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13290,8 +13559,7 @@
 										},
 										{
 											"key": "asset_id:",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "unique_id:",
@@ -13299,8 +13567,7 @@
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -13461,7 +13728,7 @@
 							]
 						}
 					},
-					"response": []				
+					"response": []
 				}
 			]
 		},
@@ -13509,7 +13776,6 @@
 												{
 													"key": "userID",
 													"value": "aaa",
-													"type": "string",
 													"description": "aaa"
 												}
 											]
@@ -13597,7 +13863,6 @@
 												{
 													"key": "userID",
 													"value": "aaa",
-													"type": "string",
 													"description": "aaa"
 												}
 											]
@@ -13645,7 +13910,6 @@
 												{
 													"key": "userID",
 													"value": "aaa",
-													"type": "string",
 													"description": "aaa"
 												}
 											]
@@ -13688,8 +13952,7 @@
 											"variable": [
 												{
 													"key": "userID",
-													"value": "",
-													"type": "string"
+													"value": ""
 												}
 											]
 										},
@@ -13840,7 +14103,6 @@
 												{
 													"key": "groupId",
 													"value": "aa",
-													"type": "string",
 													"description": "aa"
 												}
 											]
@@ -13893,7 +14155,6 @@
 												{
 													"key": "groupId",
 													"value": "aa",
-													"type": "string",
 													"description": "aa"
 												}
 											]
@@ -13937,7 +14198,6 @@
 												{
 													"key": "groupId",
 													"value": "aa",
-													"type": "string",
 													"description": "aa"
 												}
 											]
@@ -14121,22 +14381,22 @@
 										},
 										{
 											"key": "skip",
-											"value": null,
+											"value": "",
 											"description": "OPTIONAL - Specify requested page of result set"
 										},
 										{
 											"key": "limit",
-											"value": null,
+											"value": "",
 											"description": "OPTIONAL - Specify requested page of result set"
 										},
 										{
 											"key": "order",
-											"value": null,
+											"value": "",
 											"description": "OPTIONAL - Supported values: role, sys.createdAt, sys.lastActiveAt, sys.user.firstName, sys.user.lastName, sys.user.email"
 										},
 										{
 											"key": "include",
-											"value": null,
+											"value": "",
 											"description": "OPTIONAL - Specify linked resources to include in response. Supported values: sys.user, sys.createdBy, sys.updatedBy"
 										}
 									],
@@ -14191,8 +14451,7 @@
 										},
 										{
 											"key": "organizationMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14244,8 +14503,7 @@
 										},
 										{
 											"key": "organizationMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14297,8 +14555,7 @@
 										},
 										{
 											"key": "organizationMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14405,8 +14662,7 @@
 										},
 										{
 											"key": "invitationId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14517,8 +14773,7 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14617,8 +14872,7 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14670,8 +14924,7 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14733,8 +14986,7 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14841,13 +15093,11 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "teamMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14900,8 +15150,7 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -14955,13 +15204,11 @@
 										},
 										{
 											"key": "teamId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "teamMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15017,8 +15264,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15135,8 +15381,7 @@
 										},
 										{
 											"key": "spaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15187,13 +15432,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "spaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15240,8 +15483,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15289,13 +15531,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "spaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15342,8 +15582,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15399,8 +15638,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15501,13 +15739,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "teamSpaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15562,8 +15798,7 @@
 										},
 										{
 											"key": "teamSpaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15610,8 +15845,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15659,13 +15893,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "teamSpaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15713,13 +15945,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "teamSpaceMembershipId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15775,8 +16005,7 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
@@ -15827,13 +16056,11 @@
 									"variable": [
 										{
 											"key": "spaceId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										},
 										{
 											"key": "spaceMemberId",
-											"value": "",
-											"type": "string"
+											"value": ""
 										}
 									]
 								},
