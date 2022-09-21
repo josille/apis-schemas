@@ -13749,7 +13749,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -13775,8 +13775,8 @@
 											"variable": [
 												{
 													"key": "userID",
-													"value": "aaa",
-													"description": "aaa"
+													"value": "xxxx",
+													"description": "User ID"
 												}
 											]
 										},
@@ -13792,12 +13792,12 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
 										},
-										"method": "PUT",
+										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
@@ -13832,7 +13832,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -13850,20 +13850,20 @@
 											"raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
 										},
 										"url": {
-											"raw": "https://{{scim_api_url}}/Users/:userID",
+											"raw": "https://{{scim_api_url}}/Users/:UserID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
 												"Users",
-												":userID"
+												":UserID"
 											],
 											"variable": [
 												{
-													"key": "userID",
-													"value": "aaa",
-													"description": "aaa"
+													"key": "UserID",
+													"value": "xxx",
+													"description": "User ID"
 												}
 											]
 										},
@@ -13872,14 +13872,14 @@
 									"response": []
 								},
 								{
-									"name": "Update a single user",
+									"name": "Update a single user with PATCH",
 									"request": {
 										"auth": {
 											"type": "bearer",
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -13909,8 +13909,8 @@
 											"variable": [
 												{
 													"key": "userID",
-													"value": "aaa",
-													"description": "aaa"
+													"value": "xxx",
+													"description": "User ID"
 												}
 											]
 										},
@@ -13926,7 +13926,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -13952,7 +13952,8 @@
 											"variable": [
 												{
 													"key": "userID",
-													"value": ""
+													"value": "xxxx",
+													"description": "User ID"
 												}
 											]
 										},
@@ -13971,7 +13972,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{personal_access_token}}",
+											"value": "{{cma_access_token}}",
 											"type": "string"
 										}
 									]
@@ -14006,7 +14007,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{personal_access_token}}",
+											"value": "{{cma_access_token}}",
 											"type": "string"
 										}
 									]
@@ -14069,14 +14070,14 @@
 							"name": "Group",
 							"item": [
 								{
-									"name": "Group",
+									"name": "Get a single group",
 									"request": {
 										"auth": {
 											"type": "bearer",
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -14090,20 +14091,20 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
 												"Groups",
-												":groupId"
+												":groupID"
 											],
 											"variable": [
 												{
-													"key": "groupId",
-													"value": "aa",
-													"description": "aa"
+													"key": "groupID",
+													"value": "xxxx",
+													"description": "Group ID"
 												}
 											]
 										},
@@ -14112,14 +14113,14 @@
 									"response": []
 								},
 								{
-									"name": "Group",
+									"name": "Update a single group",
 									"request": {
 										"auth": {
 											"type": "bearer",
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -14142,20 +14143,20 @@
 											}
 										},
 										"url": {
-											"raw": "https://{{scim_api_url}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupIID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
 												"Groups",
-												":groupId"
+												":groupIID"
 											],
 											"variable": [
 												{
-													"key": "groupId",
-													"value": "aa",
-													"description": "aa"
+													"key": "groupIID",
+													"value": "xxxx",
+													"description": "Group ID"
 												}
 											]
 										},
@@ -14164,14 +14165,14 @@
 									"response": []
 								},
 								{
-									"name": "Group",
+									"name": "Delete a single group",
 									"request": {
 										"auth": {
 											"type": "bearer",
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -14185,20 +14186,20 @@
 											}
 										],
 										"url": {
-											"raw": "https://{{scim_api_url}}/Groups/:groupId",
+											"raw": "https://{{scim_api_url}}/Groups/:groupID",
 											"protocol": "https",
 											"host": [
 												"{{scim_api_url}}"
 											],
 											"path": [
 												"Groups",
-												":groupId"
+												":groupID"
 											],
 											"variable": [
 												{
-													"key": "groupId",
-													"value": "aa",
-													"description": "aa"
+													"key": "groupID",
+													"value": "xxxxx",
+													"description": "Group ID"
 												}
 											]
 										},
@@ -14207,14 +14208,14 @@
 									"response": []
 								},
 								{
-									"name": "Group",
+									"name": "Create a group",
 									"request": {
 										"auth": {
 											"type": "bearer",
 											"bearer": [
 												{
 													"key": "token",
-													"value": "{{personal_access_token}}",
+													"value": "{{cma_access_token}}",
 													"type": "string"
 												}
 											]
@@ -14261,7 +14262,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{personal_access_token}}",
+											"value": "{{cma_access_token}}",
 											"type": "string"
 										}
 									]
@@ -14296,7 +14297,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{personal_access_token}}",
+											"value": "{{cma_access_token}}",
 											"type": "string"
 										}
 									]
@@ -16366,6 +16367,19 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "sync api",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		}
