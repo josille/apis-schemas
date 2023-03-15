@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "b9626ef8-7453-4369-b968-47809eb58cb2",
 		"name": "Contentful APIs v1.4",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10678820"
 	},
 	"item": [
 		{
@@ -1250,7 +1251,7 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": "",
+											"value": "xxx",
 											"description": "space to use"
 										}
 									]
@@ -1691,6 +1692,15 @@
 								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expiresAt\": 1613590465\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/asset_keys/",
 									"protocol": "https",
@@ -3200,10 +3210,6 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environment_aliases/:environment_alias_id",
 									"protocol": "https",
@@ -3694,15 +3700,6 @@
 										"value": "application/vnd.contentful.management.v1+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    },\n    {\n      \"id\": \"body\",\n      \"name\": \"Body\",\n      \"required\": true,\n      \"localized\": true,\n      \"type\": \"Text\"\n    }\n  ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/content_types/:content_type_id/published",
 									"protocol": "https",
@@ -4195,15 +4192,6 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/extensions/:extension_id",
 									"protocol": "https",
@@ -4662,15 +4650,6 @@
 										"value": "6"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id/published",
 									"protocol": "https",
@@ -4727,15 +4706,6 @@
 										"value": "6"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id/archived",
 									"protocol": "https",
@@ -4792,15 +4762,6 @@
 										"value": "6"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id/archived",
 									"protocol": "https",
@@ -4857,15 +4818,6 @@
 										"value": "6"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/entries/:entry_id/published",
 									"protocol": "https",
@@ -4947,7 +4899,8 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										}
 									]
 								},
@@ -5027,7 +4980,8 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										}
 									]
 								},
@@ -5173,11 +5127,13 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "SPACE ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										}
 									]
 								},
@@ -5238,15 +5194,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "www",
+											"description": "AssestID"
 										}
 									]
 								},
@@ -5343,15 +5302,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "www",
+											"description": "Asset ID"
 										},
 										{
 											"key": "locale_code",
@@ -5403,15 +5365,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "ww",
+											"description": "Asset ID"
 										}
 									]
 								},
@@ -5458,15 +5423,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yy",
+											"description": "Environmen ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "www",
+											"description": "Asset ID"
 										}
 									]
 								},
@@ -5513,15 +5481,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "www",
+											"description": "Asset ID"
 										}
 									]
 								},
@@ -5568,15 +5539,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment iD"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "ww",
+											"description": "Asset ID"
 										}
 									]
 								},
@@ -5616,15 +5590,18 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yyy",
+											"description": "Environment ID"
 										},
 										{
 											"key": "asset_id",
-											"value": ""
+											"value": "www",
+											"description": "Assset ID"
 										}
 									]
 								},
@@ -5688,11 +5665,13 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
-											"value": ""
+											"value": "yy",
+											"description": "Environemnt ID"
 										}
 									]
 								},
@@ -5794,7 +5773,8 @@
 									"variable": [
 										{
 											"key": "space_id",
-											"value": ""
+											"value": "xxx",
+											"description": "Space ID"
 										},
 										{
 											"key": "environment_id",
@@ -8684,6 +8664,15 @@
 								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"publish|unpublish\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "https://{{cma_url}}/spaces/:space_id/environment/:environment_id/releases/:releases_id/validate",
 									"protocol": "https",
@@ -8863,57 +8852,6 @@
 										},
 										{
 											"key": "release_action_id",
-											"value": ""
-										}
-									]
-								},
-								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/scheduled-actions/scheduled-action"
-							},
-							"response": []
-						},
-						{
-							"name": "Validated release",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{cma_access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/vnd.contentful.management.v1+json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{cma_url}}/spaces/:space_id/environment/:environment_id/releases/releases_id:/validated",
-									"protocol": "https",
-									"host": [
-										"{{cma_url}}"
-									],
-									"path": [
-										"spaces",
-										":space_id",
-										"environment",
-										":environment_id",
-										"releases",
-										"releases_id:",
-										"validated"
-									],
-									"variable": [
-										{
-											"key": "space_id",
-											"value": ""
-										},
-										{
-											"key": "environment_id",
 											"value": ""
 										}
 									]
@@ -10157,59 +10095,7 @@
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": [
-								{
-									"name": "Generate a new key pair",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"type": "text",
-												"value": "application/vnd.contentful.management.v1+json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"generate\": true\n}"
-										},
-										"url": {
-											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/keys",
-											"protocol": "https",
-											"host": [
-												"{{cma_url}}"
-											],
-											"path": [
-												"organizations",
-												":organization_id",
-												"app_definitions",
-												":app_definition_id",
-												"keys"
-											],
-											"variable": [
-												{
-													"key": "organization_id",
-													"value": ""
-												},
-												{
-													"key": "app_definition_id",
-													"value": ""
-												}
-											]
-										}
-									},
-									"_postman_previewlanguage": "",
-									"header": [
-										{}
-									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
-									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppKey\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"lastUsedAt\": \"2020-03-30T13:28:37.324Z\",\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"jwk\": {\n    \"alg\": \"RS256\",\n    \"kty\": \"RSA\",\n    \"use\": \"sig\",\n    \"x5c\": [\n      \"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMII....\"\n    ],\n    \"kid\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"x5t\": \"fpFtDCM7r0I-PyIGITGO...\"\n  },\n  \"generated\": {\n    \"privateKey\": \"-----BEGIN RSA PRIVATE KEY-----...\"\n  }\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Get one app key",
@@ -10257,54 +10143,7 @@
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": [
-								{
-									"name": "Get one app key",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/keys/:key_kid",
-											"protocol": "https",
-											"host": [
-												"{{cma_url}}"
-											],
-											"path": [
-												"organizations",
-												":organization_id",
-												"app_definitions",
-												":app_definition_id",
-												"keys",
-												":key_kid"
-											],
-											"variable": [
-												{
-													"key": "organization_id",
-													"value": ""
-												},
-												{
-													"key": "app_definition_id",
-													"value": ""
-												},
-												{
-													"key": "key_kid",
-													"value": ""
-												}
-											]
-										}
-									},
-									"_postman_previewlanguage": "",
-									"header": [
-										{}
-									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
-									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppKey\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"lastUsedAt\": \"2020-03-30T13:28:37.324Z\",\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"jwk\": {\n    \"alg\": \"RS256\",\n    \"kty\": \"RSA\",\n    \"use\": \"sig\",\n    \"x5c\": [\n      \"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMII....\"\n    ],\n    \"kid\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"x5t\": \"fpFtDCM7r0I-PyIGITGO...\"\n  }\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Delete an app key",
@@ -10415,64 +10254,7 @@
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": [
-								{
-									"name": "Create One Access Grant",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"type": "text",
-												"value": "application/vnd.contentful.management.v1+json"
-											},
-											{
-												"key": "X-Contentful-Marketplace",
-												"value": "i-accept-end-user-license-agreement,i-accept-marketplace-terms-of-service,i-accept-privacy-policy",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"granteeId\": \"all\",\n  \"granteeType\": \"all\"\n}"
-										},
-										"url": {
-											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
-											"protocol": "https",
-											"host": [
-												"{{cma_url}}"
-											],
-											"path": [
-												"organizations",
-												":organization_id",
-												"app_definitions",
-												":app_definition_id",
-												"access_grants"
-											],
-											"variable": [
-												{
-													"key": "organization_id",
-													"value": ""
-												},
-												{
-													"key": "app_definition_id",
-													"value": ""
-												}
-											]
-										}
-									},
-									"_postman_previewlanguage": "",
-									"header": [
-										{}
-									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
-									"body": "{\n  \"sys\": {\n    \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n    \"type\": \"AppAccessGrant\",\n    \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n    \"createdBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n    \"updatedBy\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"User\",\n        \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n      }\n    },\n    \"organization\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Organization\",\n        \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n      }\n    },\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"<app_definition_id>\"\n      }\n    }\n  },\n  \"granteeId\": \"all\",\n  \"granteeType\": \"all\"\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Query Access Grants of a App Definition",
@@ -10515,49 +10297,7 @@
 								},
 								"description": "https://www.contentful.com/developers/docs/references/content-management-api/#/reference/app-definitions/app-definition"
 							},
-							"response": [
-								{
-									"name": "Query Access Grants of a App Definition",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://{{cma_url}}/organizations/:organization_id/app_definitions/:app_definition_id/access_grants",
-											"protocol": "https",
-											"host": [
-												"{{cma_url}}"
-											],
-											"path": [
-												"organizations",
-												":organization_id",
-												"app_definitions",
-												":app_definition_id",
-												"access_grants"
-											],
-											"variable": [
-												{
-													"key": "organization_id",
-													"value": ""
-												},
-												{
-													"key": "app_definition_id",
-													"value": ""
-												}
-											]
-										}
-									},
-									"_postman_previewlanguage": "",
-									"header": [
-										{}
-									],
-									"cookie": [
-										{
-											"expires": "Invalid Date"
-										}
-									],
-									"body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 1,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": [\n    {\n      \"sys\": {\n        \"id\": \"fpFtDCM7r0I-PyIGITGO...\",\n        \"type\": \"AppAccessGrant\",\n        \"createdAt\": \"2020-01-01T13:00:00.000Z\",\n        \"createdBy\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"User\",\n            \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n          }\n        },\n        \"updatedAt\": \"2020-01-01T13:00:00.000Z\",\n        \"updatedBy\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"User\",\n            \"id\": \"7BslKh9TdKGOK41VmLDjFZ\"\n          }\n        },\n        \"organization\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"Organization\",\n            \"id\": \"0D9ZC8rLWiw6x5qizZGiRs\"\n          }\n        },\n        \"appDefinition\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"AppDefinition\",\n            \"id\": \"<app_definition_id>\"\n          }\n        }\n      },\n      \"granteeId\": \"all\",\n      \"granteeType\": \"all\"\n    }\n  ]\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Delete Access Grant",
@@ -11159,22 +10899,22 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/entries",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										":space_id:",
+										":space_id",
 										"environments",
 										":environment_id",
 										"entries"
 									],
 									"variable": [
 										{
-											"key": "space_id:",
-											"value": ""
+											"key": "space_id",
+											"value": null
 										},
 										{
 											"key": "environment_id",
@@ -11255,26 +10995,26 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id:/assets",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/assets",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										":space_id:",
+										":space_id",
 										"environments",
-										":environment_id:",
+										":environment_id",
 										"assets"
 									],
 									"variable": [
 										{
-											"key": "space_id:",
-											"value": ""
+											"key": "space_id",
+											"value": null
 										},
 										{
-											"key": "environment_id:",
-											"value": ""
+											"key": "environment_id",
+											"value": null
 										}
 									]
 								},
@@ -11298,14 +11038,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/assets/:asset_id",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/assets/:asset_id",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										":space_id:",
+										":space_id",
 										"environments",
 										":environment_id",
 										"assets",
@@ -11313,8 +11053,8 @@
 									],
 									"variable": [
 										{
-											"key": "space_id:",
-											"value": ""
+											"key": "space_id",
+											"value": null
 										},
 										{
 											"key": "environment_id",
@@ -11371,22 +11111,22 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{cpa_url}}/spaces/:space_id:/environments/:environment_id/asset_keys",
+									"raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/asset_keys",
 									"protocol": "https",
 									"host": [
 										"{{cpa_url}}"
 									],
 									"path": [
 										"spaces",
-										":space_id:",
+										":space_id",
 										"environments",
 										":environment_id",
 										"asset_keys"
 									],
 									"variable": [
 										{
-											"key": "space_id:",
-											"value": ""
+											"key": "space_id",
+											"value": null
 										},
 										{
 											"key": "environment_id",
@@ -13312,14 +13052,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/:space_id/:asset_id:/:unique_id/:name?w=100&h=100&fit=TYPE",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?w=100&h=100&fit=TYPE",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										":space_id",
-										":asset_id:",
+										":asset_id",
 										":unique_id",
 										":name"
 									],
@@ -13343,8 +13083,8 @@
 											"value": ""
 										},
 										{
-											"key": "asset_id:",
-											"value": ""
+											"key": "asset_id",
+											"value": null
 										},
 										{
 											"key": "unique_id",
@@ -13520,15 +13260,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{images_url}}/:space_id/:asset_id:/:unique_id:/:name?w=100&h=100&fit=pad&bg=COLOR",
+									"raw": "https://{{images_url}}/:space_id/:asset_id/:unique_id/:name?w=100&h=100&fit=pad&bg=COLOR",
 									"protocol": "https",
 									"host": [
 										"{{images_url}}"
 									],
 									"path": [
 										":space_id",
-										":asset_id:",
-										":unique_id:",
+										":asset_id",
+										":unique_id",
 										":name"
 									],
 									"query": [
@@ -13558,12 +13298,12 @@
 											"value": ""
 										},
 										{
-											"key": "asset_id:",
-											"value": ""
+											"key": "asset_id",
+											"value": null
 										},
 										{
-											"key": "unique_id:",
-											"value": ""
+											"key": "unique_id",
+											"value": null
 										},
 										{
 											"key": "name",
@@ -14533,10 +14273,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/organization_memberships/:organizationMembershipId",
 									"protocol": "https",
@@ -14590,10 +14326,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/invitations",
 									"protocol": "https",
@@ -14803,10 +14535,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/teams",
 									"protocol": "https",
@@ -14902,10 +14630,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/teams/:teamId",
 									"protocol": "https",
@@ -15129,7 +14853,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"organizationMembershipId\":\"xxx\"\n}"
 								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/teams/:teamId/team_memberships",
@@ -15180,10 +14904,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/organizations/:organization_id/teams/:teamId/team_memberships/:teamMembershipId",
 									"protocol": "https",
@@ -15468,7 +15188,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"admin\": false,\n    \"email\":\"test@test.com\",\n    \"roles\": [\n        {\n            \"sys\": {\n                \"type\": \"Link\",\n                \"linkType\": \"Role\",\n                \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n            }\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships",
@@ -15515,7 +15235,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"admin\": false,\n    \"email\":\"test@test.com\",\n    \"roles\": [\n        {\n            \"sys\": {\n                \"type\": \"Link\",\n                \"linkType\": \"Role\",\n                \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n            }\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships/:spaceMembershipId",
@@ -15565,10 +15285,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/space_memberships",
 									"protocol": "https",
@@ -15830,7 +15546,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"admin\": false,\n    \"roles\": [\n        {\n            \"sys\": {\n                \"type\": \"Link\",\n                \"linkType\": \"Role\",\n                \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n            }\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships",
@@ -15877,7 +15593,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"admin\": false,\n    \"roles\": [\n        {\n            \"sys\": {\n                \"type\": \"Link\",\n                \"linkType\": \"Role\",\n                \"id\": \"1ElgCn1mi1UHSBLTP2v4TD\"\n            }\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships/:teamSpaceMembershipId",
@@ -15927,10 +15643,6 @@
 										"value": "application/scim+json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "https://{{uma_api_url}}/spaces/:spaceId/team_space_memberships/:teamSpaceMembershipId",
 									"protocol": "https",
@@ -16367,19 +16079,6 @@
 							""
 						]
 					}
-				}
-			]
-		},
-		{
-			"name": "sync api",
-			"item": [
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
 				}
 			]
 		}

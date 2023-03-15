@@ -1,0 +1,1345 @@
+{
+ "info": {
+  "_postman_id": "",
+  "name": "Contentful SCIM API",
+  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+ },
+ "item": [
+  {
+   "name": "SCIM API",
+   "item": [
+    {
+     "name": "User",
+     "item": [
+      {
+       "name": "Get a single user",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "GET",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users",
+          ":userId"
+         ],
+         "variable": [
+          {
+           "key": "userId",
+           "value": "1xGZIRXr2WPnsLkKfREo0z",
+           "type": "string",
+           "description": "ID of the SCIM User"
+          }
+         ]
+        },
+        "description": "",
+        "body": {
+         "mode": "",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": ""
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Get a single user",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users",
+            ":userId"
+           ],
+           "variable": [
+            {
+             "key": "userId",
+             "value": "1xGZIRXr2WPnsLkKfREo0z",
+             "type": "string",
+             "description": "ID of the SCIM User"
+            }
+           ]
+          },
+          "description": "",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
+        }
+       ]
+      },
+      {
+       "name": "Update a single user with PUT",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "PUT",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users",
+          ":userId"
+         ],
+         "variable": [
+          {
+           "key": "userId",
+           "value": "1xGZIRXr2WPnsLkKfREo0z",
+           "type": "string",
+           "description": "ID of the SCIM User"
+          }
+         ]
+        },
+        "description": "Updates attributes of the user.\n\n**Note**: This endpoint is currently provided for identity provider compatibility, since no User attributes are mutable.",
+        "body": {
+         "mode": "raw",
+         "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Update a single user with PUT",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "PUT",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users",
+            ":userId"
+           ],
+           "variable": [
+            {
+             "key": "userId",
+             "value": "1xGZIRXr2WPnsLkKfREo0z",
+             "type": "string",
+             "description": "ID of the SCIM User"
+            }
+           ]
+          },
+          "description": "Updates attributes of the user.\n\n**Note**: This endpoint is currently provided for identity provider compatibility, since no User attributes are mutable.",
+          "body": {
+           "mode": "raw",
+           "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
+        }
+       ]
+      },
+      {
+       "name": "Update a single user with PATCH",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "PATCH",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users",
+          ":userId"
+         ],
+         "variable": [
+          {
+           "key": "userId",
+           "value": "1xGZIRXr2WPnsLkKfREo0z",
+           "type": "string",
+           "description": "ID of the SCIM User"
+          }
+         ]
+        },
+        "description": "Updates attributes of the user.\n\n**Note**: This endpoint is currently provided for identity provider compatibility, since no User attributes are mutable.",
+        "body": {
+         "mode": "raw",
+         "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": []\n}",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Update a single user with PATCH",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "PATCH",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users",
+            ":userId"
+           ],
+           "variable": [
+            {
+             "key": "userId",
+             "value": "1xGZIRXr2WPnsLkKfREo0z",
+             "type": "string",
+             "description": "ID of the SCIM User"
+            }
+           ]
+          },
+          "description": "Updates attributes of the user.\n\n**Note**: This endpoint is currently provided for identity provider compatibility, since no User attributes are mutable.",
+          "body": {
+           "mode": "raw",
+           "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": []\n}",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
+        }
+       ]
+      },
+      {
+       "name": "Delete a single user",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "DELETE",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users",
+          ":userId"
+         ],
+         "variable": [
+          {
+           "key": "userId",
+           "value": "1xGZIRXr2WPnsLkKfREo0z",
+           "type": "string",
+           "description": "ID of the SCIM User"
+          }
+         ]
+        },
+        "description": "Use this endpoint to remove a user from your organization. Removing a user from your organization will also remove the user from all teams and spaces.\n\n**Note**: The action does not delete the user's Contentful account, but only removes them from your organization.",
+        "body": {
+         "mode": "raw",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Delete a single user",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "DELETE",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users/:userId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users",
+            ":userId"
+           ],
+           "variable": [
+            {
+             "key": "userId",
+             "value": "1xGZIRXr2WPnsLkKfREo0z",
+             "type": "string",
+             "description": "ID of the SCIM User"
+            }
+           ]
+          },
+          "description": "Use this endpoint to remove a user from your organization. Removing a user from your organization will also remove the user from all teams and spaces.\n\n**Note**: The action does not delete the user's Contentful account, but only removes them from your organization.",
+          "body": {
+           "mode": "raw",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 204,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Users collection",
+     "item": [
+      {
+       "name": "Get all users in the organization",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "GET",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users"
+         ],
+         "variable": null
+        },
+        "description": "It is possible to filter by the `userName eq` filter, passing a valid user email address as the value. See the [Filtering](https://tools.ietf.org/html/rfc7644#section-3.4.2.2) section in the SCIM 2.0 specification for details.\n\n```\nGET /Users?filter=userName eq \"user@example.com\"\n```",
+        "body": {
+         "mode": "",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": ""
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Get all users in the organization",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users"
+           ],
+           "variable": null
+          },
+          "description": "It is possible to filter by the `userName eq` filter, passing a valid user email address as the value. See the [Filtering](https://tools.ietf.org/html/rfc7644#section-3.4.2.2) section in the SCIM 2.0 specification for details.\n\n```\nGET /Users?filter=userName eq \"user@example.com\"\n```",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:ListResponse\"\n  ],\n  \"Resources\": [\n    {\n      \"schemas\": [\n        \"urn:ietf:params:scim:schemas:core:2.0:User\"\n      ],\n      \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n      \"meta\": {\n        \"resourceType\": \"User\",\n        \"created\": \"2018-05-11T20:04:37Z\",\n        \"lastModified\": \"2019-05-11T20:04:37Z\",\n        \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n      },\n      \"userName\": \"user@example.com\",\n      \"name\": {\n        \"givenName\": \"Kasia\",\n        \"familyName\": \"Kowalska\"\n      },\n      \"active\": true,\n      \"emails\": [\n        {\n          \"value\": \"user@example.com\",\n          \"type\": \"work\",\n          \"primary\": true\n        }\n      ]\n    }\n  ],\n  \"totalResults\": \"0\",\n  \"startIndex\": \"0\",\n  \"itemsPerPage\": \"0\"\n}"
+        }
+       ]
+      },
+      {
+       "name": "Create a user",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "POST",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Users"
+         ],
+         "variable": null
+        },
+        "description": "Newly created users will appear in your organization as \"Invited\". If you use the User Management API, you'll see the new Organization Membership with the `status` property of `\"pending\"`.\n\nThe new users should receive an invitation email to join your Organization. In SSO enabled organizations, users will not receive this email notification.\n\nAll users are created with the organization role of `member`. Role changes are currently only supported via the User Management API or in the Contentful web app.",
+        "body": {
+         "mode": "raw",
+         "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  }\n}",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Create a user",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "POST",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Users",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Users"
+           ],
+           "variable": null
+          },
+          "description": "Newly created users will appear in your organization as \"Invited\". If you use the User Management API, you'll see the new Organization Membership with the `status` property of `\"pending\"`.\n\nThe new users should receive an invitation email to join your Organization. In SSO enabled organizations, users will not receive this email notification.\n\nAll users are created with the organization role of `member`. Role changes are currently only supported via the User Management API or in the Contentful web app.",
+          "body": {
+           "mode": "raw",
+           "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  }\n}",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 201,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:User\"\n  ],\n  \"id\": \"1xGZIRXr2WPnsLkKfREo0z\",\n  \"meta\": {\n    \"resourceType\": \"User\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Users/1xGZIRXr2WPnsLkKfREo0z\"\n  },\n  \"userName\": \"user@example.com\",\n  \"name\": {\n    \"givenName\": \"Kasia\",\n    \"familyName\": \"Kowalska\"\n  },\n  \"active\": true,\n  \"emails\": [\n    {\n      \"value\": \"user@example.com\",\n      \"type\": \"work\",\n      \"primary\": true\n    }\n  ]\n}"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Group",
+     "item": [
+      {
+       "name": "Get a single group",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "GET",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Groups",
+          ":groupId"
+         ],
+         "variable": [
+          {
+           "key": "groupId",
+           "value": "\u003cgroup_id\u003e",
+           "type": "string",
+           "description": "ID of the Contentful team"
+          }
+         ]
+        },
+        "description": "",
+        "body": {
+         "mode": "",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": ""
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Get a single group",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Groups",
+            ":groupId"
+           ],
+           "variable": [
+            {
+             "key": "groupId",
+             "value": "\u003cgroup_id\u003e",
+             "type": "string",
+             "description": "ID of the Contentful team"
+            }
+           ]
+          },
+          "description": "",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"id\": \"\u003cgroup_id\u003e\",\n  \"meta\": {\n    \"resourceType\": \"Group\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Groups/\u003cgroup_id\u003e\"\n  },\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}"
+        }
+       ]
+      },
+      {
+       "name": "Update a single group",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "PATCH",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Groups",
+          ":groupId"
+         ],
+         "variable": [
+          {
+           "key": "groupId",
+           "value": "\u003cgroup_id\u003e",
+           "type": "string",
+           "description": "ID of the Contentful team"
+          }
+         ]
+        },
+        "description": "Use this endpoint to add, remove or replace team members.\n\nUpdate request should contain the attribute `Operations` with a list of items of the following format:\n\nProperty  | Required  | Type  | Description\n----------|-----------|-------|------------\n`op` | yes | String | One of `add`, `remove` or `replace`\n`path` | yes | String | The affected attribute. Currently, the only accepted value is `members`\n`value` | yes if adding or replacing members | Array | Currently, the only accepted value is a list of user references\n\nUser references have the following structure:\n\nProperty | Required | Type | Description\n---------|----------|------|------------\n`display`| true | String | An identifier for the team member. It's normally the full name\n`value` | true | String | The user ID\n\nFor example, to add a new user to a group we would send the following request payload:\n\n```json\n{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": [\n    {\n      \"op\": \"add\",\n      \"path\": \"members\",\n      \"value\": [\n        {\n          \"display\": \"Kasia Kowalska\",\n          \"value\": \"1xGZIRXr2WPnsLkKfREo0z\"\n        }\n      ]\n    }\n  ]\n}\n```\n\nIt is also possible to run multiple different operations.",
+        "body": {
+         "mode": "raw",
+         "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": [\n    {\n      \"op\": \"replace\",\n      \"path\": \"displayName\",\n      \"value\": \"My Group\"\n    }\n  ]\n}",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Update a single group",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "PATCH",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Groups",
+            ":groupId"
+           ],
+           "variable": [
+            {
+             "key": "groupId",
+             "value": "\u003cgroup_id\u003e",
+             "type": "string",
+             "description": "ID of the Contentful team"
+            }
+           ]
+          },
+          "description": "Use this endpoint to add, remove or replace team members.\n\nUpdate request should contain the attribute `Operations` with a list of items of the following format:\n\nProperty  | Required  | Type  | Description\n----------|-----------|-------|------------\n`op` | yes | String | One of `add`, `remove` or `replace`\n`path` | yes | String | The affected attribute. Currently, the only accepted value is `members`\n`value` | yes if adding or replacing members | Array | Currently, the only accepted value is a list of user references\n\nUser references have the following structure:\n\nProperty | Required | Type | Description\n---------|----------|------|------------\n`display`| true | String | An identifier for the team member. It's normally the full name\n`value` | true | String | The user ID\n\nFor example, to add a new user to a group we would send the following request payload:\n\n```json\n{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": [\n    {\n      \"op\": \"add\",\n      \"path\": \"members\",\n      \"value\": [\n        {\n          \"display\": \"Kasia Kowalska\",\n          \"value\": \"1xGZIRXr2WPnsLkKfREo0z\"\n        }\n      ]\n    }\n  ]\n}\n```\n\nIt is also possible to run multiple different operations.",
+          "body": {
+           "mode": "raw",
+           "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:PatchOp\"\n  ],\n  \"Operations\": [\n    {\n      \"op\": \"replace\",\n      \"path\": \"displayName\",\n      \"value\": \"My Group\"\n    }\n  ]\n}",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"id\": \"\u003cgroup_id\u003e\",\n  \"meta\": {\n    \"resourceType\": \"Group\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Groups/\u003cgroup_id\u003e\"\n  },\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}"
+        }
+       ]
+      },
+      {
+       "name": "Delete a single group",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "DELETE",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Groups",
+          ":groupId"
+         ],
+         "variable": [
+          {
+           "key": "groupId",
+           "value": "\u003cgroup_id\u003e",
+           "type": "string",
+           "description": "ID of the Contentful team"
+          }
+         ]
+        },
+        "description": "Use this endpoint to remove a team from your organization. Removing a team from your organization will in addition remove its team memberships. Any team space memberships associated with the team will also be removed.",
+        "body": {
+         "mode": "raw",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Delete a single group",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "DELETE",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups/:groupId",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Groups",
+            ":groupId"
+           ],
+           "variable": [
+            {
+             "key": "groupId",
+             "value": "\u003cgroup_id\u003e",
+             "type": "string",
+             "description": "ID of the Contentful team"
+            }
+           ]
+          },
+          "description": "Use this endpoint to remove a team from your organization. Removing a team from your organization will in addition remove its team memberships. Any team space memberships associated with the team will also be removed.",
+          "body": {
+           "mode": "raw",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 204,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Groups collection",
+     "item": [
+      {
+       "name": "Get all groups in the organization",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "GET",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Groups"
+         ],
+         "variable": null
+        },
+        "description": "It is possible to filter by the `displayName eq` filter, passing a valid group name as the value. See the [Filtering](https://tools.ietf.org/html/rfc7644#section-3.4.2.2) section in the SCIM 2.0 specification for details.\n\n```\nGET /Groups?filter=displayName eq \"My Group\"\n```",
+        "body": {
+         "mode": "",
+         "raw": "",
+         "options": {
+          "raw": {
+           "language": ""
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Get all groups in the organization",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Groups"
+           ],
+           "variable": null
+          },
+          "description": "It is possible to filter by the `displayName eq` filter, passing a valid group name as the value. See the [Filtering](https://tools.ietf.org/html/rfc7644#section-3.4.2.2) section in the SCIM 2.0 specification for details.\n\n```\nGET /Groups?filter=displayName eq \"My Group\"\n```",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 200,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:api:messages:2.0:ListResponse\"\n  ],\n  \"Resources\": [\n    {\n      \"schemas\": [\n        \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n      ],\n      \"id\": \"\u003cgroup_id\u003e\",\n      \"meta\": {\n        \"resourceType\": \"Group\",\n        \"created\": \"2018-05-11T20:04:37Z\",\n        \"lastModified\": \"2019-05-11T20:04:37Z\",\n        \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Groups/\u003cgroup_id\u003e\"\n      },\n      \"displayName\": \"My Group\",\n      \"members\": [\n        {\n          \"value\": \"123\",\n          \"display\": \"Kasia Kowalska\"\n        }\n      ]\n    }\n  ],\n  \"totalResults\": \"0\",\n  \"startIndex\": \"0\",\n  \"itemsPerPage\": \"0\"\n}"
+        }
+       ]
+      },
+      {
+       "name": "Create a group",
+       "request": {
+        "auth": {
+         "type": "bearer",
+         "bearer": [
+          {
+           "key": "token",
+           "value": "{{cma_access_token}}",
+           "type": "string"
+          }
+         ]
+        },
+        "method": "POST",
+        "header": [
+         {
+          "key": "Content-Type",
+          "value": "application/scim+json",
+          "description": ""
+         }
+        ],
+        "url": {
+         "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups",
+         "protocol": "https",
+         "host": [
+          "{{scim_api_url}}"
+         ],
+         "path": [
+          "scim",
+          "v2",
+          "organizations",
+          ":org_id",
+          "Groups"
+         ],
+         "variable": null
+        },
+        "description": "",
+        "body": {
+         "mode": "raw",
+         "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}",
+         "options": {
+          "raw": {
+           "language": "json"
+          }
+         }
+        }
+       },
+       "response": [
+        {
+         "name": "Create a group",
+         "originalRequest": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "POST",
+          "header": [
+           {
+            "key": "Content-Type",
+            "value": "application/scim+json",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{scim_api_url}}/scim/v2/organizations/{org_id}/Groups",
+           "protocol": "https",
+           "host": [
+            "{{scim_api_url}}"
+           ],
+           "path": [
+            "scim",
+            "v2",
+            "organizations",
+            ":org_id",
+            "Groups"
+           ],
+           "variable": null
+          },
+          "description": "",
+          "body": {
+           "mode": "raw",
+           "raw": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}",
+           "options": {
+            "raw": {
+             "language": "json"
+            }
+           }
+          }
+         },
+         "status": "",
+         "code": 201,
+         "header": [
+          {
+           "key": "Content-Type",
+           "value": "application/scim+json",
+           "description": ""
+          }
+         ],
+         "cookie": null,
+         "body": "{\n  \"schemas\": [\n    \"urn:ietf:params:scim:schemas:core:2.0:Group\"\n  ],\n  \"id\": \"\u003cgroup_id\u003e\",\n  \"meta\": {\n    \"resourceType\": \"Group\",\n    \"created\": \"2018-05-11T20:04:37Z\",\n    \"lastModified\": \"2019-05-11T20:04:37Z\",\n    \"location\": \"https://api.contentful.com/organizations/7BslKh9TdKGOK41VmLDjFZ/scim/v2/Groups/\u003cgroup_id\u003e\"\n  },\n  \"displayName\": \"My Group\",\n  \"members\": [\n    {\n      \"value\": \"123\",\n      \"display\": \"Kasia Kowalska\"\n    }\n  ]\n}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
