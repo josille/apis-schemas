@@ -21,6 +21,8 @@ jobs:
         - run: echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
         - run: curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
         - run: cat ./tmp/cda.json
-        - run: git status
-        - run: git remote -v
+        - run: ./postman_convert -d ./tmp/ > postman_json/Contentful_cda_cpa_cma_gql_images_scim_postmanNew.json
+        - run: git add postman_json/Contentful_cda_cpa_cma_gql_images_scim_postmanNew.json
+        - run: git commit -m 'update postmat repo via actions'
+        - run: git push
         - run: rm -rf ./tmp
