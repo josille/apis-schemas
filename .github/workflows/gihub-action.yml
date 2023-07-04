@@ -17,9 +17,8 @@ jobs:
           with:
             node-version: ${{ matrix.node-version }}
         - run: echo "Script to create postman repo"
+        - run: mkdir tmp
         - run: echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
         - run: curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
         - run: cat ./tmp/cda.json
-
-
-
+        - run: rm -rf ./tmp
