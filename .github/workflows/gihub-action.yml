@@ -19,6 +19,7 @@ jobs:
         - run: echo "Script to create postman repo"
         - run: echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
         - run: curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
+        - run: cat ./tmp/cda.json
 
 
 
