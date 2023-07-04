@@ -2389,177 +2389,6 @@
      "description": "\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e: Currently, only a few of \u003ca href=\"/developers/docs/platforms/\"\u003eour client libraries\u003c/a\u003e support Content Tags. Please ensure you're using the latest version of the client libraries.\n\u003c/div\u003e\n\nContent tags make it much easier to find specific content in your space environment.\n\nTags are environment-scoped (meaning, they exist within and are unique to an environment).\n\nOnly tags with visibility `public` are accessible via the delivery and preview APIs.\nTo learn more about the different tag visibility options, see the [tags visibility documentation](/developers/docs/references/content-management-api/#/reference/content-tags) in the management api reference page.\n\n\u003cbr\u003e\n\nA tag includes the following properties:\n\n- **name**: A human-readable unique identifier for the tag\n\n- **id**: A unique identifier for referencing the tag\n\n- **visibility**: A sys property with value `public` that makes the tag accessible via the delivery and preview API"
     },
     {
-     "name": "Resource Links",
-     "item": [
-      {
-       "name": "Retrieval of linked Resource Links",
-       "item": [
-        {
-         "name": "Query entries",
-         "request": {
-          "auth": {
-           "type": "bearer",
-           "bearer": [
-            {
-             "key": "token",
-             "value": "{{cda_access_token}}",
-             "type": "string"
-            }
-           ]
-          },
-          "method": "GET",
-          "header": [
-           {
-            "key": "X-Contentful-Resource-Resolution",
-            "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-            "description": ""
-           }
-          ],
-          "url": {
-           "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
-           "protocol": "https",
-           "host": [
-            "{{cda_url}}"
-           ],
-           "path": [
-            "spaces",
-            ":space_id",
-            "environments",
-            ":environment_id",
-            "entries"
-           ],
-           "query": [
-            {
-             "key": "include",
-             "value": "INCLUDE"
-            }
-           ],
-           "variable": [
-            {
-             "key": "space_id",
-             "value": "yadj1kx9rmg0",
-             "type": "string",
-             "description": "Alphanumeric id of the space to retrieve."
-            },
-            {
-             "key": "environment_id",
-             "value": "staging",
-             "type": "string",
-             "description": "ID of the environment in form of a string."
-            },
-            {
-             "key": "access_token",
-             "value": "fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e788625a61abe",
-             "type": "string",
-             "description": "A *production* Content Delivery API key."
-            }
-           ]
-          },
-          "description": "",
-          "body": {
-           "mode": "",
-           "raw": "",
-           "options": {
-            "raw": {
-             "language": ""
-            }
-           }
-          }
-         },
-         "response": [
-          {
-           "name": "Query entries",
-           "originalRequest": {
-            "auth": {
-             "type": "bearer",
-             "bearer": [
-              {
-               "key": "token",
-               "value": "{{cda_access_token}}",
-               "type": "string"
-              }
-             ]
-            },
-            "method": "GET",
-            "header": [
-             {
-              "key": "X-Contentful-Resource-Resolution",
-              "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-              "description": ""
-             }
-            ],
-            "url": {
-             "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
-             "protocol": "https",
-             "host": [
-              "{{cda_url}}"
-             ],
-             "path": [
-              "spaces",
-              ":space_id",
-              "environments",
-              ":environment_id",
-              "entries"
-             ],
-             "query": [
-              {
-               "key": "include",
-               "value": "INCLUDE"
-              }
-             ],
-             "variable": [
-              {
-               "key": "space_id",
-               "value": "yadj1kx9rmg0",
-               "type": "string",
-               "description": "Alphanumeric id of the space to retrieve."
-              },
-              {
-               "key": "environment_id",
-               "value": "staging",
-               "type": "string",
-               "description": "ID of the environment in form of a string."
-              },
-              {
-               "key": "access_token",
-               "value": "fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e788625a61abe",
-               "type": "string",
-               "description": "A *production* Content Delivery API key."
-              }
-             ]
-            },
-            "description": "",
-            "body": {
-             "mode": "",
-             "raw": "",
-             "options": {
-              "raw": {
-               "language": ""
-              }
-             }
-            }
-           },
-           "status": "",
-           "code": 200,
-           "header": [
-            {
-             "key": "Content-Type",
-             "value": "application/vnd.contentful.delivery.v1+json",
-             "description": ""
-            }
-           ],
-           "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": []\n}"
-          }
-         ]
-        }
-       ],
-       "description": "*Notes*:\n\n- The `include` parameter resolves links between entries and assets within a space. Links between content types within a space are not included in the response.\n\n- The `include` parameter is only available for the entry collection endpoint `/spaces/{space_id}/environments/{environment_id}/entries`."
-      }
-     ],
-     "description": "Resource Links are part of the [References across spaces](/help/references-across-spaces) feature set that allows you to link content across multiple spaces. It mainly uses `ResourceLink` links as a way to represent a relationship between entities from different spaces.\n\n`ResourceLink` links are represented as a `sys` object containing `urn`, `linkType` and `type`:\n\nProperty                         |Description                              |\n---------------------------------|-----------------------------------------|\n`sys.linkType`                   |Represents what kind of entity this resource links to. For cross-space entries the value is `Contentful:Entry`.|\n`sys.type`                       |The type of Link. `ResourceLink` is the default for cross-space resources.|\n`sys.urn`                        |The location of the resource. A [CRN](/developers/docs/references/content-management-api/#/reference/references-across-spaces) to a Contentful space entity.|\n\nAs they are part of another space, resolving cross-space linked entities requires a special header to be passed in each request named `x-contentful-resource-resolution`.\n\n#### Extra header for cross-space resolution\n\nThe `x-contentful-resource-resolution` header is a *base64 encoded JSON object* containing key-value pairs of spaceId/API Key. The plain JSON used to create the header should have the following shape:\n\n```json\n{ \n    \"spaces\": { \n        \"someSpaceId\": \"\u003ccda-token\u003e\", \n        \"anotherSpaceId\": \"\u003ccda-token\u003e\" \n    } \n}\n```\n\nThat then needs to be *stringified* and encoded to base64. You can use `JSON.stringify` and `btoa` (JavaScript) to properly convert the JSON object to a stringified encoded version of it.\n\nHere is a full example in JavaScript:\n\n```js\nconst extraTokens = { \n  \"spaces\": { \n    \"IdToR3s0lv3\": \"ND63YKcYBe335RWDnIuzv...\", \n    \"4n0th3rSp4c3\": \"UuVe6icuBuXv...\" \n  } \n}\n\n// Converts object to string and uses base64 to encode the string\nwindow.btoa(JSON.stringify(extraTokens)) // eyJzcGFjZXMiOnsiSWRUb1I[...]=\n```\n\nThe value can then be passed to the `x-contentful-resource-resolution` header as-is. All cross-space references of matching space IDs will be returned within the `includes` property of the response.\n\n#### Capabilities\n\n- The `locale` query parameter is propagated to all extra spaces present in the new header.\n\n- Only the first level of references of every extra space in the new header will be resolved. This is a behavior similar to `include=1`.\n\n- The main space (space Id being requested in the URL) will still resolve up to 10 levels.\n\n- Publishing new content in any of the extra spaces will cause the cache to be purged on every request that included that space Id.\n\n- The `includes` property of the response will include both cross-space entries and assets.\n\n- You can pass this new header in the Javascript SDK for automatic resolution.\n\n#### Errors\n\nErrors from cross-space requests are propagated back to the response payload in the `errors` property. \nIf a request to a single cross-space fails, the main space request and other spaces will still continue to process.\n\nHTTP Status Code                         |Description                              |\n---------------------------------|-----------------------------------------|\n`401`                   |Missing `Authorization` header|\n`400`                   |Incorrect format for the `x-contentful-resource-resolution` header.|\n`400`                   |Number of extra spaces in the header exceeds the maximum allowed number (`3`)|\n\n##### Errors property example\n\n```json\n{\n    \"errors\": [\n        {\n            \"details\": {\n                \"urn\": \"crn:contentful:::content:spaces/\u003cspaceId\u003e/entries/\u003centryId\u003e\",\n                \"linkType\": \"Contentful:Entry\",\n                \"type\": \"ResourceLink\"\n            },\n            \"sys\": {\n                \"id\": \"notResolvable\",\n                \"type\": \"error\"\n            }\n        }\n\n    ]\n}\n```\n\n#### Limitations\n\n- Up to `4` spaces to be resolved in a single request\n\n- Only `3` extra space tokens are supported. You can make a single API call that resolves up to `4` spaces at the same time: `3` extra spaces and the entries from the space Id in the initial request.\n\n- Up to `1000` references in the `includes` property in the response.\n\n- Only the first level of cross-space references is resolved from the original spaceId in the URL\n\n- The `Authorization` header is still required for every request and it should enable access to the main space Id in the URL.\n\n- Errors from the extra space tokens will be returned in the `errors` property of the response.\n\n- Using the new header will also consume the Rate Limiting from the space Ids present in it when the request is *uncached*.\n\n- No [Advanced Caching](/developers/docs/infrastructure/advanced-caching/) support\n\n- No [MRDI](/developers/docs/infrastructure/what-is-mrdi/) support\n\nFor more information, see the [Resource Links FAQs](/help/resource-links-faqs)."
-    },
-    {
      "name": "Links",
      "item": [
       {
@@ -2748,16 +2577,16 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "fields.{linking_field}.sys.id",
              "value": "TARGET_ENTRY_ID"
             },
             {
              "key": "include",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -2841,16 +2670,16 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "fields.{linking_field}.sys.id",
                "value": "TARGET_ENTRY_ID"
               },
               {
                "key": "include",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -3112,12 +2941,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "select",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -3189,12 +3018,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "select",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -4379,12 +4208,12 @@
            ],
            "query": [
             {
-             "key": "{attribute}[exists]",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "{attribute}[exists]",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -4462,12 +4291,12 @@
              ],
              "query": [
               {
-               "key": "{attribute}[exists]",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "{attribute}[exists]",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -6757,16 +6586,16 @@
            ],
            "query": [
             {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
+            },
+            {
              "key": "fields.{reference_field}.sys.contentType.sys.id",
              "value": "REFERENCE_CONTENT_TYPE"
             },
             {
              "key": "fields.{reference_field}.fields.{search_field}[match]",
              "value": "SEARCH_VALUE"
-            },
-            {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -6856,16 +6685,16 @@
              ],
              "query": [
               {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
+              },
+              {
                "key": "fields.{reference_field}.sys.contentType.sys.id",
                "value": "REFERENCE_CONTENT_TYPE"
               },
               {
                "key": "fields.{reference_field}.fields.{search_field}[match]",
                "value": "SEARCH_VALUE"
-              },
-              {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -7117,6 +6946,177 @@
      ]
     },
     {
+     "name": "Resource Links",
+     "item": [
+      {
+       "name": "Retrieval of linked Resource Links",
+       "item": [
+        {
+         "name": "Query entries",
+         "request": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cda_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [
+           {
+            "key": "X-Contentful-Resource-Resolution",
+            "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
+            "description": ""
+           }
+          ],
+          "url": {
+           "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
+           "protocol": "https",
+           "host": [
+            "{{cda_url}}"
+           ],
+           "path": [
+            "spaces",
+            ":space_id",
+            "environments",
+            ":environment_id",
+            "entries"
+           ],
+           "query": [
+            {
+             "key": "include",
+             "value": "INCLUDE"
+            }
+           ],
+           "variable": [
+            {
+             "key": "space_id",
+             "value": "yadj1kx9rmg0",
+             "type": "string",
+             "description": "Alphanumeric id of the space to retrieve."
+            },
+            {
+             "key": "environment_id",
+             "value": "staging",
+             "type": "string",
+             "description": "ID of the environment in form of a string."
+            },
+            {
+             "key": "access_token",
+             "value": "fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e788625a61abe",
+             "type": "string",
+             "description": "A *production* Content Delivery API key."
+            }
+           ]
+          },
+          "description": "",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "response": [
+          {
+           "name": "Query entries",
+           "originalRequest": {
+            "auth": {
+             "type": "bearer",
+             "bearer": [
+              {
+               "key": "token",
+               "value": "{{cda_access_token}}",
+               "type": "string"
+              }
+             ]
+            },
+            "method": "GET",
+            "header": [
+             {
+              "key": "X-Contentful-Resource-Resolution",
+              "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
+              "description": ""
+             }
+            ],
+            "url": {
+             "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
+             "protocol": "https",
+             "host": [
+              "{{cda_url}}"
+             ],
+             "path": [
+              "spaces",
+              ":space_id",
+              "environments",
+              ":environment_id",
+              "entries"
+             ],
+             "query": [
+              {
+               "key": "include",
+               "value": "INCLUDE"
+              }
+             ],
+             "variable": [
+              {
+               "key": "space_id",
+               "value": "yadj1kx9rmg0",
+               "type": "string",
+               "description": "Alphanumeric id of the space to retrieve."
+              },
+              {
+               "key": "environment_id",
+               "value": "staging",
+               "type": "string",
+               "description": "ID of the environment in form of a string."
+              },
+              {
+               "key": "access_token",
+               "value": "fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e788625a61abe",
+               "type": "string",
+               "description": "A *production* Content Delivery API key."
+              }
+             ]
+            },
+            "description": "",
+            "body": {
+             "mode": "",
+             "raw": "",
+             "options": {
+              "raw": {
+               "language": ""
+              }
+             }
+            }
+           },
+           "status": "",
+           "code": 200,
+           "header": [
+            {
+             "key": "Content-Type",
+             "value": "application/vnd.contentful.delivery.v1+json",
+             "description": ""
+            }
+           ],
+           "cookie": null,
+           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": []\n}"
+          }
+         ]
+        }
+       ],
+       "description": "*Notes*:\n\n- The `include` parameter resolves links between entries and assets within a space. Links between content types within a space are not included in the response.\n\n- The `include` parameter is only available for the entry collection endpoint `/spaces/{space_id}/environments/{environment_id}/entries`."
+      }
+     ],
+     "description": "Resource Links are part of the [References across spaces](/help/references-across-spaces) feature set that allows you to link content across multiple spaces. It mainly uses `ResourceLink` links as a way to represent a relationship between entities from different spaces.\n\n`ResourceLink` links are represented as a `sys` object containing `urn`, `linkType` and `type`:\n\nProperty                         |Description                              |\n---------------------------------|-----------------------------------------|\n`sys.linkType`                   |Represents what kind of entity this resource links to. For cross-space entries the value is `Contentful:Entry`.|\n`sys.type`                       |The type of Link. `ResourceLink` is the default for cross-space resources.|\n`sys.urn`                        |The location of the resource. A [CRN](/developers/docs/references/content-management-api/#/reference/references-across-spaces) to a Contentful space entity.|\n\nAs they are part of another space, resolving cross-space linked entities requires a special header to be passed in each request named `x-contentful-resource-resolution`.\n\n#### Extra header for cross-space resolution\n\nThe `x-contentful-resource-resolution` header is a *base64 encoded JSON object* containing key-value pairs of spaceId/API Key. The plain JSON used to create the header should have the following shape:\n\n```json\n{ \n    \"spaces\": { \n        \"someSpaceId\": \"\u003ccda-token\u003e\", \n        \"anotherSpaceId\": \"\u003ccda-token\u003e\" \n    } \n}\n```\n\nThat then needs to be *stringified* and encoded to base64. You can use `JSON.stringify` and `btoa` (JavaScript) to properly convert the JSON object to a stringified encoded version of it.\n\nHere is a full example in JavaScript:\n\n```js\nconst extraTokens = { \n  \"spaces\": { \n    \"IdToR3s0lv3\": \"ND63YKcYBe335RWDnIuzv...\", \n    \"4n0th3rSp4c3\": \"UuVe6icuBuXv...\" \n  } \n}\n\n// Converts object to string and uses base64 to encode the string\nwindow.btoa(JSON.stringify(extraTokens)) // eyJzcGFjZXMiOnsiSWRUb1I[...]=\n```\n\nThe value can then be passed to the `x-contentful-resource-resolution` header as-is. All cross-space references of matching space IDs will be returned within the `includes` property of the response.\n\n#### Capabilities\n\n- The `locale` query parameter is propagated to all extra spaces present in the new header.\n\n- Only the first level of references of every extra space in the new header will be resolved. This is a behavior similar to `include=1`.\n\n- The main space (space Id being requested in the URL) will still resolve up to 10 levels.\n\n- Publishing new content in any of the extra spaces will cause the cache to be purged on every request that included that space Id.\n\n- The `includes` property of the response will include both cross-space entries and assets.\n\n- You can pass this new header in the Javascript SDK for automatic resolution.\n\n#### Errors\n\nErrors from cross-space requests are propagated back to the response payload in the `errors` property. \nIf a request to a single cross-space fails, the main space request and other spaces will still continue to process.\n\nHTTP Status Code                         |Description                              |\n---------------------------------|-----------------------------------------|\n`401`                   |Missing `Authorization` header|\n`400`                   |Incorrect format for the `x-contentful-resource-resolution` header.|\n`400`                   |Number of extra spaces in the header exceeds the maximum allowed number (`3`)|\n\n##### Errors property example\n\n```json\n{\n    \"errors\": [\n        {\n            \"details\": {\n                \"urn\": \"crn:contentful:::content:spaces/\u003cspaceId\u003e/entries/\u003centryId\u003e\",\n                \"linkType\": \"Contentful:Entry\",\n                \"type\": \"ResourceLink\"\n            },\n            \"sys\": {\n                \"id\": \"notResolvable\",\n                \"type\": \"error\"\n            }\n        }\n\n    ]\n}\n```\n\n#### Limitations\n\n- Up to `4` spaces to be resolved in a single request\n\n- Only `3` extra space tokens are supported. You can make a single API call that resolves up to `4` spaces at the same time: `3` extra spaces and the entries from the space Id in the initial request.\n\n- Up to `1000` references in the `includes` property in the response.\n\n- Only the first level of cross-space references is resolved from the original spaceId in the URL\n\n- The `Authorization` header is still required for every request and it should enable access to the main space Id in the URL.\n\n- Errors from the extra space tokens will be returned in the `errors` property of the response.\n\n- Using the new header will also consume the Rate Limiting from the space Ids present in it when the request is *uncached*.\n\n- No [Advanced Caching](/developers/docs/infrastructure/advanced-caching/) support\n\n- No [MRDI](/developers/docs/infrastructure/what-is-mrdi/) support\n\nFor more information, see the [Resource Links FAQs](/help/resource-links-faqs)."
+    },
+    {
      "name": "Synchronization",
      "item": [
       {
@@ -7150,16 +7150,16 @@
            ],
            "query": [
             {
+             "key": "initial",
+             "value": "TRUE"
+            },
+            {
              "key": "type",
              "value": "TYPE"
             },
             {
              "key": "limit",
              "value": "LIMIT"
-            },
-            {
-             "key": "initial",
-             "value": "TRUE"
             }
            ],
            "variable": [
@@ -7217,16 +7217,16 @@
              ],
              "query": [
               {
+               "key": "initial",
+               "value": "TRUE"
+              },
+              {
                "key": "type",
                "value": "TYPE"
               },
               {
                "key": "limit",
                "value": "LIMIT"
-              },
-              {
-               "key": "initial",
-               "value": "TRUE"
               }
              ],
              "variable": [
@@ -37146,10 +37146,6 @@
            ],
            "query": [
             {
-             "key": "dateRange.endAt",
-             "value": "ENDAT"
-            },
-            {
              "key": "order",
              "value": "ORDER"
             },
@@ -37160,6 +37156,10 @@
             {
              "key": "dateRange.startAt",
              "value": "STARTAT"
+            },
+            {
+             "key": "dateRange.endAt",
+             "value": "ENDAT"
             }
            ],
            "variable": [
@@ -37229,10 +37229,6 @@
              ],
              "query": [
               {
-               "key": "dateRange.endAt",
-               "value": "ENDAT"
-              },
-              {
                "key": "order",
                "value": "ORDER"
               },
@@ -37243,6 +37239,10 @@
               {
                "key": "dateRange.startAt",
                "value": "STARTAT"
+              },
+              {
+               "key": "dateRange.endAt",
+               "value": "ENDAT"
               }
              ],
              "variable": [
@@ -41604,177 +41604,6 @@
      "description": "\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e: Currently, only a few of \u003ca href=\"/developers/docs/platforms/\"\u003eour client libraries\u003c/a\u003e support Content Tags. Please ensure you're using the latest version of the client libraries.\n\u003c/div\u003e\n\nContent tags make it much easier to find specific content in your space environment.\n\nTags are environment-scoped (meaning, they exist within and are unique to an environment).\n\nOnly tags with visibility `public` are accessible via the delivery and preview APIs.\nTo learn more about the different tag visibility options, see the [tags visibility documentation](/developers/docs/references/content-management-api/#/reference/content-tags) in the management api reference page.\n\n\u003cbr\u003e\n\nA tag includes the following properties:\n\n- **name**: A human-readable unique identifier for the tag\n\n- **id**: A unique identifier for referencing the tag\n\n- **visibility**: A sys property with value `public` that makes the tag accessible via the delivery and preview API"
     },
     {
-     "name": "Resource Links",
-     "item": [
-      {
-       "name": "Retrieval of linked Resource Links",
-       "item": [
-        {
-         "name": "Query entries",
-         "request": {
-          "auth": {
-           "type": "bearer",
-           "bearer": [
-            {
-             "key": "token",
-             "value": "{{cpa_access_token}}",
-             "type": "string"
-            }
-           ]
-          },
-          "method": "GET",
-          "header": [
-           {
-            "key": "X-Contentful-Resource-Resolution",
-            "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-            "description": ""
-           }
-          ],
-          "url": {
-           "raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
-           "protocol": "https",
-           "host": [
-            "{{cpa_url}}"
-           ],
-           "path": [
-            "spaces",
-            ":space_id",
-            "environments",
-            ":environment_id",
-            "entries"
-           ],
-           "query": [
-            {
-             "key": "include",
-             "value": "INCLUDE"
-            }
-           ],
-           "variable": [
-            {
-             "key": "space_id",
-             "value": "yadj1kx9rmg0",
-             "type": "string",
-             "description": "Alphanumeric id of the space to retrieve."
-            },
-            {
-             "key": "environment_id",
-             "value": "staging",
-             "type": "string",
-             "description": "ID of the environment in form of a string."
-            },
-            {
-             "key": "access_token",
-             "value": "f0aa56e3659d58947f8e3ddd6301c9591c9b73a8b54c35435233b18b3e6752d5",
-             "type": "string",
-             "description": "A *preview* Content Delivery API key."
-            }
-           ]
-          },
-          "description": "",
-          "body": {
-           "mode": "",
-           "raw": "",
-           "options": {
-            "raw": {
-             "language": ""
-            }
-           }
-          }
-         },
-         "response": [
-          {
-           "name": "Query entries",
-           "originalRequest": {
-            "auth": {
-             "type": "bearer",
-             "bearer": [
-              {
-               "key": "token",
-               "value": "{{cpa_access_token}}",
-               "type": "string"
-              }
-             ]
-            },
-            "method": "GET",
-            "header": [
-             {
-              "key": "X-Contentful-Resource-Resolution",
-              "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-              "description": ""
-             }
-            ],
-            "url": {
-             "raw": "https://{{cpa_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
-             "protocol": "https",
-             "host": [
-              "{{cpa_url}}"
-             ],
-             "path": [
-              "spaces",
-              ":space_id",
-              "environments",
-              ":environment_id",
-              "entries"
-             ],
-             "query": [
-              {
-               "key": "include",
-               "value": "INCLUDE"
-              }
-             ],
-             "variable": [
-              {
-               "key": "space_id",
-               "value": "yadj1kx9rmg0",
-               "type": "string",
-               "description": "Alphanumeric id of the space to retrieve."
-              },
-              {
-               "key": "environment_id",
-               "value": "staging",
-               "type": "string",
-               "description": "ID of the environment in form of a string."
-              },
-              {
-               "key": "access_token",
-               "value": "f0aa56e3659d58947f8e3ddd6301c9591c9b73a8b54c35435233b18b3e6752d5",
-               "type": "string",
-               "description": "A *preview* Content Delivery API key."
-              }
-             ]
-            },
-            "description": "",
-            "body": {
-             "mode": "",
-             "raw": "",
-             "options": {
-              "raw": {
-               "language": ""
-              }
-             }
-            }
-           },
-           "status": "",
-           "code": 200,
-           "header": [
-            {
-             "key": "Content-Type",
-             "value": "application/vnd.contentful.delivery.v1+json",
-             "description": ""
-            }
-           ],
-           "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": []\n}"
-          }
-         ]
-        }
-       ],
-       "description": "*Notes*:\n\n- The `include` parameter resolves links between entries and assets within a space. Links between content types within a space are not included in the response.\n\n- The `include` parameter is only available for the entry collection endpoint `/spaces/{space_id}/environments/{environment_id}/entries`."
-      }
-     ],
-     "description": "Resource Links are part of the [References across spaces](/help/references-across-spaces) feature set that allows you to link content across multiple spaces. It mainly uses `ResourceLink` links as a way to represent a relationship between entities from different spaces.\n\n`ResourceLink` links are represented as a `sys` object containing `urn`, `linkType` and `type`:\n\nProperty                         |Description                              |\n---------------------------------|-----------------------------------------|\n`sys.linkType`                   |Represents what kind of entity this resource links to. For cross-space entries the value is `Contentful:Entry`.|\n`sys.type`                       |The type of Link. `ResourceLink` is the default for cross-space resources.|\n`sys.urn`                        |The location of the resource. A [CRN](/developers/docs/references/content-management-api/#/reference/references-across-spaces) to a Contentful space entity.|\n\nAs they are part of another space, resolving cross-space linked entities requires a special header to be passed in each request named `x-contentful-resource-resolution`.\n\n#### Extra header for cross-space resolution\n\nThe `x-contentful-resource-resolution` header is a *base64 encoded JSON object* containing key-value pairs of spaceId/API Key. The plain JSON used to create the header should have the following shape:\n\n```json\n{ \n    \"spaces\": { \n        \"someSpaceId\": \"\u003ccda-token\u003e\", \n        \"anotherSpaceId\": \"\u003ccda-token\u003e\" \n    } \n}\n```\n\nThat then needs to be *stringified* and encoded to base64. You can use `JSON.stringify` and `btoa` (JavaScript) to properly convert the JSON object to a stringified encoded version of it.\n\nHere is a full example in JavaScript:\n\n```js\nconst extraTokens = { \n  \"spaces\": { \n    \"IdToR3s0lv3\": \"ND63YKcYBe335RWDnIuzv...\", \n    \"4n0th3rSp4c3\": \"UuVe6icuBuXv...\" \n  } \n}\n\n// Converts object to string and uses base64 to encode the string\nwindow.btoa(JSON.stringify(extraTokens)) // eyJzcGFjZXMiOnsiSWRUb1I[...]=\n```\n\nThe value can then be passed to the `x-contentful-resource-resolution` header as-is. All cross-space references of matching space IDs will be returned within the `includes` property of the response.\n\n#### Capabilities\n\n- The `locale` query parameter is propagated to all extra spaces present in the new header.\n\n- Only the first level of references of every extra space in the new header will be resolved. This is a behavior similar to `include=1`.\n\n- The main space (space Id being requested in the URL) will still resolve up to 10 levels.\n\n- Publishing new content in any of the extra spaces will cause the cache to be purged on every request that included that space Id.\n\n- The `includes` property of the response will include both cross-space entries and assets.\n\n- You can pass this new header in the Javascript SDK for automatic resolution.\n\n#### Errors\n\nErrors from cross-space requests are propagated back to the response payload in the `errors` property. \nIf a request to a single cross-space fails, the main space request and other spaces will still continue to process.\n\nHTTP Status Code                         |Description                              |\n---------------------------------|-----------------------------------------|\n`401`                   |Missing `Authorization` header|\n`400`                   |Incorrect format for the `x-contentful-resource-resolution` header.|\n`400`                   |Number of extra spaces in the header exceeds the maximum allowed number (`3`)|\n\n##### Errors property example\n\n```json\n{\n    \"errors\": [\n        {\n            \"details\": {\n                \"urn\": \"crn:contentful:::content:spaces/\u003cspaceId\u003e/entries/\u003centryId\u003e\",\n                \"linkType\": \"Contentful:Entry\",\n                \"type\": \"ResourceLink\"\n            },\n            \"sys\": {\n                \"id\": \"notResolvable\",\n                \"type\": \"error\"\n            }\n        }\n\n    ]\n}\n```\n\n#### Limitations\n\n- Up to `4` spaces to be resolved in a single request\n\n- Only `3` extra space tokens are supported. You can make a single API call that resolves up to `4` spaces at the same time: `3` extra spaces and the entries from the space Id in the initial request.\n\n- Up to `1000` references in the `includes` property in the response.\n\n- Only the first level of cross-space references is resolved from the original spaceId in the URL\n\n- The `Authorization` header is still required for every request and it should enable access to the main space Id in the URL.\n\n- Errors from the extra space tokens will be returned in the `errors` property of the response.\n\n- Using the new header will also consume the Rate Limiting from the space Ids present in it when the request is *uncached*.\n\n- No [Advanced Caching](/developers/docs/infrastructure/advanced-caching/) support\n\n- No [MRDI](/developers/docs/infrastructure/what-is-mrdi/) support\n\nFor more information, see the [Resource Links FAQs](/help/resource-links-faqs)."
-    },
-    {
      "name": "Links",
      "item": [
       {
@@ -41963,16 +41792,16 @@
            ],
            "query": [
             {
+             "key": "fields.{linking_field}.sys.id",
+             "value": "TARGET_ENTRY_ID"
+            },
+            {
              "key": "include",
              "value": "VALUE"
             },
             {
              "key": "content_type",
              "value": "CONTENT_TYPE"
-            },
-            {
-             "key": "fields.{linking_field}.sys.id",
-             "value": "TARGET_ENTRY_ID"
             }
            ],
            "variable": [
@@ -42056,16 +41885,16 @@
              ],
              "query": [
               {
+               "key": "fields.{linking_field}.sys.id",
+               "value": "TARGET_ENTRY_ID"
+              },
+              {
                "key": "include",
                "value": "VALUE"
               },
               {
                "key": "content_type",
                "value": "CONTENT_TYPE"
-              },
-              {
-               "key": "fields.{linking_field}.sys.id",
-               "value": "TARGET_ENTRY_ID"
               }
              ],
              "variable": [
@@ -42854,12 +42683,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "fields.{field_id}",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -42937,12 +42766,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "fields.{field_id}",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -46702,12 +46531,12 @@
            ],
            "query": [
             {
-             "key": "fl",
-             "value": "PROGRESSIVE"
-            },
-            {
              "key": "fm",
              "value": "JPG"
+            },
+            {
+             "key": "fl",
+             "value": "PROGRESSIVE"
             }
            ],
            "variable": [
@@ -46778,12 +46607,12 @@
              ],
              "query": [
               {
-               "key": "fl",
-               "value": "PROGRESSIVE"
-              },
-              {
                "key": "fm",
                "value": "JPG"
+              },
+              {
+               "key": "fl",
+               "value": "PROGRESSIVE"
               }
              ],
              "variable": [
@@ -47156,12 +46985,12 @@
            ],
            "query": [
             {
-             "key": "w",
-             "value": "WIDTH"
-            },
-            {
              "key": "h",
              "value": "HEIGHT"
+            },
+            {
+             "key": "w",
+             "value": "WIDTH"
             }
            ],
            "variable": [
@@ -47244,12 +47073,12 @@
              ],
              "query": [
               {
-               "key": "w",
-               "value": "WIDTH"
-              },
-              {
                "key": "h",
                "value": "HEIGHT"
+              },
+              {
+               "key": "w",
+               "value": "WIDTH"
               }
              ],
              "variable": [
@@ -48112,10 +47941,6 @@
            ],
            "query": [
             {
-             "key": "w",
-             "value": "WIDTH"
-            },
-            {
              "key": "h",
              "value": "HEIGHT"
             },
@@ -48126,6 +47951,10 @@
             {
              "key": "bg",
              "value": "COLOR"
+            },
+            {
+             "key": "w",
+             "value": "WIDTH"
             }
            ],
            "variable": [
@@ -48214,10 +48043,6 @@
              ],
              "query": [
               {
-               "key": "w",
-               "value": "WIDTH"
-              },
-              {
                "key": "h",
                "value": "HEIGHT"
               },
@@ -48228,6 +48053,10 @@
               {
                "key": "bg",
                "value": "COLOR"
+              },
+              {
+               "key": "w",
+               "value": "WIDTH"
               }
              ],
              "variable": [
@@ -48304,20 +48133,6 @@
        "description": "You can choose the background color when using corner radius or the `pad` fit type.\nIt accepts RGB values such as `rgb:9090ff`. The default is white for JEPGs and transparent for PNGs and WEBPs."
       }
      ]
-    }
-   ]
-  },
-  {
-   "name": "Contentful GraphQL API (GQL)",
-   "item": [
-    {
-     "name": "Space"
-    },
-    {
-     "name": "Space \u0026 environment"
-    },
-    {
-     "name": "Schema query (Introspection)"
     }
    ]
   },

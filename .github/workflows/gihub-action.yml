@@ -1,0 +1,35 @@
+name: GitHub Action - CTF to postman
+on: 
+  push:
+    branches:
+      - development_github
+  repository_dispatch:
+    types: [ctf-postman-webhook]
+jobs:
+  postman-webhook-stage:
+      if: >-
+        github.event_name == 'repository_dispatch'
+      runs-on: ubuntu-latest
+      env:
+        POSTMAN_FILE: postman/Contentful_cda_cpa_cma_gql_images_scim_postman.json
+      steps:
+        - uses: actions/checkout@v3
+        - run: git config --global user.email "rodrigo.hal@ctf.com"
+        - run: git config --global user.name "Rodrigo HAL"
+        - run: echo "Updating postman repo"
+        - run: mkdir tmp
+        - run: echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
+        - run: curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
+        - run: echo "Doing CPA ${{ github.event.client_payload.CPA_ID }}"
+        - run: curl -o ./tmp/cpa.json https://www.contentful.com/developers/_resources/cpa.${{ github.event.client_payload.CPA_ID }}.json
+        - run: echo "Doing CMA ${{ github.event.client_payload.CMA_ID }}"
+        - run: curl -o ./tmp/cma.json https://www.contentful.com/developers/_resources/cma.${{ github.event.client_payload.CMA_ID }}.json
+        - run: echo "Doing IMAGES ${{ github.event.client_payload.IMAGES_ID }}"
+        - run: curl -o ./tmp/images.json https://www.contentful.com/developers/_resources/images.${{ github.event.client_payload.IMAGES_ID }}.json
+        - run: echo "Doing SCIM ${{ github.event.client_payload.SCIM_ID }}"
+        - run: curl -o ./tmp/scim.json https://www.contentful.com/developers/_resources/scim.${{ github.event.client_payload.SCIM_ID }}.json
+        - run: ./postman_convert -d ./tmp/ > ${{ env.POSTMAN_FILE }}
+        - run: git add ${{ env.POSTMAN_FILE }}
+        - run: git commit -m 'update postmat repo via actions'
+        - run: git push
+        - run: rm -rf ./tmp
