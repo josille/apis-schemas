@@ -12,10 +12,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ matrix.node-version }}
+        - run: git config --global user.email "rodrigo.hal@ctf.com"
+        - run: git config --global user.name "Rodrigo HAL"
         - run: echo "Script to create postman repo"
         - run: mkdir tmp
         - run: echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
