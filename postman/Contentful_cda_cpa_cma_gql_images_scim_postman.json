@@ -1,7 +1,7 @@
 {
  "info": {
   "_postman_id": "",
-  "name": "Contentful API's v2.5",
+  "name": "Contentful API's v2.6",
   "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
  },
  "item": [
@@ -6586,16 +6586,16 @@
            ],
            "query": [
             {
-             "key": "fields.{reference_field}.fields.{search_field}[match]",
-             "value": "SEARCH_VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
             },
             {
              "key": "fields.{reference_field}.sys.contentType.sys.id",
              "value": "REFERENCE_CONTENT_TYPE"
+            },
+            {
+             "key": "fields.{reference_field}.fields.{search_field}[match]",
+             "value": "SEARCH_VALUE"
             }
            ],
            "variable": [
@@ -6685,16 +6685,16 @@
              ],
              "query": [
               {
-               "key": "fields.{reference_field}.fields.{search_field}[match]",
-               "value": "SEARCH_VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
               },
               {
                "key": "fields.{reference_field}.sys.contentType.sys.id",
                "value": "REFERENCE_CONTENT_TYPE"
+              },
+              {
+               "key": "fields.{reference_field}.fields.{search_field}[match]",
+               "value": "SEARCH_VALUE"
               }
              ],
              "variable": [
@@ -7150,16 +7150,16 @@
            ],
            "query": [
             {
-             "key": "limit",
-             "value": "LIMIT"
-            },
-            {
              "key": "initial",
              "value": "TRUE"
             },
             {
              "key": "type",
              "value": "TYPE"
+            },
+            {
+             "key": "limit",
+             "value": "LIMIT"
             }
            ],
            "variable": [
@@ -7217,16 +7217,16 @@
              ],
              "query": [
               {
-               "key": "limit",
-               "value": "LIMIT"
-              },
-              {
                "key": "initial",
                "value": "TRUE"
               },
               {
                "key": "type",
                "value": "TYPE"
+              },
+              {
+               "key": "limit",
+               "value": "LIMIT"
               }
              ],
              "variable": [
@@ -7303,20 +7303,20 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
-             "key": "limit",
-             "value": "LIMIT"
-            },
-            {
              "key": "initial",
              "value": "TRUE"
             },
             {
              "key": "type",
              "value": "ENTRY"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "limit",
+             "value": "LIMIT"
             }
            ],
            "variable": [
@@ -7374,20 +7374,20 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
-               "key": "limit",
-               "value": "LIMIT"
-              },
-              {
                "key": "initial",
                "value": "TRUE"
               },
               {
                "key": "type",
                "value": "ENTRY"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "limit",
+               "value": "LIMIT"
               }
              ],
              "variable": [
@@ -34690,7 +34690,7 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"AppSignedRequest\",\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"\u003capp_definition_id\u003e\"\n      }\n    }\n  },\n  \"additionalHeaders\": {\n    \"X-Contentful-Signature\": \"\u003csignature\u003e\",\n    \"X-Contentful-Signed-Headers\": \"\u003ccomma-separated-headers-in-signing-order\u003e\",\n    \"X-Contentful-Timestamp\": \"\u003ctimestamp-of-request-signing\u003e\",\n    \"X-Contentful-Space-Id\": \"\u003cspace-id\u003e\",\n    \"X-Contentful-Environment-Id\": \"\u003cenvironment-id\u003e\",\n    \"X-Contentful-User-Id\": \"\u003cuser-id\u003e\"\n  }\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"AppSignedRequest\",\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"\u003capp_definition_id\u003e\"\n      }\n    }\n  },\n  \"additionalHeaders\": {\n    \"X-Contentful-Signature\": \"\u003csignature\u003e\",\n    \"X-Contentful-Signed-Headers\": \"\u003ccomma-separated-headers-in-signing-order\u003e\",\n    \"X-Contentful-Timestamp\": \"\u003ctimestamp-of-request-signing\u003e\",\n    \"X-Contentful-CRN\": \"\u003ccrn-of-signed-request\u003e\",\n    \"X-Contentful-Space-Id\": \"\u003cspace-id\u003e\",\n    \"X-Contentful-Environment-Id\": \"\u003cenvironment-id\u003e\",\n    \"X-Contentful-User-Id\": \"\u003cuser-id\u003e\"\n  }\n}"
           }
          ]
         }
@@ -37331,6 +37331,10 @@
            ],
            "query": [
             {
+             "key": "order",
+             "value": "ORDER"
+            },
+            {
              "key": "metric[in]",
              "value": "METRIC"
             },
@@ -37341,10 +37345,6 @@
             {
              "key": "dateRange.endAt",
              "value": "ENDAT"
-            },
-            {
-             "key": "order",
-             "value": "ORDER"
             }
            ],
            "variable": [
@@ -37414,6 +37414,10 @@
              ],
              "query": [
               {
+               "key": "order",
+               "value": "ORDER"
+              },
+              {
                "key": "metric[in]",
                "value": "METRIC"
               },
@@ -37424,10 +37428,6 @@
               {
                "key": "dateRange.endAt",
                "value": "ENDAT"
-              },
-              {
-               "key": "order",
-               "value": "ORDER"
               }
              ],
              "variable": [
@@ -39024,7 +39024,7 @@
            }
           ],
           "url": {
-           "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id=ENTRYID\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
+           "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id={ENTRYId}\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
            "protocol": "https",
            "host": [
             "{{cma_url}}"
@@ -39038,16 +39038,16 @@
            ],
            "query": [
             {
-             "key": "entity.sys.id",
-             "value": "ENTRYID"
-            },
-            {
              "key": "workflow.sys.id",
              "value": "WORKFLOWID"
             },
             {
              "key": "entity.sys.linkType",
              "value": "ENTRY"
+            },
+            {
+             "key": "entity.sys.id",
+             "value": "ENTRYID"
             }
            ],
            "variable": [
@@ -39123,7 +39123,7 @@
              }
             ],
             "url": {
-             "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id=ENTRYID\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
+             "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id={ENTRYId}\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
              "protocol": "https",
              "host": [
               "{{cma_url}}"
@@ -39137,16 +39137,16 @@
              ],
              "query": [
               {
-               "key": "entity.sys.id",
-               "value": "ENTRYID"
-              },
-              {
                "key": "workflow.sys.id",
                "value": "WORKFLOWID"
               },
               {
                "key": "entity.sys.linkType",
                "value": "ENTRY"
+              },
+              {
+               "key": "entity.sys.id",
+               "value": "ENTRYID"
               }
              ],
              "variable": [
@@ -41792,16 +41792,16 @@
            ],
            "query": [
             {
+             "key": "include",
+             "value": "VALUE"
+            },
+            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
             },
             {
              "key": "fields.{linking_field}.sys.id",
              "value": "TARGET_ENTRY_ID"
-            },
-            {
-             "key": "include",
-             "value": "VALUE"
             }
            ],
            "variable": [
@@ -41885,16 +41885,16 @@
              ],
              "query": [
               {
+               "key": "include",
+               "value": "VALUE"
+              },
+              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
               },
               {
                "key": "fields.{linking_field}.sys.id",
                "value": "TARGET_ENTRY_ID"
-              },
-              {
-               "key": "include",
-               "value": "VALUE"
               }
              ],
              "variable": [
@@ -42868,12 +42868,12 @@
            ],
            "query": [
             {
-             "key": "fields.{field_id}[all]",
-             "value": "VALUES"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "fields.{field_id}[all]",
+             "value": "VALUES"
             }
            ],
            "variable": [
@@ -42951,12 +42951,12 @@
              ],
              "query": [
               {
-               "key": "fields.{field_id}[all]",
-               "value": "VALUES"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "fields.{field_id}[all]",
+               "value": "VALUES"
               }
              ],
              "variable": [
@@ -43053,12 +43053,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "{attribute}[in]",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -43136,12 +43136,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "{attribute}[in]",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -47180,16 +47180,16 @@
            ],
            "query": [
             {
-             "key": "fit",
-             "value": "TYPE"
-            },
-            {
              "key": "w",
              "value": "WIDTH"
             },
             {
              "key": "h",
              "value": "HEIGHT"
+            },
+            {
+             "key": "fit",
+             "value": "TYPE"
             }
            ],
            "variable": [
@@ -47278,16 +47278,16 @@
              ],
              "query": [
               {
-               "key": "fit",
-               "value": "TYPE"
-              },
-              {
                "key": "w",
                "value": "WIDTH"
               },
               {
                "key": "h",
                "value": "HEIGHT"
+              },
+              {
+               "key": "fit",
+               "value": "TYPE"
               }
              ],
              "variable": [
@@ -47941,6 +47941,10 @@
            ],
            "query": [
             {
+             "key": "bg",
+             "value": "COLOR"
+            },
+            {
              "key": "w",
              "value": "WIDTH"
             },
@@ -47951,10 +47955,6 @@
             {
              "key": "fit",
              "value": "PAD"
-            },
-            {
-             "key": "bg",
-             "value": "COLOR"
             }
            ],
            "variable": [
@@ -48043,6 +48043,10 @@
              ],
              "query": [
               {
+               "key": "bg",
+               "value": "COLOR"
+              },
+              {
                "key": "w",
                "value": "WIDTH"
               },
@@ -48053,10 +48057,6 @@
               {
                "key": "fit",
                "value": "PAD"
-              },
-              {
-               "key": "bg",
-               "value": "COLOR"
               }
              ],
              "variable": [
