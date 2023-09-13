@@ -1,7 +1,7 @@
 {
  "info": {
   "_postman_id": "",
-  "name": "Contentful API's v2.1",
+  "name": "Contentful API's v2.6",
   "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
  },
  "item": [
@@ -3468,12 +3468,12 @@
            ],
            "query": [
             {
-             "key": "fields.{field_id}",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "fields.{field_id}",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -3551,12 +3551,12 @@
              ],
              "query": [
               {
-               "key": "fields.{field_id}",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "fields.{field_id}",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -4208,12 +4208,12 @@
            ],
            "query": [
             {
-             "key": "{attribute}[exists]",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "{attribute}[exists]",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -4291,12 +4291,12 @@
              ],
              "query": [
               {
-               "key": "{attribute}[exists]",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "{attribute}[exists]",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -4920,12 +4920,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "fields.center[near]",
              "value": "COORDINATE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -4997,12 +4997,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "fields.center[near]",
                "value": "COORDINATE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -7150,16 +7150,16 @@
            ],
            "query": [
             {
+             "key": "initial",
+             "value": "TRUE"
+            },
+            {
              "key": "type",
              "value": "TYPE"
             },
             {
              "key": "limit",
              "value": "LIMIT"
-            },
-            {
-             "key": "initial",
-             "value": "TRUE"
             }
            ],
            "variable": [
@@ -7217,16 +7217,16 @@
              ],
              "query": [
               {
+               "key": "initial",
+               "value": "TRUE"
+              },
+              {
                "key": "type",
                "value": "TYPE"
               },
               {
                "key": "limit",
                "value": "LIMIT"
-              },
-              {
-               "key": "initial",
-               "value": "TRUE"
               }
              ],
              "variable": [
@@ -34690,7 +34690,7 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"AppSignedRequest\",\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"\u003capp_definition_id\u003e\"\n      }\n    }\n  },\n  \"additionalHeaders\": {\n    \"X-Contentful-Signature\": \"\u003csignature\u003e\",\n    \"X-Contentful-Signed-Headers\": \"\u003ccomma-separated-headers-in-signing-order\u003e\",\n    \"X-Contentful-Timestamp\": \"\u003ctimestamp-of-request-signing\u003e\",\n    \"X-Contentful-Space-Id\": \"\u003cspace-id\u003e\",\n    \"X-Contentful-Environment-Id\": \"\u003cenvironment-id\u003e\",\n    \"X-Contentful-User-Id\": \"\u003cuser-id\u003e\"\n  }\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"AppSignedRequest\",\n    \"appDefinition\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"AppDefinition\",\n        \"id\": \"\u003capp_definition_id\u003e\"\n      }\n    }\n  },\n  \"additionalHeaders\": {\n    \"X-Contentful-Signature\": \"\u003csignature\u003e\",\n    \"X-Contentful-Signed-Headers\": \"\u003ccomma-separated-headers-in-signing-order\u003e\",\n    \"X-Contentful-Timestamp\": \"\u003ctimestamp-of-request-signing\u003e\",\n    \"X-Contentful-CRN\": \"\u003ccrn-of-signed-request\u003e\",\n    \"X-Contentful-Space-Id\": \"\u003cspace-id\u003e\",\n    \"X-Contentful-Environment-Id\": \"\u003cenvironment-id\u003e\",\n    \"X-Contentful-User-Id\": \"\u003cuser-id\u003e\"\n  }\n}"
           }
          ]
         }
@@ -37146,10 +37146,6 @@
            ],
            "query": [
             {
-             "key": "dateRange.endAt",
-             "value": "ENDAT"
-            },
-            {
              "key": "order",
              "value": "ORDER"
             },
@@ -37160,6 +37156,10 @@
             {
              "key": "dateRange.startAt",
              "value": "STARTAT"
+            },
+            {
+             "key": "dateRange.endAt",
+             "value": "ENDAT"
             }
            ],
            "variable": [
@@ -37229,10 +37229,6 @@
              ],
              "query": [
               {
-               "key": "dateRange.endAt",
-               "value": "ENDAT"
-              },
-              {
                "key": "order",
                "value": "ORDER"
               },
@@ -37243,6 +37239,10 @@
               {
                "key": "dateRange.startAt",
                "value": "STARTAT"
+              },
+              {
+               "key": "dateRange.endAt",
+               "value": "ENDAT"
               }
              ],
              "variable": [
@@ -37331,20 +37331,20 @@
            ],
            "query": [
             {
-             "key": "dateRange.startAt",
-             "value": "STARTAT"
-            },
-            {
-             "key": "dateRange.endAt",
-             "value": "ENDAT"
-            },
-            {
              "key": "order",
              "value": "ORDER"
             },
             {
              "key": "metric[in]",
              "value": "METRIC"
+            },
+            {
+             "key": "dateRange.startAt",
+             "value": "STARTAT"
+            },
+            {
+             "key": "dateRange.endAt",
+             "value": "ENDAT"
             }
            ],
            "variable": [
@@ -37414,20 +37414,20 @@
              ],
              "query": [
               {
-               "key": "dateRange.startAt",
-               "value": "STARTAT"
-              },
-              {
-               "key": "dateRange.endAt",
-               "value": "ENDAT"
-              },
-              {
                "key": "order",
                "value": "ORDER"
               },
               {
                "key": "metric[in]",
                "value": "METRIC"
+              },
+              {
+               "key": "dateRange.startAt",
+               "value": "STARTAT"
+              },
+              {
+               "key": "dateRange.endAt",
+               "value": "ENDAT"
               }
              ],
              "variable": [
@@ -39038,16 +39038,16 @@
            ],
            "query": [
             {
+             "key": "workflow.sys.id",
+             "value": "WORKFLOWID"
+            },
+            {
              "key": "entity.sys.linkType",
              "value": "ENTRY"
             },
             {
              "key": "entity.sys.id",
              "value": "ENTRYID"
-            },
-            {
-             "key": "workflow.sys.id",
-             "value": "WORKFLOWID"
             }
            ],
            "variable": [
@@ -39137,16 +39137,16 @@
              ],
              "query": [
               {
+               "key": "workflow.sys.id",
+               "value": "WORKFLOWID"
+              },
+              {
                "key": "entity.sys.linkType",
                "value": "ENTRY"
               },
               {
                "key": "entity.sys.id",
                "value": "ENTRYID"
-              },
-              {
-               "key": "workflow.sys.id",
-               "value": "WORKFLOWID"
               }
              ],
              "variable": [
@@ -42868,12 +42868,12 @@
            ],
            "query": [
             {
-             "key": "fields.{field_id}[all]",
-             "value": "VALUES"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "fields.{field_id}[all]",
+             "value": "VALUES"
             }
            ],
            "variable": [
@@ -42951,12 +42951,12 @@
              ],
              "query": [
               {
-               "key": "fields.{field_id}[all]",
-               "value": "VALUES"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "fields.{field_id}[all]",
+               "value": "VALUES"
               }
              ],
              "variable": [
@@ -43053,12 +43053,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "{attribute}[in]",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -43136,12 +43136,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "{attribute}[in]",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -43238,12 +43238,12 @@
            ],
            "query": [
             {
-             "key": "{attribute}[nin]",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "{attribute}[nin]",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -43321,12 +43321,12 @@
              ],
              "query": [
               {
-               "key": "{attribute}[nin]",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "{attribute}[nin]",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -45801,16 +45801,16 @@
            ],
            "query": [
             {
+             "key": "fields.{reference_field}.fields.{search_field}[match]",
+             "value": "SEARCH_VALUE"
+            },
+            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
             },
             {
              "key": "fields.{reference_field}.sys.contentType.sys.id",
              "value": "REFERENCE_CONTENT_TYPE"
-            },
-            {
-             "key": "fields.{reference_field}.fields.{search_field}[match]",
-             "value": "SEARCH_VALUE"
             }
            ],
            "variable": [
@@ -45900,16 +45900,16 @@
              ],
              "query": [
               {
+               "key": "fields.{reference_field}.fields.{search_field}[match]",
+               "value": "SEARCH_VALUE"
+              },
+              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
               },
               {
                "key": "fields.{reference_field}.sys.contentType.sys.id",
                "value": "REFERENCE_CONTENT_TYPE"
-              },
-              {
-               "key": "fields.{reference_field}.fields.{search_field}[match]",
-               "value": "SEARCH_VALUE"
               }
              ],
              "variable": [
@@ -47180,16 +47180,16 @@
            ],
            "query": [
             {
-             "key": "fit",
-             "value": "TYPE"
-            },
-            {
              "key": "w",
              "value": "WIDTH"
             },
             {
              "key": "h",
              "value": "HEIGHT"
+            },
+            {
+             "key": "fit",
+             "value": "TYPE"
             }
            ],
            "variable": [
@@ -47278,16 +47278,16 @@
              ],
              "query": [
               {
-               "key": "fit",
-               "value": "TYPE"
-              },
-              {
                "key": "w",
                "value": "WIDTH"
               },
               {
                "key": "h",
                "value": "HEIGHT"
+              },
+              {
+               "key": "fit",
+               "value": "TYPE"
               }
              ],
              "variable": [
@@ -47758,12 +47758,12 @@
            ],
            "query": [
             {
-             "key": "q",
-             "value": "QUALITY"
-            },
-            {
              "key": "fm",
              "value": "JPG"
+            },
+            {
+             "key": "q",
+             "value": "QUALITY"
             }
            ],
            "variable": [
@@ -47840,12 +47840,12 @@
              ],
              "query": [
               {
-               "key": "q",
-               "value": "QUALITY"
-              },
-              {
                "key": "fm",
                "value": "JPG"
+              },
+              {
+               "key": "q",
+               "value": "QUALITY"
               }
              ],
              "variable": [
