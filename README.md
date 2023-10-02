@@ -1,4 +1,4 @@
-# Contentful Client API schemas
+# Contentful API Client schemas
 
 ## Description
 
