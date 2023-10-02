@@ -1,45 +1,51 @@
-# Contentful API's schemas
-openAPI, Postman and Insomnia JSON schema for contentful REST and GraphQL APIs.
+# Contentful Client API schemas
 
-* Content Delivery API (CDA) used to retrieve published content to display in your application
-* Content Management API (CMA) used to create or update your content
-* Content Preview API (CPA) used to retrieve content that is still unpublished
-* SCIMP API System for Cross-domain Identity Management API
-* Images API used to retrieve and apply transformations to images
-* GraphQL Content API used to retrieve both published and unpublished content using GraphQL
+## Description
 
-## Includes
+Repository containing Contentful APIs definition schemas for different clients: 
 
-JSON endpoints definition and environment schema.
+* Postman
+* openAPI (Not mantained)
+* Insomnia (Not mantained)
 
-![screenshot](screenshot.png)
+The Contentful APIs schemas include: 
 
-## openAPI
-please use 'https://editor.swagger.io/' to edit online
+* [Content Delivery API (CDA)](https://www.contentful.com/developers/docs/references/content-delivery-api/) used to retrieve published content to display in your application.
+* [Content Management API (CMA)](https://www.contentful.com/developers/docs/references/content-management-api/) used to create or update your content.
+* [Content Preview API (CPA)](https://www.contentful.com/developers/docs/references/content-preview-api/) used to retrieve content that is still unpublished
+* [SCIMP API](https://www.contentful.com/developers/docs/references/scim-api/) used to programatically manage organization memberships and teams
+* [Images API](https://www.contentful.com/developers/docs/references/images-api/) used to retrieve and apply transformations to images
 
-to generate documentation please use: 
-https://openapi-generator.tech/docs/usage
+## Postman installation
 
-```
-$ openapi-generator generate -i Contentful-CDA.openapi_collection.yml -g dynamic-html -o ctf_CDA_html/
-```
-## postman
+Import the API schema and Environment into your Postman client:
 
-## insomnia
+[Postman API schema json](https://raw.githubusercontent.com/rodrigo-contentful/apis-schemas/master/postman/Contentful_cda_cpa_cma_gql_images_scim_postman.json)
 
-## How to use
-1. Import `Contentful APIs.postman_collection.json` into postman.
-2. Import `Contentful-API.postman_environment.json`into postman.
-3. Open Environments and add your CONTENFUL `space_id`, `environment_id`, `cda_access_token`, `cpa_access_token`, `cma_access_token`.
+[Postman API environment variables](https://raw.githubusercontent.com/rodrigo-contentful/apis-schemas/master/postman/Contentful-API.postman_environment.json)
+
+Update your local environment with your corresponding Contentful credentials and Ids.
 
 * `space_id` - Your space ID
 * `organization_id` - Your orgnazitaion ID
 * `cda_access_token` - Content Delivery API (CDA) access token
 * `cpa_access_token` - Content Preview API (CDA)
 * `cma_access_token` - Content management API (CDA)
-* `personal_access_token` - Personal access token
 
-## References and links
+## Postman Usage
+
+After import, all APIs are organized in folders with similar structure as Contentful documentation.
+
+![alt text](assets/screenshot_navigation.png)
+
+
+### Contentful Apis documentation
+
+The import includes basic API description based on Contentful documentation.
+
+![alt text](assets/screenshot_documentation.png)
+
+### References and links
 
 [Personal access tokens](https://www.contentful.com/help/personal-access-tokens/)
 
