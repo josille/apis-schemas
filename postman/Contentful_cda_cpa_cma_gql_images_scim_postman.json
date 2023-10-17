@@ -1,7 +1,7 @@
 {
  "info": {
   "_postman_id": "",
-  "name": "Contentful API's v2.6",
+  "name": "Contentful API's v2.7",
   "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
  },
  "item": [
@@ -2577,16 +2577,16 @@
            ],
            "query": [
             {
+             "key": "include",
+             "value": "VALUE"
+            },
+            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
             },
             {
              "key": "fields.{linking_field}.sys.id",
              "value": "TARGET_ENTRY_ID"
-            },
-            {
-             "key": "include",
-             "value": "VALUE"
             }
            ],
            "variable": [
@@ -2670,16 +2670,16 @@
              ],
              "query": [
               {
+               "key": "include",
+               "value": "VALUE"
+              },
+              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
               },
               {
                "key": "fields.{linking_field}.sys.id",
                "value": "TARGET_ENTRY_ID"
-              },
-              {
-               "key": "include",
-               "value": "VALUE"
               }
              ],
              "variable": [
@@ -2941,12 +2941,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "select",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -3018,12 +3018,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "select",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -6586,16 +6586,16 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "fields.{reference_field}.sys.contentType.sys.id",
              "value": "REFERENCE_CONTENT_TYPE"
             },
             {
              "key": "fields.{reference_field}.fields.{search_field}[match]",
              "value": "SEARCH_VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -6685,16 +6685,16 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "fields.{reference_field}.sys.contentType.sys.id",
                "value": "REFERENCE_CONTENT_TYPE"
               },
               {
                "key": "fields.{reference_field}.fields.{search_field}[match]",
                "value": "SEARCH_VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -6965,13 +6965,7 @@
            ]
           },
           "method": "GET",
-          "header": [
-           {
-            "key": "X-Contentful-Resource-Resolution",
-            "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-            "description": ""
-           }
-          ],
+          "header": [],
           "url": {
            "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
            "protocol": "https",
@@ -7038,13 +7032,7 @@
              ]
             },
             "method": "GET",
-            "header": [
-             {
-              "key": "X-Contentful-Resource-Resolution",
-              "value": "\"eyJzcGFjZXMiOnsiSWRUb1I...\"",
-              "description": ""
-             }
-            ],
+            "header": [],
             "url": {
              "raw": "https://{{cda_url}}/spaces/:space_id/environments/:environment_id/entries?\u0026include=INCLUDE",
              "protocol": "https",
@@ -7114,7 +7102,7 @@
        "description": "*Notes*:\n\n- The `include` parameter resolves links between entries and assets within a space. Links between content types within a space are not included in the response.\n\n- The `include` parameter is only available for the entry collection endpoint `/spaces/{space_id}/environments/{environment_id}/entries`."
       }
      ],
-     "description": "Resource Links are part of the [References across spaces](/help/references-across-spaces) feature set that allows you to link content across multiple spaces. It mainly uses `ResourceLink` links as a way to represent a relationship between entities from different spaces.\n\n`ResourceLink` links are represented as a `sys` object containing `urn`, `linkType` and `type`:\n\nProperty                         |Description                              |\n---------------------------------|-----------------------------------------|\n`sys.linkType`                   |Represents what kind of entity this resource links to. For cross-space entries the value is `Contentful:Entry`.|\n`sys.type`                       |The type of Link. `ResourceLink` is the default for cross-space resources.|\n`sys.urn`                        |The location of the resource. A [CRN](/developers/docs/references/content-management-api/#/reference/references-across-spaces) to a Contentful environment entity.|\n\nAs they are part of another space, resolving cross-space linked entities requires a special header to be passed in each request named `x-contentful-resource-resolution`.\n\n#### Extra header for cross-space resolution\n\nThe `x-contentful-resource-resolution` header is a *base64 encoded JSON object* containing key-value pairs of spaceId/API Key. The plain JSON used to create the header should have the following shape:\n\n```json\n{\n    \"spaces\": {\n        \"someSpaceId\": \"\u003ccda-token\u003e\",\n        \"anotherSpaceId\": \"\u003ccda-token\u003e\"\n    }\n}\n```\n\nThat then needs to be *stringified* and encoded to base64. You can use `JSON.stringify` and `btoa` (JavaScript) to properly convert the JSON object to a stringified encoded version of it.\n\nHere is a full example in JavaScript:\n\n```js\nconst extraTokens = {\n  \"spaces\": {\n    \"IdToR3s0lv3\": \"ND63YKcYBe335RWDnIuzv...\",\n    \"4n0th3rSp4c3\": \"UuVe6icuBuXv...\"\n  }\n}\n\n// Converts object to string and uses base64 to encode the string\nwindow.btoa(JSON.stringify(extraTokens)) // eyJzcGFjZXMiOnsiSWRUb1I[...]=\n```\n\nThe value can then be passed to the `x-contentful-resource-resolution` header as-is. All cross-space references of matching space IDs will be returned within the `includes` property of the response.\n\n#### Capabilities\n\n- The `locale` query parameter is propagated to all extra spaces present in the new header.\n\n- Only the first level of references of every extra space in the new header will be resolved. This is a behavior similar to `include=1`.\n\n- The main space (space Id being requested in the URL) will still resolve up to 10 levels.\n\n- Publishing new content in any of the extra spaces will cause the cache to be purged on every request that included that space Id.\n\n- The `includes` property of the response will include both cross-space entries and assets.\n\n- You can pass this new header in the Javascript SDK for automatic resolution.\n\n#### Errors\n\nErrors from cross-space requests are propagated back to the response payload in the `errors` property.\nIf a request to a single cross-space fails, the main space request and other spaces will still continue to process.\n\nHTTP Status Code                         |Description                              |\n---------------------------------|-----------------------------------------|\n`401`                   |Missing `Authorization` header|\n`400`                   |Incorrect format for the `x-contentful-resource-resolution` header.|\n`400`                   |Number of extra spaces in the header exceeds the maximum allowed number (`3`)|\n\n##### Errors property example\n\n```json\n{\n    \"errors\": [\n        {\n            \"details\": {\n                \"urn\": \"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e/entries/\u003centryId\u003e\",\n                \"linkType\": \"Contentful:Entry\",\n                \"type\": \"ResourceLink\"\n            },\n            \"sys\": {\n                \"id\": \"notResolvable\",\n                \"type\": \"error\"\n            }\n        }\n\n    ]\n}\n```\n\n#### Limitations\n\n- Up to `4` spaces to be resolved in a single request\n\n- Only `3` extra space tokens are supported. You can make a single API call that resolves up to `4` spaces at the same time: `3` extra spaces and the entries from the space Id in the initial request.\n\n- Up to `1000` references in the `includes` property in the response.\n\n- Only the first level of cross-space references is resolved from the original spaceId in the URL\n\n- The `Authorization` header is still required for every request and it should enable access to the main space Id in the URL.\n\n- Errors from the extra space tokens will be returned in the `errors` property of the response.\n\n- Using the new header will also consume the Rate Limiting from the space Ids present in it when the request is *uncached*.\n\n- No [Advanced Caching](/developers/docs/infrastructure/advanced-caching/) support\n\n- No [MRDI](/developers/docs/infrastructure/what-is-mrdi/) support\n\nFor more information, see the [Resource Links FAQs](/help/resource-links-faqs)."
+     "description": "Resource Links are part of the [Cross-space references](/help/references-across-spaces) feature set that allows you to link content across multiple spaces. It mainly uses `ResourceLink` links as a way to represent a relationship between entities from different spaces.\n\n`ResourceLink` links are represented as a `sys` object containing `urn`, `linkType` and `type`:\n\nProperty                         |Description                              |\n---------------------------------|-----------------------------------------|\n`sys.linkType`                   |Represents what kind of entity this resource links to. For cross-space entries the value is `Contentful:Entry`.|\n`sys.type`                       |The type of Link. `ResourceLink` is the default for cross-space resources.|\n`sys.urn`                        |The location of the resource. A [CRN](/developers/docs/references/content-management-api/#/reference/references-across-spaces) to a Contentful environment entity.|\n\nAs they are part of another space, resolving cross-space linked entities requires a special header to be passed in each request named `x-contentful-resource-resolution`.\n\n#### Extra header for cross-space resolution\n\nThe `x-contentful-resource-resolution` header is a *base64 encoded JSON object* containing key-value pairs of spaceId/API Key. The plain JSON used to create the header should have the following shape:\n\n```json\n{\n    \"spaces\": {\n        \"someSpaceId\": \"\u003ccda-token\u003e\",\n        \"anotherSpaceId\": \"\u003ccda-token\u003e\"\n    }\n}\n```\n\nThat then needs to be *stringified* and encoded to base64. You can use `JSON.stringify` and `btoa` (JavaScript) to properly convert the JSON object to a stringified encoded version of it.\n\nHere is a full example in JavaScript:\n\n```js\nconst extraTokens = {\n  \"spaces\": {\n    \"IdToR3s0lv3\": \"ND63YKcYBe335RWDnIuzv...\",\n    \"4n0th3rSp4c3\": \"UuVe6icuBuXv...\"\n  }\n}\n\n// Converts object to string and uses base64 to encode the string\nwindow.btoa(JSON.stringify(extraTokens)) // eyJzcGFjZXMiOnsiSWRUb1I[...]=\n```\n\nThe value can then be passed to the `x-contentful-resource-resolution` header as-is. All cross-space references of matching space IDs will be returned within the `includes` property of the response.\n\n#### Capabilities\n\n- The `locale` query parameter is propagated to all extra spaces present in the new header.\n\n- Only the first level of references of every extra space in the new header will be resolved. This is a behavior similar to `include=1`.\n\n- The main space (space Id being requested in the URL) will still resolve up to 10 levels.\n\n- Publishing new content in any of the extra spaces will cause the cache to be purged on every request that included that space Id.\n\n- The `includes` property of the response will include both cross-space entries and assets.\n\n- You can pass this new header in the Javascript SDK for automatic resolution.\n\n#### Errors\n\nErrors from cross-space requests are propagated back to the response payload in the `errors` property.\nIf a request to a single cross-space fails, the main space request and other spaces will still continue to process.\n\nHTTP Status Code                         |Description                              |\n---------------------------------|-----------------------------------------|\n`401`                   |Missing `Authorization` header|\n`400`                   |Incorrect format for the `x-contentful-resource-resolution` header.|\n`400`                   |Number of extra spaces in the header exceeds the maximum allowed number (`3`)|\n\n##### Errors property example\n\n```json\n{\n    \"errors\": [\n        {\n            \"details\": {\n                \"urn\": \"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e/entries/\u003centryId\u003e\",\n                \"linkType\": \"Contentful:Entry\",\n                \"type\": \"ResourceLink\"\n            },\n            \"sys\": {\n                \"id\": \"notResolvable\",\n                \"type\": \"error\"\n            }\n        }\n\n    ]\n}\n```\n\n#### Limitations\n\n- Up to `4` spaces to be resolved in a single request\n\n- Only `3` extra space tokens are supported. You can make a single API call that resolves up to `4` spaces at the same time: `3` extra spaces and the entries from the space Id in the initial request.\n\n- Up to `1000` references in the `includes` property in the response.\n\n- Only the first level of cross-space references is resolved from the original spaceId in the URL\n\n- The `Authorization` header is still required for every request and it should enable access to the main space Id in the URL.\n\n- Errors from the extra space tokens will be returned in the `errors` property of the response.\n\n- Using the new header will also consume the Rate Limiting from the space Ids present in it when the request is *uncached*.\n\n- No [Advanced Caching](/developers/docs/infrastructure/advanced-caching/) support\n\n- No [MRDI](/developers/docs/infrastructure/what-is-mrdi/) support\n\nFor more information, see the [Resource Links FAQs](/help/resource-links-faqs)."
     },
     {
      "name": "Synchronization",
@@ -7150,16 +7138,16 @@
            ],
            "query": [
             {
+             "key": "limit",
+             "value": "LIMIT"
+            },
+            {
              "key": "initial",
              "value": "TRUE"
             },
             {
              "key": "type",
              "value": "TYPE"
-            },
-            {
-             "key": "limit",
-             "value": "LIMIT"
             }
            ],
            "variable": [
@@ -7217,16 +7205,16 @@
              ],
              "query": [
               {
+               "key": "limit",
+               "value": "LIMIT"
+              },
+              {
                "key": "initial",
                "value": "TRUE"
               },
               {
                "key": "type",
                "value": "TYPE"
-              },
-              {
-               "key": "limit",
-               "value": "LIMIT"
               }
              ],
              "variable": [
@@ -7303,6 +7291,10 @@
            ],
            "query": [
             {
+             "key": "type",
+             "value": "ENTRY"
+            },
+            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
             },
@@ -7313,10 +7305,6 @@
             {
              "key": "initial",
              "value": "TRUE"
-            },
-            {
-             "key": "type",
-             "value": "ENTRY"
             }
            ],
            "variable": [
@@ -7374,6 +7362,10 @@
              ],
              "query": [
               {
+               "key": "type",
+               "value": "ENTRY"
+              },
+              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
               },
@@ -7384,10 +7376,6 @@
               {
                "key": "initial",
                "value": "TRUE"
-              },
-              {
-               "key": "type",
-               "value": "ENTRY"
               }
              ],
              "variable": [
@@ -10677,7 +10665,7 @@
             }
            ]
           },
-          "description": "#### Rich text node type validations\n\nValidation      |Description                              |Applicable to|Example                         |\n----------------|-----------------------------------------|-------------|--------------------------------|\n`linkContentType`|Takes an array of content type ids and validates that the link points to an entry of that content type.|`embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`|`{\"linkContentType\": [\"post\",\"doc\",\"product\"]}`\n`size`|Takes min and/or max parameters and validates the number of entries.|`asset-hyperlink`, `embedded-asset-block`, `embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`, `embedded-resource-block` |`{\"size\": { \"min\": 5, \"max\": 20}}`\n`allowedResources`|Defines the entities that can be referenced by the field. It is only used for references across spaces.|`embedded-resource-block`|`{\"allowedResources\": []}`\n\nRich text node type validations contain validations and allowed resources for the specified node type. See the example below:\n\n```json\n{\n  \"nodes\":{\n    \"embedded-entry-block\":[\n      {\n        \"size\":{\n          \"min\":1,\n          \"max\":5\n        },\n        \"message\":\"...\"\n      },\n      {\n        \"linkContentType\":[\n          \"foo\"\n        ],\n        \"message\":\"...\"\n      }\n    ],\n    \"embedded-resource-block\":{\n      \"validations\":[\n        {\n            \"size\": {\n                \"min\": 0,\n                \"max\": 10\n            },\n            \"message\": \"...\"\n        }\n      ],\n      \"allowedResources\":[\n        {\n          \"type\":\"Contentful:Entry\",\n          \"source\":\"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e\",\n          \"contentTypes\":[\n            \"foo\",\n            \"bar\"\n          ]\n        }\n      ]\n    }\n  }\n}\n```\n\nFor details about `allowedResources` see [references across spaces](#/reference/references-across-spaces/create-the-field-type-in-a-content-type).\n\n#### Default values\n\nUsing the `defaultValue` property of a field, you can define a value that is applied when entries are created.\nIf `defaultValue` is omitted the field will not be pre-filled with any value. See the example below:\n\n```json\n{\n  \"name\": \"foo\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"defaultValue\": {\n        \"en-US\": \"default title\",\n        \"it-IT\": \"titolo predefinito\",\n        \"fr-FR\": null\n      },\n      \"localized\": true\n    },\n    {\n      \"id\": \"color\",\n      \"name\": \"Color\",\n      \"type\": \"Symbol\",\n      \"defaultValue\": {\n        \"en-US\": \"blue\"\n      },\n      \"localized\": false\n    },\n    {\n      \"id\": \"labels\",\n      \"name\": \"Labels\",\n      \"type\": \"Array\",\n      \"localized\": false,\n      \"items\": {\n        \"type\": \"Symbol\"\n      },\n      \"defaultValue\": {\n        \"en-US\": [\"quick_read\", \"easy\"]\n      }\n    },\n    {\n      \"id\": \"breaking_news\",\n      \"name\": \"Breaking news\",\n      \"localized\": true\n    }\n  ]\n}\n```\n\nYou can localize default values by providing separate values for each locale. When the value is omitted, in the entry creation request,\nthen the configured default value is applied and the entry saved with it.\nIn case of a non-localized field, only the default value targeting the default locale will be applied to the\nnew entry.\n\nYou can set the default value for a locale to be `null`. This can be helpful to interrupt the [locale fallback](#/reference/locales) and\nsee your field empty after the entry is created.\n\nDefault values are not validated according to the field [`validations` property](#validations). This means that they are applied to new entries even if they are invalid.\nIn this case, those entries can't be published until the field value is fixed.\n\n**Limitations**:\nIf the default locale of an environment changes, the default value configuration is not modified. So the value targeting the previous default locale will still be applied to it.\nCurrently not all the field types support default values. The supported field ones are:\n\n- `{type: \"Symbol\"}`\n\n- `{type: \"Text\"}`\n\n- `{type: \"Integer\"}`\n\n- `{type: \"Number\"}`\n\n- `{type: \"Date\"}`\n\n- `{type: \"Boolean\"}`\n\n- `{type: \"Array\", items: {type: \"Symbol\"}}` only short texts arrays are supported\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nDefault values are applied to fields during entry creation and are only applied for activated content types.\nChanging `defaultValue` for a content type field will not change previously created entries;\nit will only apply to entries created after `defaultValue` has been updated.\n\u003c/div\u003e\n\n#### Annotations\n\nAnnotations provide you with means to attach semantic metadata to a content type or parts of it. Once assigned, they can be\ninterpreted by applications and services to adjust their behaviour accordingly.\n\nFor example, in [Compose](/developers/docs/compose/what-is-compose/) an annotation can be assigned to any content type.\nOnce assigned, this content type will be available for use as a page type in Compose, making all entries of that content type\navailable for editing.\n\nAs of now, we provide a small set of system annotations to drive the behaviour of [Compose](/developers/docs/compose/what-is-compose/). You can find a list of the annotations below.\n\nAnnotation ID  | Can be assigned to | Description |\n----------------|--------------------|-------------|\n`Contentful:AggregateRoot`| Content type | Adding this annotation to a content type will make it available as a page type in Compose. [Learn more](/developers/docs/compose/page-types/) |\n`Contentful:AggregateComponent`| Content type fields of type `Link` pointing to an entry (single and multiple references) | Adding this annotation to a field will turn it into a page component in Compose. [Learn more](/developers/docs/compose/page-types/#page-components) |\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nYou are able to assign only the system annotations that are listed above to any of your content types.\nWe don't provide either means of listing annotations or capabilities to create and assign custom annotations.\n\u003c/div\u003e\n\nSome of the annotations are assigned automatically. You can find a list of them below.\n\n| Annotation ID  | Is assigned to | Description |\n----------------|--------------------|-------------|\n|`Contentful:ManagedByEnvironmentTemplate`| Content type | This annotation is automatically assigned to every content type installed by [Content model templates](/developers/docs/references/content-management-api/#/reference/content-model-templates). It indicates which content types are managed by a template by showing a small icon in the Contentful web app and Compose. |\n|`Contentful:GraphQLFieldResolver`| Field | When the \"Resolve content on delivery\" checkbox is selected in the field settings under the appearance tab in the content model editor, an annotation is automatically assigned to that field. This annotation specifies the app responsible for resolving third party content in GraphQL queries. |\n\n#### Assigning annotations\n\nBy adding a `metadata.annotations` property to the payload, you can assign annotations to either the content type itself\nor individual fields of that content type. Annotations that can be assigned to individual fields will usually have additional\nrestrictions to which type of field they can be assigned (see `Contentful:AggregateComponent` above).\n\nThe example payload below shows you how to assign annotations to a sample content type. It will do the following things:\n\n* Assign the `Contentful:AggregateRoot` annotation to the content type itself\n\n* Assign the `Contentful:AggregateComponent` annotation the the reference field `sections`\n\n```json\n{\n  \"name\": \"Page\",\n  \"displayField\": \"title\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Name\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"slug\",\n      \"name\": \"Slug\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"sections\",\n      \"name\": \"Sections\",\n      \"type\": \"Array\",\n      \"items\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Entry\"\n      }\n    }\n  ],\n  \"metadata\": {\n    \"annotations\": {\n      \"ContentType\": [\n        {\n          \"sys\": {\n            \"id\": \"Contentful:AggregateRoot\",\n            \"type\": \"Link\",\n            \"linkType\": \"Annotation\"\n          }\n        }\n      ],\n      \"ContentTypeField\": {\n        \"sections\": [\n          {\n            \"sys\": {\n              \"id\": \"Contentful:AggregateComponent\",\n              \"type\": \"Link\",\n              \"linkType\": \"Annotation\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n```\n\n#### Changing field IDs\n\nYou can change the ID of a content type field in the Contentful web app. You can also change it via the API, by sending the `newId` property in the field's payload to override the current ID.\nThe API will return different data after this change, and this might break your existing code base. Read more about managing changes to content structure in our [multiple environments guide](/developers/docs/concepts/multiple-environments/).",
+          "description": "#### Rich text node type validations\n\nValidation      |Description                              |Applicable to|Example                         |\n----------------|-----------------------------------------|-------------|--------------------------------|\n`linkContentType`|Takes an array of content type ids and validates that the link points to an entry of that content type.|`embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`|`{\"linkContentType\": [\"post\",\"doc\",\"product\"]}`\n`size`|Takes min and/or max parameters and validates the number of entries.|`asset-hyperlink`, `embedded-asset-block`, `embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`, `embedded-resource-block` |`{\"size\": { \"min\": 5, \"max\": 20}}`\n`allowedResources`|Defines the entities that can be referenced by the field. It is only used for cross-space references.|`embedded-resource-block`|`{\"allowedResources\": []}`\n\nRich text node type validations contain validations and allowed resources for the specified node type. See the example below:\n\n```json\n{\n  \"nodes\":{\n    \"embedded-entry-block\":[\n      {\n        \"size\":{\n          \"min\":1,\n          \"max\":5\n        },\n        \"message\":\"...\"\n      },\n      {\n        \"linkContentType\":[\n          \"foo\"\n        ],\n        \"message\":\"...\"\n      }\n    ],\n    \"embedded-resource-block\":{\n      \"validations\":[\n        {\n            \"size\": {\n                \"min\": 0,\n                \"max\": 10\n            },\n            \"message\": \"...\"\n        }\n      ],\n      \"allowedResources\":[\n        {\n          \"type\":\"Contentful:Entry\",\n          \"source\":\"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e\",\n          \"contentTypes\":[\n            \"foo\",\n            \"bar\"\n          ]\n        }\n      ]\n    }\n  }\n}\n```\n\nFor details about `allowedResources` see [References across spaces](#/reference/references-across-spaces/create-the-field-type-in-a-content-type).\n\n#### Default values\n\nUsing the `defaultValue` property of a field, you can define a value that is applied when entries are created.\nIf `defaultValue` is omitted the field will not be pre-filled with any value. See the example below:\n\n```json\n{\n  \"name\": \"foo\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"defaultValue\": {\n        \"en-US\": \"default title\",\n        \"it-IT\": \"titolo predefinito\",\n        \"fr-FR\": null\n      },\n      \"localized\": true\n    },\n    {\n      \"id\": \"color\",\n      \"name\": \"Color\",\n      \"type\": \"Symbol\",\n      \"defaultValue\": {\n        \"en-US\": \"blue\"\n      },\n      \"localized\": false\n    },\n    {\n      \"id\": \"labels\",\n      \"name\": \"Labels\",\n      \"type\": \"Array\",\n      \"localized\": false,\n      \"items\": {\n        \"type\": \"Symbol\"\n      },\n      \"defaultValue\": {\n        \"en-US\": [\"quick_read\", \"easy\"]\n      }\n    },\n    {\n      \"id\": \"breaking_news\",\n      \"name\": \"Breaking news\",\n      \"localized\": true\n    }\n  ]\n}\n```\n\nYou can localize default values by providing separate values for each locale. When the value is omitted, in the entry creation request,\nthen the configured default value is applied and the entry saved with it.\nIn case of a non-localized field, only the default value targeting the default locale will be applied to the\nnew entry.\n\nYou can set the default value for a locale to be `null`. This can be helpful to interrupt the [locale fallback](#/reference/locales) and\nsee your field empty after the entry is created.\n\nDefault values are not validated according to the field [`validations` property](#validations). This means that they are applied to new entries even if they are invalid.\nIn this case, those entries can't be published until the field value is fixed.\n\n**Limitations**:\nIf the default locale of an environment changes, the default value configuration is not modified. So the value targeting the previous default locale will still be applied to it.\nCurrently not all the field types support default values. The supported field ones are:\n\n- `{type: \"Symbol\"}`\n\n- `{type: \"Text\"}`\n\n- `{type: \"Integer\"}`\n\n- `{type: \"Number\"}`\n\n- `{type: \"Date\"}`\n\n- `{type: \"Boolean\"}`\n\n- `{type: \"Array\", items: {type: \"Symbol\"}}` only short texts arrays are supported\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nDefault values are applied to fields during entry creation and are only applied for activated content types.\nChanging `defaultValue` for a content type field will not change previously created entries;\nit will only apply to entries created after `defaultValue` has been updated.\n\u003c/div\u003e\n\n#### Annotations\n\nAnnotations provide you with means to attach semantic metadata to a content type or parts of it. Once assigned, they can be\ninterpreted by applications and services to adjust their behaviour accordingly.\n\nFor example, in [Compose](/developers/docs/compose/what-is-compose/) an annotation can be assigned to any content type.\nOnce assigned, this content type will be available for use as a page type in Compose, making all entries of that content type\navailable for editing.\n\nAs of now, we provide a small set of system annotations to drive the behaviour of [Compose](/developers/docs/compose/what-is-compose/). You can find a list of the annotations below.\n\nAnnotation ID  | Can be assigned to | Description |\n----------------|--------------------|-------------|\n`Contentful:AggregateRoot`| Content type | Adding this annotation to a content type will make it available as a page type in Compose. [Learn more](/developers/docs/compose/page-types/) |\n`Contentful:AggregateComponent`| Content type fields of type `Link` pointing to an entry (single and multiple references) | Adding this annotation to a field will turn it into a page component in Compose. [Learn more](/developers/docs/compose/page-types/#page-components) |\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nYou are able to assign only the system annotations that are listed above to any of your content types.\nWe don't provide either means of listing annotations or capabilities to create and assign custom annotations.\n\u003c/div\u003e\n\nSome of the annotations are assigned automatically. You can find a list of them below.\n\n| Annotation ID  | Is assigned to | Description |\n----------------|--------------------|-------------|\n|`Contentful:ManagedByEnvironmentTemplate`| Content type | This annotation is automatically assigned to every content type installed by [Content model templates](/developers/docs/references/content-management-api/#/reference/content-model-templates). It indicates which content types are managed by a template by showing a small icon in the Contentful web app and Compose. |\n|`Contentful:GraphQLFieldResolver`| Field | When the \"Resolve content on delivery\" checkbox is selected in the field settings under the appearance tab in the content model editor, an annotation is automatically assigned to that field. This annotation specifies the app responsible for resolving third party content in GraphQL queries. |\n\n#### Assigning annotations\n\nBy adding a `metadata.annotations` property to the payload, you can assign annotations to either the content type itself\nor individual fields of that content type. Annotations that can be assigned to individual fields will usually have additional\nrestrictions to which type of field they can be assigned (see `Contentful:AggregateComponent` above).\n\nThe example payload below shows you how to assign annotations to a sample content type. It will do the following things:\n\n* Assign the `Contentful:AggregateRoot` annotation to the content type itself\n\n* Assign the `Contentful:AggregateComponent` annotation the the reference field `sections`\n\n```json\n{\n  \"name\": \"Page\",\n  \"displayField\": \"title\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Name\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"slug\",\n      \"name\": \"Slug\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"sections\",\n      \"name\": \"Sections\",\n      \"type\": \"Array\",\n      \"items\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Entry\"\n      }\n    }\n  ],\n  \"metadata\": {\n    \"annotations\": {\n      \"ContentType\": [\n        {\n          \"sys\": {\n            \"id\": \"Contentful:AggregateRoot\",\n            \"type\": \"Link\",\n            \"linkType\": \"Annotation\"\n          }\n        }\n      ],\n      \"ContentTypeField\": {\n        \"sections\": [\n          {\n            \"sys\": {\n              \"id\": \"Contentful:AggregateComponent\",\n              \"type\": \"Link\",\n              \"linkType\": \"Annotation\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n```\n\n#### Changing field IDs\n\nYou can change the ID of a content type field in the Contentful web app. You can also change it via the API, by sending the `newId` property in the field's payload to override the current ID.\nThe API will return different data after this change, and this might break your existing code base. Read more about managing changes to content structure in our [multiple environments guide](/developers/docs/concepts/multiple-environments/).",
           "body": {
            "mode": "raw",
            "raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"validations\": [\n        {\n          \"size\": \"\",\n          \"regexp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
@@ -10750,7 +10738,7 @@
               }
              ]
             },
-            "description": "#### Rich text node type validations\n\nValidation      |Description                              |Applicable to|Example                         |\n----------------|-----------------------------------------|-------------|--------------------------------|\n`linkContentType`|Takes an array of content type ids and validates that the link points to an entry of that content type.|`embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`|`{\"linkContentType\": [\"post\",\"doc\",\"product\"]}`\n`size`|Takes min and/or max parameters and validates the number of entries.|`asset-hyperlink`, `embedded-asset-block`, `embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`, `embedded-resource-block` |`{\"size\": { \"min\": 5, \"max\": 20}}`\n`allowedResources`|Defines the entities that can be referenced by the field. It is only used for references across spaces.|`embedded-resource-block`|`{\"allowedResources\": []}`\n\nRich text node type validations contain validations and allowed resources for the specified node type. See the example below:\n\n```json\n{\n  \"nodes\":{\n    \"embedded-entry-block\":[\n      {\n        \"size\":{\n          \"min\":1,\n          \"max\":5\n        },\n        \"message\":\"...\"\n      },\n      {\n        \"linkContentType\":[\n          \"foo\"\n        ],\n        \"message\":\"...\"\n      }\n    ],\n    \"embedded-resource-block\":{\n      \"validations\":[\n        {\n            \"size\": {\n                \"min\": 0,\n                \"max\": 10\n            },\n            \"message\": \"...\"\n        }\n      ],\n      \"allowedResources\":[\n        {\n          \"type\":\"Contentful:Entry\",\n          \"source\":\"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e\",\n          \"contentTypes\":[\n            \"foo\",\n            \"bar\"\n          ]\n        }\n      ]\n    }\n  }\n}\n```\n\nFor details about `allowedResources` see [references across spaces](#/reference/references-across-spaces/create-the-field-type-in-a-content-type).\n\n#### Default values\n\nUsing the `defaultValue` property of a field, you can define a value that is applied when entries are created.\nIf `defaultValue` is omitted the field will not be pre-filled with any value. See the example below:\n\n```json\n{\n  \"name\": \"foo\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"defaultValue\": {\n        \"en-US\": \"default title\",\n        \"it-IT\": \"titolo predefinito\",\n        \"fr-FR\": null\n      },\n      \"localized\": true\n    },\n    {\n      \"id\": \"color\",\n      \"name\": \"Color\",\n      \"type\": \"Symbol\",\n      \"defaultValue\": {\n        \"en-US\": \"blue\"\n      },\n      \"localized\": false\n    },\n    {\n      \"id\": \"labels\",\n      \"name\": \"Labels\",\n      \"type\": \"Array\",\n      \"localized\": false,\n      \"items\": {\n        \"type\": \"Symbol\"\n      },\n      \"defaultValue\": {\n        \"en-US\": [\"quick_read\", \"easy\"]\n      }\n    },\n    {\n      \"id\": \"breaking_news\",\n      \"name\": \"Breaking news\",\n      \"localized\": true\n    }\n  ]\n}\n```\n\nYou can localize default values by providing separate values for each locale. When the value is omitted, in the entry creation request,\nthen the configured default value is applied and the entry saved with it.\nIn case of a non-localized field, only the default value targeting the default locale will be applied to the\nnew entry.\n\nYou can set the default value for a locale to be `null`. This can be helpful to interrupt the [locale fallback](#/reference/locales) and\nsee your field empty after the entry is created.\n\nDefault values are not validated according to the field [`validations` property](#validations). This means that they are applied to new entries even if they are invalid.\nIn this case, those entries can't be published until the field value is fixed.\n\n**Limitations**:\nIf the default locale of an environment changes, the default value configuration is not modified. So the value targeting the previous default locale will still be applied to it.\nCurrently not all the field types support default values. The supported field ones are:\n\n- `{type: \"Symbol\"}`\n\n- `{type: \"Text\"}`\n\n- `{type: \"Integer\"}`\n\n- `{type: \"Number\"}`\n\n- `{type: \"Date\"}`\n\n- `{type: \"Boolean\"}`\n\n- `{type: \"Array\", items: {type: \"Symbol\"}}` only short texts arrays are supported\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nDefault values are applied to fields during entry creation and are only applied for activated content types.\nChanging `defaultValue` for a content type field will not change previously created entries;\nit will only apply to entries created after `defaultValue` has been updated.\n\u003c/div\u003e\n\n#### Annotations\n\nAnnotations provide you with means to attach semantic metadata to a content type or parts of it. Once assigned, they can be\ninterpreted by applications and services to adjust their behaviour accordingly.\n\nFor example, in [Compose](/developers/docs/compose/what-is-compose/) an annotation can be assigned to any content type.\nOnce assigned, this content type will be available for use as a page type in Compose, making all entries of that content type\navailable for editing.\n\nAs of now, we provide a small set of system annotations to drive the behaviour of [Compose](/developers/docs/compose/what-is-compose/). You can find a list of the annotations below.\n\nAnnotation ID  | Can be assigned to | Description |\n----------------|--------------------|-------------|\n`Contentful:AggregateRoot`| Content type | Adding this annotation to a content type will make it available as a page type in Compose. [Learn more](/developers/docs/compose/page-types/) |\n`Contentful:AggregateComponent`| Content type fields of type `Link` pointing to an entry (single and multiple references) | Adding this annotation to a field will turn it into a page component in Compose. [Learn more](/developers/docs/compose/page-types/#page-components) |\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nYou are able to assign only the system annotations that are listed above to any of your content types.\nWe don't provide either means of listing annotations or capabilities to create and assign custom annotations.\n\u003c/div\u003e\n\nSome of the annotations are assigned automatically. You can find a list of them below.\n\n| Annotation ID  | Is assigned to | Description |\n----------------|--------------------|-------------|\n|`Contentful:ManagedByEnvironmentTemplate`| Content type | This annotation is automatically assigned to every content type installed by [Content model templates](/developers/docs/references/content-management-api/#/reference/content-model-templates). It indicates which content types are managed by a template by showing a small icon in the Contentful web app and Compose. |\n|`Contentful:GraphQLFieldResolver`| Field | When the \"Resolve content on delivery\" checkbox is selected in the field settings under the appearance tab in the content model editor, an annotation is automatically assigned to that field. This annotation specifies the app responsible for resolving third party content in GraphQL queries. |\n\n#### Assigning annotations\n\nBy adding a `metadata.annotations` property to the payload, you can assign annotations to either the content type itself\nor individual fields of that content type. Annotations that can be assigned to individual fields will usually have additional\nrestrictions to which type of field they can be assigned (see `Contentful:AggregateComponent` above).\n\nThe example payload below shows you how to assign annotations to a sample content type. It will do the following things:\n\n* Assign the `Contentful:AggregateRoot` annotation to the content type itself\n\n* Assign the `Contentful:AggregateComponent` annotation the the reference field `sections`\n\n```json\n{\n  \"name\": \"Page\",\n  \"displayField\": \"title\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Name\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"slug\",\n      \"name\": \"Slug\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"sections\",\n      \"name\": \"Sections\",\n      \"type\": \"Array\",\n      \"items\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Entry\"\n      }\n    }\n  ],\n  \"metadata\": {\n    \"annotations\": {\n      \"ContentType\": [\n        {\n          \"sys\": {\n            \"id\": \"Contentful:AggregateRoot\",\n            \"type\": \"Link\",\n            \"linkType\": \"Annotation\"\n          }\n        }\n      ],\n      \"ContentTypeField\": {\n        \"sections\": [\n          {\n            \"sys\": {\n              \"id\": \"Contentful:AggregateComponent\",\n              \"type\": \"Link\",\n              \"linkType\": \"Annotation\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n```\n\n#### Changing field IDs\n\nYou can change the ID of a content type field in the Contentful web app. You can also change it via the API, by sending the `newId` property in the field's payload to override the current ID.\nThe API will return different data after this change, and this might break your existing code base. Read more about managing changes to content structure in our [multiple environments guide](/developers/docs/concepts/multiple-environments/).",
+            "description": "#### Rich text node type validations\n\nValidation      |Description                              |Applicable to|Example                         |\n----------------|-----------------------------------------|-------------|--------------------------------|\n`linkContentType`|Takes an array of content type ids and validates that the link points to an entry of that content type.|`embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`|`{\"linkContentType\": [\"post\",\"doc\",\"product\"]}`\n`size`|Takes min and/or max parameters and validates the number of entries.|`asset-hyperlink`, `embedded-asset-block`, `embedded-entry-block`, `embedded-entry-inline`, `entry-hyperlink`, `embedded-resource-block` |`{\"size\": { \"min\": 5, \"max\": 20}}`\n`allowedResources`|Defines the entities that can be referenced by the field. It is only used for cross-space references.|`embedded-resource-block`|`{\"allowedResources\": []}`\n\nRich text node type validations contain validations and allowed resources for the specified node type. See the example below:\n\n```json\n{\n  \"nodes\":{\n    \"embedded-entry-block\":[\n      {\n        \"size\":{\n          \"min\":1,\n          \"max\":5\n        },\n        \"message\":\"...\"\n      },\n      {\n        \"linkContentType\":[\n          \"foo\"\n        ],\n        \"message\":\"...\"\n      }\n    ],\n    \"embedded-resource-block\":{\n      \"validations\":[\n        {\n            \"size\": {\n                \"min\": 0,\n                \"max\": 10\n            },\n            \"message\": \"...\"\n        }\n      ],\n      \"allowedResources\":[\n        {\n          \"type\":\"Contentful:Entry\",\n          \"source\":\"crn:contentful:::content:spaces/\u003cspaceId\u003e/environments/\u003cenvironmentId\u003e\",\n          \"contentTypes\":[\n            \"foo\",\n            \"bar\"\n          ]\n        }\n      ]\n    }\n  }\n}\n```\n\nFor details about `allowedResources` see [References across spaces](#/reference/references-across-spaces/create-the-field-type-in-a-content-type).\n\n#### Default values\n\nUsing the `defaultValue` property of a field, you can define a value that is applied when entries are created.\nIf `defaultValue` is omitted the field will not be pre-filled with any value. See the example below:\n\n```json\n{\n  \"name\": \"foo\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"defaultValue\": {\n        \"en-US\": \"default title\",\n        \"it-IT\": \"titolo predefinito\",\n        \"fr-FR\": null\n      },\n      \"localized\": true\n    },\n    {\n      \"id\": \"color\",\n      \"name\": \"Color\",\n      \"type\": \"Symbol\",\n      \"defaultValue\": {\n        \"en-US\": \"blue\"\n      },\n      \"localized\": false\n    },\n    {\n      \"id\": \"labels\",\n      \"name\": \"Labels\",\n      \"type\": \"Array\",\n      \"localized\": false,\n      \"items\": {\n        \"type\": \"Symbol\"\n      },\n      \"defaultValue\": {\n        \"en-US\": [\"quick_read\", \"easy\"]\n      }\n    },\n    {\n      \"id\": \"breaking_news\",\n      \"name\": \"Breaking news\",\n      \"localized\": true\n    }\n  ]\n}\n```\n\nYou can localize default values by providing separate values for each locale. When the value is omitted, in the entry creation request,\nthen the configured default value is applied and the entry saved with it.\nIn case of a non-localized field, only the default value targeting the default locale will be applied to the\nnew entry.\n\nYou can set the default value for a locale to be `null`. This can be helpful to interrupt the [locale fallback](#/reference/locales) and\nsee your field empty after the entry is created.\n\nDefault values are not validated according to the field [`validations` property](#validations). This means that they are applied to new entries even if they are invalid.\nIn this case, those entries can't be published until the field value is fixed.\n\n**Limitations**:\nIf the default locale of an environment changes, the default value configuration is not modified. So the value targeting the previous default locale will still be applied to it.\nCurrently not all the field types support default values. The supported field ones are:\n\n- `{type: \"Symbol\"}`\n\n- `{type: \"Text\"}`\n\n- `{type: \"Integer\"}`\n\n- `{type: \"Number\"}`\n\n- `{type: \"Date\"}`\n\n- `{type: \"Boolean\"}`\n\n- `{type: \"Array\", items: {type: \"Symbol\"}}` only short texts arrays are supported\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nDefault values are applied to fields during entry creation and are only applied for activated content types.\nChanging `defaultValue` for a content type field will not change previously created entries;\nit will only apply to entries created after `defaultValue` has been updated.\n\u003c/div\u003e\n\n#### Annotations\n\nAnnotations provide you with means to attach semantic metadata to a content type or parts of it. Once assigned, they can be\ninterpreted by applications and services to adjust their behaviour accordingly.\n\nFor example, in [Compose](/developers/docs/compose/what-is-compose/) an annotation can be assigned to any content type.\nOnce assigned, this content type will be available for use as a page type in Compose, making all entries of that content type\navailable for editing.\n\nAs of now, we provide a small set of system annotations to drive the behaviour of [Compose](/developers/docs/compose/what-is-compose/). You can find a list of the annotations below.\n\nAnnotation ID  | Can be assigned to | Description |\n----------------|--------------------|-------------|\n`Contentful:AggregateRoot`| Content type | Adding this annotation to a content type will make it available as a page type in Compose. [Learn more](/developers/docs/compose/page-types/) |\n`Contentful:AggregateComponent`| Content type fields of type `Link` pointing to an entry (single and multiple references) | Adding this annotation to a field will turn it into a page component in Compose. [Learn more](/developers/docs/compose/page-types/#page-components) |\n\n\u003cdiv class=\"note\"\u003e\n\u003cstrong\u003eNote\u003c/strong\u003e:\nYou are able to assign only the system annotations that are listed above to any of your content types.\nWe don't provide either means of listing annotations or capabilities to create and assign custom annotations.\n\u003c/div\u003e\n\nSome of the annotations are assigned automatically. You can find a list of them below.\n\n| Annotation ID  | Is assigned to | Description |\n----------------|--------------------|-------------|\n|`Contentful:ManagedByEnvironmentTemplate`| Content type | This annotation is automatically assigned to every content type installed by [Content model templates](/developers/docs/references/content-management-api/#/reference/content-model-templates). It indicates which content types are managed by a template by showing a small icon in the Contentful web app and Compose. |\n|`Contentful:GraphQLFieldResolver`| Field | When the \"Resolve content on delivery\" checkbox is selected in the field settings under the appearance tab in the content model editor, an annotation is automatically assigned to that field. This annotation specifies the app responsible for resolving third party content in GraphQL queries. |\n\n#### Assigning annotations\n\nBy adding a `metadata.annotations` property to the payload, you can assign annotations to either the content type itself\nor individual fields of that content type. Annotations that can be assigned to individual fields will usually have additional\nrestrictions to which type of field they can be assigned (see `Contentful:AggregateComponent` above).\n\nThe example payload below shows you how to assign annotations to a sample content type. It will do the following things:\n\n* Assign the `Contentful:AggregateRoot` annotation to the content type itself\n\n* Assign the `Contentful:AggregateComponent` annotation the the reference field `sections`\n\n```json\n{\n  \"name\": \"Page\",\n  \"displayField\": \"title\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Name\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"slug\",\n      \"name\": \"Slug\",\n      \"type\": \"Symbol\"\n    },\n    {\n      \"id\": \"sections\",\n      \"name\": \"Sections\",\n      \"type\": \"Array\",\n      \"items\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Entry\"\n      }\n    }\n  ],\n  \"metadata\": {\n    \"annotations\": {\n      \"ContentType\": [\n        {\n          \"sys\": {\n            \"id\": \"Contentful:AggregateRoot\",\n            \"type\": \"Link\",\n            \"linkType\": \"Annotation\"\n          }\n        }\n      ],\n      \"ContentTypeField\": {\n        \"sections\": [\n          {\n            \"sys\": {\n              \"id\": \"Contentful:AggregateComponent\",\n              \"type\": \"Link\",\n              \"linkType\": \"Annotation\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n```\n\n#### Changing field IDs\n\nYou can change the ID of a content type field in the Contentful web app. You can also change it via the API, by sending the `newId` property in the field's payload to override the current ID.\nThe API will return different data after this change, and this might break your existing code base. Read more about managing changes to content structure in our [multiple environments guide](/developers/docs/concepts/multiple-environments/).",
             "body": {
              "mode": "raw",
              "raw": "{\n  \"name\": \"Blog Post\",\n  \"fields\": [\n    {\n      \"id\": \"title\",\n      \"name\": \"Title\",\n      \"type\": \"Text\",\n      \"validations\": [\n        {\n          \"size\": \"\",\n          \"regexp\": \"\"\n        }\n      ]\n    }\n  ]\n}",
@@ -14514,7 +14502,7 @@
        "description": "Use this endpoint to set the  `ResourceLink` field values in entries."
       }
      ],
-     "description": "References across spaces allow you to link content across multiple spaces. Using references across spaces, you can create reusable content and update multiple spaces with the same piece of content.\nTo accommodate referencing across multiple spaces, the `ResourceLink` field type has been added. The `ResourceLink` field carries references to entities in separate spaces. All `ResourceLink` fields are configured in the `ContentType` definitions as usual fields and accept the `allowedResources` validation rule. This validation restricts the entities that can be linked by the field.\n\nSupported field properties: `localized`, `required`, `omitted` and `disabled`.\n\n### Contentful Resource Names\n\nWith references across spaces, the Contentful Resource Name (`crn`) API identifier is used.\n\nA `crn` is a formatted string used to describe an object in the API domain. It uses a shared syntax that can be resolved across Contentful services.\nCurrently, `crn` is only used in the context of references across spaces to recognize a Contentful [space](#/reference/spaces/space), [environment](#/reference/environments/environment), or [entry](#/reference/entries/entry).\n\nThe respective syntax templates are:\n\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/environments/\u003c:environmentId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/entries/\u003c:entryId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/environments/\u003c:environmentId\u003e/entries/\u003c:entryId\u003e`\n\nThe `\u003c:spaceId\u003e`, `\u003c:environmentId\u003e`, and `\u003c:entryId\u003e` portions must contain standard [resource IDs](#/introduction/resource-ids). In the following snippets, the \"{crn}\" placeholder will be used where one of these is needed.\n\nNote: Omitting the environment in a `crn` is equivalent to referencing the master environment."
+     "description": "Cross-space references (formerly known as References across spaces) allow you to link content across multiple spaces. Using cross-space references, you can create reusable content and update multiple spaces with the same piece of content.\nTo accommodate referencing across multiple spaces, the `ResourceLink` field type has been added. The `ResourceLink` field carries references to entities in separate spaces. All `ResourceLink` fields are configured in the `ContentType` definitions as usual fields and accept the `allowedResources` validation rule. This validation restricts the entities that can be linked by the field.\n\nSupported field properties: `localized`, `required`, `omitted` and `disabled`.\n\n### Contentful Resource Names\n\nWith cross-space references, the Contentful Resource Name (`crn`) API identifier is used.\n\nA `crn` is a formatted string used to describe an object in the API domain. It uses a shared syntax that can be resolved across Contentful services.\nCurrently, `crn` is only used in the context of cross-space references to recognize a Contentful [space](#/reference/spaces/space), [environment](#/reference/environments/environment), or [entry](#/reference/entries/entry).\n\nThe respective syntax templates are:\n\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/environments/\u003c:environmentId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/entries/\u003c:entryId\u003e`\n`crn:contentful:::content:spaces/\u003c:spaceId\u003e/environments/\u003c:environmentId\u003e/entries/\u003c:entryId\u003e`\n\nThe `\u003c:spaceId\u003e`, `\u003c:environmentId\u003e`, and `\u003c:entryId\u003e` portions must contain standard [resource IDs](#/introduction/resource-ids). In the following snippets, the \"{crn}\" placeholder will be used where one of these is needed.\n\nNote: Omitting the environment in a `crn` is equivalent to referencing the master environment."
     },
     {
      "name": "Space Enablements",
@@ -26489,7 +26477,7 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"revokedAt\": null,\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"token\": \"46d42a80f96db00393ffa867a753de126e658484dd8a20d209bcb7efcf3761b9\"\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"lastUsedAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"revokedAt\": null,\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"token\": \"46d42a80f96db00393ffa867a753de126e658484dd8a20d209bcb7efcf3761b9\"\n}"
           }
          ]
         },
@@ -26521,7 +26509,7 @@
            ],
            "variable": null
           },
-          "description": "This endpoint will return all active CMA tokens, including revoked tokens. The possible types of tokens are `PersonalAccessToken`, `CLIToken` and  `OAuthApplication`.\n\nThe following table contains all the filters (query params) available for this endpoint:\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt and -sys.expiresAt\nquery              | Search parameter. Search implemented by 4 last characters of the token or the name of the token (e.g. `?query=token`,`?query=bQrU`)\n\nMore examples with date range filters:\n\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
+          "description": "This endpoint will return all active CMA tokens, including revoked tokens. The possible types of tokens are `PersonalAccessToken`, `CLIToken` and  `OAuthApplication`.\n\nThe following table contains all the filters (query params) available for this endpoint:\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[gt] | Filter tokens by lastUsedAt date greater then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[gt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[lt] | Filter tokens by lastUsedAt date less then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt and -sys.expiresAt\nquery              | Search parameter. Search implemented by 4 last characters of the token or the name of the token (e.g. `?query=token`,`?query=bQrU`)\n\nMore examples with date range filters:\n\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
           "body": {
            "mode": "raw",
            "raw": "{\n  \"name\": \"My Token\",\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"expiresIn\": 0\n}",
@@ -26561,7 +26549,7 @@
              ],
              "variable": null
             },
-            "description": "This endpoint will return all active CMA tokens, including revoked tokens. The possible types of tokens are `PersonalAccessToken`, `CLIToken` and  `OAuthApplication`.\n\nThe following table contains all the filters (query params) available for this endpoint:\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt and -sys.expiresAt\nquery              | Search parameter. Search implemented by 4 last characters of the token or the name of the token (e.g. `?query=token`,`?query=bQrU`)\n\nMore examples with date range filters:\n\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
+            "description": "This endpoint will return all active CMA tokens, including revoked tokens. The possible types of tokens are `PersonalAccessToken`, `CLIToken` and  `OAuthApplication`.\n\nThe following table contains all the filters (query params) available for this endpoint:\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[gt] | Filter tokens by lastUsedAt date greater then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[gt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[lt] | Filter tokens by lastUsedAt date less then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt and -sys.expiresAt\nquery              | Search parameter. Search implemented by 4 last characters of the token or the name of the token (e.g. `?query=token`,`?query=bQrU`)\n\nMore examples with date range filters:\n\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
             "body": {
              "mode": "raw",
              "raw": "{\n  \"name\": \"My Token\",\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"expiresIn\": 0\n}",
@@ -26582,7 +26570,7 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": [\n    {\n      \"sys\": {\n        \"type\": \"PersonalAccessToken\",\n        \"id\": \"exampletokenid\",\n        \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n        \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n        \"expiresAt\": null,\n        \"redactedValue\": \"TmTU\",\n        \"application\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"Application\",\n            \"id\": \"\u003capplication_id\u003e\"\n          }\n        }\n      },\n      \"name\": \"My Token\",\n      \"revokedAt\": null,\n      \"scopes\": [\n        \"content_management_manage\"\n      ]\n    }\n  ]\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": [\n    {\n      \"sys\": {\n        \"type\": \"PersonalAccessToken\",\n        \"id\": \"exampletokenid\",\n        \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n        \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n        \"expiresAt\": null,\n        \"lastUsedAt\": null,\n        \"redactedValue\": \"TmTU\",\n        \"application\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"Application\",\n            \"id\": \"\u003capplication_id\u003e\"\n          }\n        }\n      },\n      \"name\": \"My Token\",\n      \"revokedAt\": null,\n      \"scopes\": [\n        \"content_management_manage\"\n      ]\n    }\n  ]\n}"
           }
          ]
         }
@@ -26696,7 +26684,7 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"revokedAt\": null,\n  \"scopes\": [\n    \"content_management_manage\"\n  ]\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"lastUsedAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"revokedAt\": null,\n  \"scopes\": [\n    \"content_management_manage\"\n  ]\n}"
           }
          ]
         }
@@ -26824,7 +26812,105 @@
             }
            ],
            "cookie": null,
-           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"revokedAt\": \"2015-05-18T11:29:46.809Z\"\n}"
+           "body": "{\n  \"sys\": {\n    \"type\": \"PersonalAccessToken\",\n    \"id\": \"exampletokenid\",\n    \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n    \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n    \"expiresAt\": null,\n    \"lastUsedAt\": null,\n    \"redactedValue\": \"TmTU\",\n    \"application\": {\n      \"sys\": {\n        \"type\": \"Link\",\n        \"linkType\": \"Application\",\n        \"id\": \"\u003capplication_id\u003e\"\n      }\n    }\n  },\n  \"name\": \"My Token\",\n  \"scopes\": [\n    \"content_management_manage\"\n  ],\n  \"revokedAt\": \"2015-05-18T11:29:46.809Z\"\n}"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Admin view Access tokens collection",
+       "item": [
+        {
+         "name": "Get all access tokens",
+         "request": {
+          "auth": {
+           "type": "bearer",
+           "bearer": [
+            {
+             "key": "token",
+             "value": "{{cma_access_token}}",
+             "type": "string"
+            }
+           ]
+          },
+          "method": "GET",
+          "header": [],
+          "url": {
+           "raw": "https://{{cma_url}}/organizations/{organization_id}/access_tokens",
+           "protocol": "https",
+           "host": [
+            "{{cma_url}}"
+           ],
+           "path": [
+            "organizations",
+            ":organization_id",
+            "access_tokens"
+           ],
+           "variable": null
+          },
+          "description": "The endpoint should return redacted versions of all CMA tokens belonging to the users who are members of the given organization. This access is only available for admins and owners.\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[gt] | Filter tokens by lastUsedAt date greater then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[gt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[lt] | Filter tokens by lastUsedAt date less then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt, -sys.expiresAt, sys.lastUsedAt, -sys.lastUsedAt, sys.user.firstName, -sys.user.firstName, sys.user.lastName, -sys.user.lastName\nquery              | Search parameter. Search implemented by 4 last characters of the token (e.g. `?query=bQrU`)\n\nMore examples with date range filters:\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
+          "body": {
+           "mode": "",
+           "raw": "",
+           "options": {
+            "raw": {
+             "language": ""
+            }
+           }
+          }
+         },
+         "response": [
+          {
+           "name": "Get all access tokens",
+           "originalRequest": {
+            "auth": {
+             "type": "bearer",
+             "bearer": [
+              {
+               "key": "token",
+               "value": "{{cma_access_token}}",
+               "type": "string"
+              }
+             ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+             "raw": "https://{{cma_url}}/organizations/{organization_id}/access_tokens",
+             "protocol": "https",
+             "host": [
+              "{{cma_url}}"
+             ],
+             "path": [
+              "organizations",
+              ":organization_id",
+              "access_tokens"
+             ],
+             "variable": null
+            },
+            "description": "The endpoint should return redacted versions of all CMA tokens belonging to the users who are members of the given organization. This access is only available for admins and owners.\n\nFilter             |Description\n-------------------|----------------------------------------------------------\nsys.type[in]       | Filter tokens to those matching the comma-separated list of types (e.g. `sys.type[in]=PersonalAccessToken,CLIToken,OAuthApplication`)\nsys.expiresAt[gt]  | Filter tokens by expiresAt date greater then provided value in ISO 8601 format (e.g. `sys.expiresAt[gt]=2023-08-17T09:00:00`)\nsys.expiresAt[lt]  | Filter tokens by expiresAt date less then provided value in ISO 8601 format (e.g. `sys.expiresAt[lt]=2023-08-17T09:00:00`)\nsys.expiresAt=NULL | Filter tokens by expiresAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.expiresAt`\nsys.revokedAt[gt]  | Filter tokens by revokedAt date greater then provided value in ISO 8601 format (e.g. `sys.revokedAt[gt]=2023-08-17T09:00:00`)\nsys.revokedAt[lt]  | Filter tokens by revokedAt date less then provided value in ISO 8601 format (e.g. `sys.revokedAt[lt]=2023-08-17T09:00:00`)\nsys.revokedAt=NULL | Filter tokens by revokedAt date equals null, it returns all tokens without an expiration date. Also works with ommited value, for example `?sys.revokedAt`\nsys.createdAt[gt]  | Filter tokens by createdAt date greater then provided value in ISO 8601 format (e.g. `sys.createdAt[gt]=2023-08-17T09:00:00`)\nsys.createdAt[lt]  | Filter tokens by createdAt date less then provided value in ISO 8601 format (e.g. `sys.createdAt[lt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[gt] | Filter tokens by lastUsedAt date greater then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[gt]=2023-08-17T09:00:00`)\nsys.lastUsedAt[lt] | Filter tokens by lastUsedAt date less then provided value in ISO 8601 format (e.g. `sys.lastUsedAt[lt]=2023-08-17T09:00:00`)\norder              | Orders the query results. The available options include sys.createdAt, -sys.createdAt, sys.expiresAt, -sys.expiresAt, sys.lastUsedAt, -sys.lastUsedAt, sys.user.firstName, -sys.user.firstName, sys.user.lastName, -sys.user.lastName\nquery              | Search parameter. Search implemented by 4 last characters of the token (e.g. `?query=bQrU`)\n\nMore examples with date range filters:\n`?sys.expiresAt[gt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all active tokens.\n`?sys.expiresAt[lt]=${now_as_iso_date}\u0026revokedAt=null` – Returns all expired tokens.\n`?revokedAt[lt]=${now_as_iso_date}` – Returns all revoked tokens.",
+            "body": {
+             "mode": "",
+             "raw": "",
+             "options": {
+              "raw": {
+               "language": ""
+              }
+             }
+            }
+           },
+           "status": "",
+           "code": 200,
+           "header": [
+            {
+             "key": "Content-Type",
+             "value": "application/vnd.contentful.management.v1+json",
+             "description": ""
+            }
+           ],
+           "cookie": null,
+           "body": "{\n  \"sys\": {\n    \"type\": \"Array\"\n  },\n  \"total\": 0,\n  \"skip\": 0,\n  \"limit\": 100,\n  \"items\": [\n    {\n      \"sys\": {\n        \"type\": \"PersonalAccessToken\",\n        \"id\": \"exampletokenid\",\n        \"createdAt\": \"2015-05-18T11:29:46.809Z\",\n        \"updatedAt\": \"2015-05-18T11:29:46.809Z\",\n        \"expiresAt\": null,\n        \"lastUsedAt\": null,\n        \"redactedValue\": \"TmTU\",\n        \"user\": {\n          \"sys\": {\n            \"type\": \"Link\",\n            \"linkType\": \"User\",\n            \"id\": \"7uqvFPPLzgtVaezGvjA9U6\"\n          }\n        }\n      },\n      \"revokedAt\": null,\n      \"scopes\": [\n        \"content_management_manage\"\n      ]\n    }\n  ]\n}"
           }
          ]
         }
@@ -37331,10 +37417,6 @@
            ],
            "query": [
             {
-             "key": "metric[in]",
-             "value": "METRIC"
-            },
-            {
              "key": "dateRange.startAt",
              "value": "STARTAT"
             },
@@ -37345,6 +37427,10 @@
             {
              "key": "order",
              "value": "ORDER"
+            },
+            {
+             "key": "metric[in]",
+             "value": "METRIC"
             }
            ],
            "variable": [
@@ -37414,10 +37500,6 @@
              ],
              "query": [
               {
-               "key": "metric[in]",
-               "value": "METRIC"
-              },
-              {
                "key": "dateRange.startAt",
                "value": "STARTAT"
               },
@@ -37428,6 +37510,10 @@
               {
                "key": "order",
                "value": "ORDER"
+              },
+              {
+               "key": "metric[in]",
+               "value": "METRIC"
               }
              ],
              "variable": [
@@ -39024,7 +39110,7 @@
            }
           ],
           "url": {
-           "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id=ENTRYID\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
+           "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id={ENTRYId}\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
            "protocol": "https",
            "host": [
             "{{cma_url}}"
@@ -39038,16 +39124,16 @@
            ],
            "query": [
             {
+             "key": "entity.sys.linkType",
+             "value": "ENTRY"
+            },
+            {
              "key": "entity.sys.id",
              "value": "ENTRYID"
             },
             {
              "key": "workflow.sys.id",
              "value": "WORKFLOWID"
-            },
-            {
-             "key": "entity.sys.linkType",
-             "value": "ENTRY"
             }
            ],
            "variable": [
@@ -39123,7 +39209,7 @@
              }
             ],
             "url": {
-             "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id=ENTRYID\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
+             "raw": "https://{{cma_url}}/spaces/:space_id/environments/:environment_id/workflows_changelog?entity.sys.linkType=ENTRY\u0026entity.sys.id={ENTRYId}\u0026workflow.sys.id=WORKFLOWID\u0026skip,limit,eventAt[gte],eventAt[lte]}",
              "protocol": "https",
              "host": [
               "{{cma_url}}"
@@ -39137,16 +39223,16 @@
              ],
              "query": [
               {
+               "key": "entity.sys.linkType",
+               "value": "ENTRY"
+              },
+              {
                "key": "entity.sys.id",
                "value": "ENTRYID"
               },
               {
                "key": "workflow.sys.id",
                "value": "WORKFLOWID"
-              },
-              {
-               "key": "entity.sys.linkType",
-               "value": "ENTRY"
               }
              ],
              "variable": [
@@ -42683,12 +42769,12 @@
            ],
            "query": [
             {
-             "key": "fields.{field_id}",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "fields.{field_id}",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -42766,12 +42852,12 @@
              ],
              "query": [
               {
-               "key": "fields.{field_id}",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "fields.{field_id}",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -43238,12 +43324,12 @@
            ],
            "query": [
             {
-             "key": "{attribute}[nin]",
-             "value": "VALUE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "{attribute}[nin]",
+             "value": "VALUE"
             }
            ],
            "variable": [
@@ -43321,12 +43407,12 @@
              ],
              "query": [
               {
-               "key": "{attribute}[nin]",
-               "value": "VALUE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "{attribute}[nin]",
+               "value": "VALUE"
               }
              ],
              "variable": [
@@ -43423,12 +43509,12 @@
            ],
            "query": [
             {
-             "key": "content_type",
-             "value": "CONTENT_TYPE"
-            },
-            {
              "key": "{attribute}[exists]",
              "value": "VALUE"
+            },
+            {
+             "key": "content_type",
+             "value": "CONTENT_TYPE"
             }
            ],
            "variable": [
@@ -43506,12 +43592,12 @@
              ],
              "query": [
               {
-               "key": "content_type",
-               "value": "CONTENT_TYPE"
-              },
-              {
                "key": "{attribute}[exists]",
                "value": "VALUE"
+              },
+              {
+               "key": "content_type",
+               "value": "CONTENT_TYPE"
               }
              ],
              "variable": [
@@ -44308,12 +44394,12 @@
            ],
            "query": [
             {
-             "key": "fields.center[within]",
-             "value": "RECTANGLE"
-            },
-            {
              "key": "content_type",
              "value": "CONTENT_TYPE"
+            },
+            {
+             "key": "fields.center[within]",
+             "value": "RECTANGLE"
             }
            ],
            "variable": [
@@ -44385,12 +44471,12 @@
              ],
              "query": [
               {
-               "key": "fields.center[within]",
-               "value": "RECTANGLE"
-              },
-              {
                "key": "content_type",
                "value": "CONTENT_TYPE"
+              },
+              {
+               "key": "fields.center[within]",
+               "value": "RECTANGLE"
               }
              ],
              "variable": [
@@ -47395,12 +47481,12 @@
            ],
            "query": [
             {
-             "key": "f",
-             "value": "TYPE"
-            },
-            {
              "key": "fit",
              "value": "THUMB"
+            },
+            {
+             "key": "f",
+             "value": "TYPE"
             }
            ],
            "variable": [
@@ -47477,12 +47563,12 @@
              ],
              "query": [
               {
-               "key": "f",
-               "value": "TYPE"
-              },
-              {
                "key": "fit",
                "value": "THUMB"
+              },
+              {
+               "key": "f",
+               "value": "TYPE"
               }
              ],
              "variable": [
@@ -47941,6 +48027,10 @@
            ],
            "query": [
             {
+             "key": "h",
+             "value": "HEIGHT"
+            },
+            {
              "key": "fit",
              "value": "PAD"
             },
@@ -47951,10 +48041,6 @@
             {
              "key": "w",
              "value": "WIDTH"
-            },
-            {
-             "key": "h",
-             "value": "HEIGHT"
             }
            ],
            "variable": [
@@ -48043,6 +48129,10 @@
              ],
              "query": [
               {
+               "key": "h",
+               "value": "HEIGHT"
+              },
+              {
                "key": "fit",
                "value": "PAD"
               },
@@ -48053,10 +48143,6 @@
               {
                "key": "w",
                "value": "WIDTH"
-              },
-              {
-               "key": "h",
-               "value": "HEIGHT"
               }
              ],
              "variable": [
