@@ -5,6 +5,10 @@ on:
       - development_github
   repository_dispatch:
     types: [ctf-postman-webhook]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
 jobs:
   postman-webhook-stage:
       if: >-
