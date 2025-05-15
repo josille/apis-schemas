@@ -25,7 +25,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     if: >-
-        github.event_name == 'repository_dispatch'
+        github.event_name == 'workflow_dispatch'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
