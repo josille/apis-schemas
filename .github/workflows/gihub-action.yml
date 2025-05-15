@@ -45,7 +45,7 @@ jobs:
               curl -o ./tmp/scim.json https://www.contentful.com/developers/_resources/scim.${{ github.event.client_payload.SCIM_ID }}.json
             
         - name: Transforming to Postman
-          run: ./postman_convert -v ${{github.event.client_payload.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
+          # run: ./postman_convert -v ${{github.event.client_payload.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
 
         - name: Commit files
           run: |
