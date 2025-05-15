@@ -47,7 +47,7 @@ jobs:
       - name: Downloading Contentful CDA documentation
         run: |
            echo "Doing CDA ${{ github.event.inputs.CDA_ID }}"
-           curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
+           curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.inputs.CDA_ID }}.json
 
       - name: Transforming to Postman
         run: ./postman_convert -v ${{github.event.inputs.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
