@@ -19,6 +19,18 @@ on:
         description: 'User CPA:'
         required: true
         default: "Hello World"      
+      CMA_ID:
+        description: 'User CMA:'
+        required: true
+        default: "Hello World"
+      IMAGES_ID:
+        description: 'User IMAGES_ID:'
+        required: true
+        default: "Hello World"
+      SCIM_ID:
+        description: 'User SCIM_ID:'
+        required: true
+        default: "Hello World"
       API_VERSION:
         description: 'User API_VERSION:'
         required: true
@@ -48,6 +60,26 @@ jobs:
         run: |
            echo "Doing CDA ${{ github.event.inputs.CDA_ID }}"
            curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.inputs.CDA_ID }}.json
+
+      - name: Downloading Contentful CPA documentation
+        run: |
+            echo "Doing CPA ${{ github.event.inputs.CPA_ID }}"
+            curl -o ./tmp/cpa.json https://www.contentful.com/developers/_resources/cpa.${{ github.event.inputs.CPA_ID }}.json
+              
+      - name: Downloading Contentful CMA documentation
+        run: |
+            echo "Doing CMA ${{ github.event.inputs.CMA_ID }}"  
+            curl -o ./tmp/cma.json https://www.contentful.com/developers/_resources/cma.${{ github.event.inputs.CMA_ID }}.json
+                          
+      - name: Downloading Contentful IMAGES API documentation
+        run: |
+            echo "Doing IMAGES ${{ github.event.inputs.IMAGES_ID }}"
+            curl -o ./tmp/images.json https://www.contentful.com/developers/_resources/images.${{ github.event.inputs.IMAGES_ID }}.json
+            
+      - name: Downloading Contentful SCIM API documentation
+        run: |
+            echo "Doing SCIM ${{ github.event.inputs.SCIM_ID }}"
+            curl -o ./tmp/scim.json https://www.contentful.com/developers/_resources/scim.${{ github.event.inputs.SCIM_ID }}.json
 
       - name: Transforming to Postman
         run: ./postman_convert -v ${{github.event.inputs.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
