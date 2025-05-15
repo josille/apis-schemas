@@ -8,6 +8,15 @@ on:
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      CDA_ID:
+        description: 'User Input:'
+        required: true
+        default: "Hello World"
+      CPA_ID:
+        description: 'User Input:'
+        required: true
+        default: "Hello World"
   
 jobs:
   postman-webhook-stage:
@@ -25,28 +34,28 @@ jobs:
 
         - name: Downloading Contentful CDA documentation
           run: |
-              echo "Doing CDA ${{ github.event.client_payload.CDA_ID }}"
-              curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
+              echo "Doing CDA ${{ github.event.inputs.CDA_ID }}"
+              # curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.client_payload.CDA_ID }}.json
 
         - name: Downloading Contentful CPA documentation
           run: |
-              echo "Doing CPA ${{ github.event.client_payload.CPA_ID }}"
-              curl -o ./tmp/cpa.json https://www.contentful.com/developers/_resources/cpa.${{ github.event.client_payload.CPA_ID }}.json
+              # echo "Doing CPA ${{ github.event.client_payload.CPA_ID }}"
+              # curl -o ./tmp/cpa.json https://www.contentful.com/developers/_resources/cpa.${{ github.event.client_payload.CPA_ID }}.json
               
         - name: Downloading Contentful CMA documentation
           run: |
-              echo "Doing CMA ${{ github.event.client_payload.CMA_ID }}"  
-              curl -o ./tmp/cma.json https://www.contentful.com/developers/_resources/cma.${{ github.event.client_payload.CMA_ID }}.json
+              # echo "Doing CMA ${{ github.event.client_payload.CMA_ID }}"  
+              # curl -o ./tmp/cma.json https://www.contentful.com/developers/_resources/cma.${{ github.event.client_payload.CMA_ID }}.json
                           
         - name: Downloading Contentful IMAGES API documentation
           run: |
-              echo "Doing IMAGES ${{ github.event.client_payload.IMAGES_ID }}"
-              curl -o ./tmp/images.json https://www.contentful.com/developers/_resources/images.${{ github.event.client_payload.IMAGES_ID }}.json
+              # echo "Doing IMAGES ${{ github.event.client_payload.IMAGES_ID }}"
+              # curl -o ./tmp/images.json https://www.contentful.com/developers/_resources/images.${{ github.event.client_payload.IMAGES_ID }}.json
             
         - name: Downloading Contentful SCIM API documentation
           run: |
-              echo "Doing SCIM ${{ github.event.client_payload.SCIM_ID }}"
-              curl -o ./tmp/scim.json https://www.contentful.com/developers/_resources/scim.${{ github.event.client_payload.SCIM_ID }}.json
+              # echo "Doing SCIM ${{ github.event.client_payload.SCIM_ID }}"
+              # curl -o ./tmp/scim.json https://www.contentful.com/developers/_resources/scim.${{ github.event.client_payload.SCIM_ID }}.json
             
         - name: Transforming to Postman
           # run: ./postman_convert -v ${{github.event.client_payload.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
