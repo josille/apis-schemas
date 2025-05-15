@@ -45,7 +45,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
-        POSTMAN_FILE: postman/Contentful_cda_cpa_cma_gql_images_scim_postman_test.json
+        POSTMAN_FILE: postman/Contentful_cda_cpa_cma_gql_images_scim_postman.json
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
