@@ -51,3 +51,13 @@ jobs:
 
       - name: Transforming to Postman
         run: ./postman_convert -v ${{github.event.inputs.API_VERSION}} -d ./tmp/ > ${{ env.POSTMAN_FILE }}
+
+      - name: Commit files
+        run: |
+              git config --global user.email "rodrigo.hal@ctf.com"        
+              git config --global user.name "Rodrigo HAL"
+              git add ${{ env.POSTMAN_FILE }}
+              git commit -m 'update postmat schema verion ${{github.event.inputs.API_VERSION}} via action'
+
+      - name: Push changes
+        run: git push 
