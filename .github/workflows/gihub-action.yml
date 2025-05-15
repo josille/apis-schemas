@@ -51,8 +51,8 @@ jobs:
           run: |
               git config --global user.email "rodrigo.hal@ctf.com"        
               git config --global user.name "Rodrigo HAL"
-              git add ${{ env.POSTMAN_FILE }}
-              git commit -m 'update postmat schema verion ${{github.event.client_payload.API_VERSION}} via action'
+              # git add ${{ env.POSTMAN_FILE }}
+              # git commit -m 'update postmat schema verion ${{github.event.client_payload.API_VERSION}} via action'
 
-        - name: Push changes
-          run: git push 
+        #- name: Push changes
+        #  run: git push 
