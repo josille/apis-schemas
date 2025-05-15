@@ -44,6 +44,6 @@ jobs:
 
       - name: Downloading Contentful CDA documentation
         run: |
-            echo "Doing event_name ${{ github.event_name }}"
+            # echo "Doing event_name ${{ github.event_name }}"
           echo Add other actions to build,
           echo test, and deploy your project.
