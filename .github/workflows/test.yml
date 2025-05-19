@@ -63,7 +63,7 @@ jobs:
       - name: setiing variables
         # if: ${{ env.CDA == 'none' }}
         run: |
-          response = $(curl -s https://www.contentful.com/developers/docs/ | grep -oP '(?<="cda\.json":")(?=.*[a-z])(?=.*\d)[a-z\d]{9,11}')         
+          response = `$(curl -s https://www.contentful.com/developers/docs/ | grep -oP '(?<="cda\.json":")(?=.*[a-z])(?=.*\d)[a-z\d]{9,11}')`         
           echo "response from curl CDA= $response"
         env:
           CDA: $response
