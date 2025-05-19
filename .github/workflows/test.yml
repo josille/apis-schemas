@@ -1,0 +1,72 @@
+# This is a basic workflow to help you get started with Actions
+name: GitHub Action - CTF to postman
+on: 
+  push:
+    branches:
+      - development_github
+  repository_dispatch:
+    types: [ctf-postman-webhook]
+
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      CDA_ID:
+        description: 'User CDA:'
+        required: true
+        default: "none"
+      CPA_ID:
+        description: 'User CPA:'
+        required: false
+        default: "none"      
+      CMA_ID:
+        description: 'User CMA:'
+        required: false
+        default: "none"  
+      IMAGES_ID:
+        description: 'User IMAGES_ID:'
+        required: false
+        default: "none"  
+      SCIM_ID:
+        description: 'User SCIM_ID:'
+        required: false
+        default: "none"
+      API_VERSION:
+        description: 'User API_VERSION:'
+        required: false
+        default: "none"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+        POSTMAN_FILE: postman/Contentful_cda_cpa_cma_gql_images_scim_postman.json
+        CDA: ${{ github.event.inputs.CDA_ID }}
+        
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: checkout repo
+        uses: actions/checkout@v4
+       
+      - name: Preparing
+        run: mkdir tmp
+
+      - name: setiing variables
+        if: ${{ env.CDA == 'none' }}
+        run: |
+          response = $(curl -s https://www.contentful.com/developers/docs/ | grep -oP '(?<="cda\.json":")(?=.*[a-z])(?=.*\d)[a-z\d]{9,11}')         
+          echo "response from curl CDA= $response"
+        env:
+          CDA: $response
+
+      - name: Downloading Contentful CDA documentation
+        run: |
+           echo "Doing CDA ${{ env.CDA }}"
+           # curl -o ./tmp/cda.json https://www.contentful.com/developers/_resources/cda.${{ github.event.inputs.CDA_ID }}.json
+
+      
